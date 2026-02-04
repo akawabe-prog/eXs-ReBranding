@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eXs 1 TKG | Product | eXs (エクス)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { black: '#111111', gray: '#F5F5F5', stripe: '#635BFF' }
+                    },
+                    letterSpacing: { widest: '.15em' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="font-sans text-brand-black antialiased bg-white">
+
+    <header id="common-header" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm text-brand-black shadow-sm transition-all duration-300"></header>
+
+    <main class="pt-32 pb-20 px-6 min-h-screen">
+        <div class="container mx-auto max-w-7xl">
+            
+            <nav class="text-xs text-gray-400 mb-10 font-en tracking-wider">
+                <a href="index.html" class="hover:text-black">HOME</a>
+                <span class="mx-2">/</span>
+                <a href="product-intro-tkg.html" class="hover:text-black">eXs 1 TKG (Intro)</a>
+                <span class="mx-2">/</span>
+                <span class="text-black">Purchase</span>
+            </nav>
+
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-20">
+                
+                <div class="w-full lg:w-3/5">
+                    <div class="bg-gray-100 aspect-[4/3] mb-4 overflow-hidden relative group cursor-zoom-in">
+                        <img src="https://placehold.co/1200x900/111/fff?text=eXs+1+TKG+Main" alt="eXs 1 TKG" class="w-full h-full object-contain p-8 transition-transform duration-500 hover:scale-105" id="main-image">
+                        
+                        <div class="absolute top-4 right-4 flex flex-col items-end gap-2">
+                            <span class="bg-red-600 text-white text-xs px-3 py-1 font-bold tracking-widest shadow-sm">大阪万博採用モデル</span>
+                            <span class="bg-black text-white text-xs px-3 py-1 font-bold tracking-widest shadow-sm">免許不要</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4">
+                        <button class="bg-gray-50 aspect-square border border-black p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/111/fff?text=Main')">
+                            <img src="https://placehold.co/200x200/111/fff?text=Main" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/333/fff?text=Fold')">
+                            <img src="https://placehold.co/200x200/333/fff?text=Fold" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/555/fff?text=Panel')">
+                            <img src="https://placehold.co/200x200/555/fff?text=Panel" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/777/fff?text=Light')">
+                            <img src="https://placehold.co/200x200/777/fff?text=Light" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/999/fff?text=Tire')">
+                            <img src="https://placehold.co/200x200/999/fff?text=Tire" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/bbb/fff?text=Back')">
+                            <img src="https://placehold.co/200x200/bbb/fff?text=Back" class="w-full h-full object-contain">
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8 bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-sm mb-4 flex items-center text-red-600">
+                            <i class="fa-solid fa-triangle-exclamation mr-2"></i> 購入前の重要確認事項
+                        </h3>
+                        <ul class="text-xs text-gray-600 space-y-2 list-disc list-inside">
+                            <li>本製品は「特定小型原動機付自転車」です。</li>
+                            <li>16歳未満の方は購入・運転ができません。</li>
+                            <li>公道を走行するには、ナンバープレートの取得と自賠責保険への加入が必須です。</li>
+                            <li>ヘルメットの着用は努力義務ですが、安全のため着用を強く推奨します。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 flex flex-col">
+                    <h1 class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-2">eXs 1 TKG</h1>
+                    <p class="font-en text-sm text-gray-500 tracking-widest mb-6">ELECTRIC KICKBOARD</p>
+                    
+                    <div class="text-3xl font-en font-bold mb-8">
+                        <span>¥64,800</span>
+                        <span class="text-sm font-normal text-gray-500 ml-2">(TAX IN)</span>
+                    </div>
+
+                    <p class="text-sm text-gray-700 leading-loose mb-10 text-justify">
+                        免許不要（16歳以上）で乗れる特定小型原動機付自転車モデル。大阪・関西万博の運営管理業務でも採用された高い信頼性。コンパクトに折りたため、車載や室内保管も容易です。
+                    </p>
+
+                    <div class="mb-10">
+                        <span class="block text-xs font-en font-bold tracking-widest mb-4">OPTIONS</span>
+                        <div class="space-y-3">
+                            <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black">
+                                    <span class="ml-3 text-sm font-medium">eXsオリジナルヘルメット</span>
+                                </div>
+                                <span class="text-sm font-en text-gray-500">+ ¥4,500</span>
+                            </label>
+                            <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black">
+                                    <span class="ml-3 text-sm font-medium">ワイヤーロック</span>
+                                </div>
+                                <span class="text-sm font-en text-gray-500">+ ¥2,200</span>
+                            </label>
+                            <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black">
+                                    <span class="ml-3 text-sm font-medium">自賠責保険加入代行（1年）</span>
+                                </div>
+                                <span class="text-sm font-en text-gray-500">+ ¥7,000</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto">
+                        <button onclick="document.getElementById('stripe-modal').classList.remove('hidden')" class="w-full bg-brand-stripe text-white font-en font-bold py-5 tracking-widest text-lg hover:opacity-90 transition mb-4 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-id-card"></i> 年齢確認をして購入へ
+                        </button>
+                        <p class="text-xs text-gray-400 text-center">
+                            ※ 特定小型原付のため、Stripe Identityによる本人確認（16歳以上）が必要です。<br>
+                            ※ 注文から発送まで約<span class="font-bold text-black mx-1">3〜5営業日</span>いただいております。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-32 max-w-4xl mx-auto border-t border-gray-200">
+                <details class="group border-b border-gray-200" open>
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>SPECIFICATIONS</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>全長</span><span>1100 mm</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>重量</span><span>16.0 kg</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>最高速度</span><span>20 km/h (車道)</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>走行距離</span><span>20 - 25 km</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>モーター</span><span>350W</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>防水性能</span><span>IP54</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>最大積載</span><span>100 kg</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>区分</span><span>特定小型原付</span></div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group border-b border-gray-200">
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>WARRANTY & SUPPORT</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <h4 class="font-bold text-black mb-2">保証期間について</h4>
+                        <p class="mb-4">本体・バッテリー：ご購入日より6ヶ月<br>消耗品（タイヤ、ブレーキ等）は保証対象外となります。</p>
+                        <h4 class="font-bold text-black mb-2">アフターサポート</h4>
+                        <p>全国の提携メンテナンス店にて修理・点検が可能です。</p>
+                    </div>
+                </details>
+            </div>
+
+            <section class="mt-32 mb-20 fade-up">
+                <div class="text-center mb-8">
+                    <span class="font-en text-xs font-bold tracking-widest text-gray-400 block mb-2">IMAGE MOVIE</span>
+                    <h2 class="font-en text-2xl md:text-3xl font-bold tracking-tighter">THE URBAN CRUISER</h2>
+                </div>
+                <div class="relative w-full aspect-video bg-black overflow-hidden group">
+                    <video class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline poster="https://placehold.co/1920x1080/111/333?text=Kickboard+Movie">
+                        <source src="https://videos.pexels.com/video-files/5927702/5927702-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm">
+                            <i class="fa-solid fa-play text-white ml-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-32">
+                <div class="flex flex-col md:flex-row items-center gap-12 mb-24 fade-up">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://placehold.co/800x600/222/fff?text=Compact+Folding" alt="Folding Mechanism" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10">
+                        <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. COMPACT FOLDING</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">3ステップで折りたたみ。<br>持ち運びもスマートに。</h3>
+                        <p class="text-sm text-gray-600 leading-loose text-justify">
+                            ロックを外してレバーを倒すだけの簡単3ステップで、コンパクトに折りたたみが可能。重量16kgと軽量設計のため、オフィスへの持ち込みや車のトランクへの積載もスムーズです。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24 fade-up">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://placehold.co/800x600/333/fff?text=Expo+2025" alt="Expo 2025 Official" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                    <div class="w-full md:w-1/2 md:pr-10">
+                        <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">02. OFFICIAL ADOPTION</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">大阪・関西万博公式採用。<br>プロが認めた信頼性。</h3>
+                        <p class="text-sm text-gray-600 leading-loose text-justify">
+                            2025年大阪・関西万博の会場運営管理業務において、移動用モビリティとして正式採用。広大な会場内をスタッフが安全かつ効率的に移動するための「足」として、その耐久性と安全性が認められています。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-12 fade-up">
+                    <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
+                        <img src="https://placehold.co/400x400/111/fff?text=Puncture+Free" alt="Tire" class="w-full h-auto object-cover">
+                        <img src="https://placehold.co/400x400/111/fff?text=License+Free" alt="Plate" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10">
+                        <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">03. SAFETY & LEGAL</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">免許不要で乗れる、<br>新しい移動の自由。</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <span class="text-lg mr-4 opacity-30 font-en">A</span>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-2">特定小型原付区分</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">16歳以上であれば免許不要。ヘルメットは努力義務ですが、着用を推奨します。</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-lg mr-4 opacity-30 font-en">B</span>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-2">ノーパンクタイヤ</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">空気入れ不要の8.5インチノーパンクタイヤを採用。パンクの心配がありません。</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-lg mr-4 opacity-30 font-en">C</span>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-2">保安部品完備</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">ウインカー、ライト、最高速度表示灯など、公道走行に必要な保安部品を標準装備。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-32 bg-gray-50 p-8 md:p-16 text-center fade-up">
+                <span class="font-en text-xs font-bold tracking-widest text-gray-400 block mb-4">SPEC MOVIE</span>
+                <h3 class="font-en text-xl md:text-2xl font-bold tracking-tighter mb-8">FOLDING & DETAILS</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="aspect-video bg-gray-200 relative overflow-hidden group cursor-pointer">
+                        <video class="w-full h-full object-cover" muted loop playsinline poster="https://placehold.co/800x450/ccc/333?text=Folding+Demo"></video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
+                            <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY FOLDING</div>
+                        </div>
+                    </div>
+                    <div class="aspect-video bg-gray-200 relative overflow-hidden group cursor-pointer">
+                        <video class="w-full h-full object-cover" muted loop playsinline poster="https://placehold.co/800x450/ccc/333?text=Riding+Scene"></video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
+                            <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY RIDING</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-10 fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="font-en text-xl font-bold tracking-widest">GALLERY</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x900/222/fff?text=TKG+Scene+1" alt="Gallery 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x900/333/fff?text=TKG+Scene+2" alt="Gallery 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x900/444/fff?text=TKG+Detail+1" alt="Gallery 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x900/555/fff?text=TKG+Detail+2" alt="Gallery 4" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="stripe-modal" class="fixed inset-0 z-[60] bg-black/50 hidden flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white w-full max-w-md rounded-xl shadow-2xl overflow-hidden p-0 m-4">
+            <div class="bg-[#635BFF] p-6 text-white text-center">
+                <i class="fa-brands fa-stripe text-4xl mb-2"></i>
+                <h3 class="font-bold text-lg">Identity Verification</h3>
+                <p class="text-xs opacity-80">安全な取引のため、本人確認を行います。</p>
+            </div>
+            
+            <div class="p-8">
+                <div id="verify-step-1">
+                    <p class="text-sm text-gray-600 mb-6 text-center leading-relaxed">
+                        本製品は16歳未満の方への販売が禁止されています。<br>
+                        運転免許証またはマイナンバーカードをご用意ください。
+                    </p>
+                    <button onclick="alert('本人確認プロセスを開始します（デモ）')" class="w-full bg-[#635BFF] text-white font-bold py-3 rounded-md hover:bg-[#534be0] transition mb-3">
+                        本人確認を開始する
+                    </button>
+                    <button onclick="document.getElementById('stripe-modal').classList.add('hidden')" class="w-full text-gray-500 text-xs py-2 hover:underline">
+                        キャンセル
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
+
+    <script src="JS/components.js"></script>
+    <script src="JS/script.js"></script>
+    
+    <script>
+        function updateImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+    </script>
+</body>
+</html>

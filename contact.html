@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | eXs (エクス)</title>
+    <meta name="description" content="eXs（エクス）製品に関するお問い合わせ、修理・メンテナンスのご相談はこちらから。">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { black: '#111111', gray: '#F5F5F5' }
+                    },
+                    letterSpacing: { widest: '.15em' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        
+        /* フォーム入力時のスタイル */
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #111;
+            background-color: #FAFAFA;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-black antialiased bg-white">
+
+    <header id="common-header" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm text-brand-black shadow-sm transition-all duration-300"></header>
+
+    <main class="pt-40 pb-20 px-6 min-h-screen">
+        
+        <div class="container mx-auto max-w-4xl text-center mb-20 fade-up">
+            <h1 class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-4">CONTACT</h1>
+            <p class="text-xs text-gray-400 tracking-widest mb-12">お問い合わせ</p>
+            <p class="text-sm text-gray-600 leading-loose">
+                製品の仕様、ご購入、メンテナンス、その他ご不明な点がございましたら、<br class="hidden md:block">
+                下記フォームよりお気軽にお問い合わせください。<br>
+                通常、3営業日以内に担当者より返信いたします。
+            </p>
+        </div>
+
+        <div class="container mx-auto max-w-2xl fade-up">
+            <form action="#" method="POST" class="space-y-8">
+                
+                <div class="group">
+                    <label for="type" class="block text-xs font-bold tracking-widest mb-2 font-en">INQUIRY TYPE <span class="text-gray-400 font-normal ml-2">お問い合わせ種別</span></label>
+                    <div class="relative">
+                        <select id="type" name="type" class="w-full bg-gray-50 border border-gray-200 text-sm px-4 py-4 appearance-none cursor-pointer hover:border-gray-400 transition rounded-none">
+                            <option value="" disabled selected>選択してください</option>
+                            <option value="product">製品について（eXs Street / eXs 1 TKG）</option>
+                            <option value="purchase">購入・在庫について</option>
+                            <option value="maintenance">修理・メンテナンスについて</option>
+                            <option value="business">ビジネスパートナー・協業について</option>
+                            <option value="other">その他</option>
+                        </select>
+                        <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="group">
+                        <label for="name" class="block text-xs font-bold tracking-widest mb-2 font-en">NAME <span class="text-red-500">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="山田 太郎" required class="w-full bg-gray-50 border border-gray-200 text-sm px-4 py-4 transition rounded-none placeholder-gray-300">
+                    </div>
+                    <div class="group">
+                        <label for="email" class="block text-xs font-bold tracking-widest mb-2 font-en">EMAIL <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="example@exs.mobi" required class="w-full bg-gray-50 border border-gray-200 text-sm px-4 py-4 transition rounded-none placeholder-gray-300">
+                    </div>
+                </div>
+
+                <div class="group">
+                    <label for="phone" class="block text-xs font-bold tracking-widest mb-2 font-en">PHONE NUMBER <span class="text-gray-400 font-normal ml-2">電話番号</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="090-1234-5678" class="w-full bg-gray-50 border border-gray-200 text-sm px-4 py-4 transition rounded-none placeholder-gray-300">
+                </div>
+
+                <div class="group">
+                    <label for="message" class="block text-xs font-bold tracking-widest mb-2 font-en">MESSAGE <span class="text-red-500">*</span></label>
+                    <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください。" required class="w-full bg-gray-50 border border-gray-200 text-sm px-4 py-4 transition rounded-none placeholder-gray-300"></textarea>
+                </div>
+
+                <div class="pt-4">
+                    <label class="flex items-start cursor-pointer group">
+                        <input type="checkbox" required class="w-4 h-4 mt-1 border-gray-300 rounded text-black focus:ring-black accent-black">
+                        <span class="ml-3 text-xs text-gray-500 leading-relaxed group-hover:text-black transition">
+                            <a href="#" class="underline hover:text-black">プライバシーポリシー</a>に同意の上、送信します。
+                        </span>
+                    </label>
+                </div>
+
+                <div class="pt-8 text-center">
+                    <button type="submit" class="bg-brand-black text-white px-16 py-5 font-en font-bold tracking-widest hover:bg-gray-800 transition w-full md:w-auto shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-300">
+                        SEND MESSAGE
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="mt-32 text-center border-t border-gray-100 pt-16 fade-up">
+            <h3 class="font-en font-bold text-xl mb-4">FAQ</h3>
+            <p class="text-sm text-gray-500 mb-8">よくあるご質問はこちら</p>
+            <a href="index.html#support" class="text-xs border-b border-black pb-1 hover:opacity-60 transition font-en tracking-widest">
+                VIEW SUPPORT PAGE
+            </a>
+        </div>
+
+    </main>
+
+    <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
+
+    <script src="JS/components.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>

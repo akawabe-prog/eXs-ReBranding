@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eXs 1 TKG | Product | eXs (エクス)</title>
+    <meta name="description" content="eXs 1 TKG - 免許不要（16歳以上）で乗れる特定小型原付モデル。大阪・関西万博公式採用の信頼性と、コンパクトな折りたたみ設計。">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { black: '#111111', gray: '#F5F5F5', stripe: '#635BFF' }
+                    },
+                    letterSpacing: { widest: '.15em' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans text-brand-black antialiased bg-white" id="product-page-tkg">
+
+    <header id="header" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm text-brand-black shadow-sm">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="font-en font-bold text-3xl tracking-tighter z-50 relative">eXs</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-en tracking-widest font-medium">
+                <a href="index.html" class="hover:text-gray-500 transition">HOME</a>
+                <a href="index.html#street" class="text-gray-900 border-b border-black">PRODUCT</a>
+                <a href="partner.html" class="hover:text-gray-500 transition">BUSINESS</a>
+            </nav>
+            <button class="md:hidden z-50"><i class="fa-solid fa-bars text-2xl"></i></button>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-6 min-h-screen relative">
+        <div id="loading-overlay" class="absolute inset-0 bg-white z-40 flex items-center justify-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-black"></div>
+        </div>
+
+        <div class="container mx-auto max-w-7xl opacity-0 transition-opacity duration-500" id="product-container">
+            
+            <nav class="text-xs text-gray-400 mb-10 font-en tracking-wider">
+                <a href="index.html" class="hover:text-black">HOME</a>
+                <span class="mx-2">/</span>
+                <span id="breadcrumb-name" class="text-black">...</span>
+            </nav>
+
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+                
+                <div class="w-full lg:w-3/5">
+                    <div class="bg-gray-100 aspect-[4/3] mb-4 overflow-hidden relative group cursor-zoom-in">
+                        <img id="main-image" src="" alt="" class="w-full h-full object-contain p-8 transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 tracking-widest">LICENSE FREE</div>
+                        <div class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-3 py-1 tracking-widest">EXPO 2025 OFFICIAL</div>
+                    </div>
+                    <div id="thumbnails-container" class="grid grid-cols-4 gap-4"></div>
+                    
+                    <div class="mt-8 bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-sm mb-4 flex items-center text-red-600">
+                            <i class="fa-solid fa-triangle-exclamation mr-2"></i> 購入前の重要確認事項
+                        </h3>
+                        <ul class="text-xs text-gray-600 space-y-2 list-disc list-inside">
+                            <li>本製品は「特定小型原動機付自転車」です。</li>
+                            <li>16歳未満の方は購入・運転ができません。</li>
+                            <li>公道を走行するには、ナンバープレートの取得と自賠責保険への加入が必須です。</li>
+                            <li>ヘルメットの着用は努力義務ですが、安全のため着用を強く推奨します。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 flex flex-col">
+                    <h1 id="product-name" class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-2"></h1>
+                    <p id="product-category" class="font-en text-sm text-gray-500 tracking-widest mb-6"></p>
+                    
+                    <div class="text-3xl font-en font-bold mb-8">
+                        <span id="display-price"></span>
+                        <span class="text-sm font-normal text-gray-500 ml-2">(TAX IN)</span>
+                    </div>
+
+                    <p id="product-description" class="text-sm text-gray-700 leading-loose mb-10 text-justify"></p>
+
+                    <div class="mb-10" id="option-section">
+                        <span class="block text-xs font-en font-bold tracking-widest mb-4">OPTIONS</span>
+                        <div id="option-container" class="space-y-3"></div>
+                    </div>
+
+                    <div class="mt-auto">
+                        <button id="verify-btn" class="w-full bg-brand-stripe text-white font-en font-bold py-5 tracking-widest text-lg hover:opacity-90 transition mb-4 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-id-card"></i> 年齢確認をして購入へ
+                        </button>
+                        <p class="text-xs text-gray-400 text-center">
+                            ※ 特定小型原付のため、Stripe Identityによる本人確認（16歳以上）が必要です。<br>
+                            ※ 注文から発送まで約<span id="shipping-estimate"></span>いただいております。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-32 max-w-4xl mx-auto border-t border-gray-200">
+                <details class="group border-b border-gray-200" open>
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>SPECIFICATIONS</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <div id="specs-container" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4"></div>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </main>
+
+    <div id="stripe-modal" class="fixed inset-0 z-[60] bg-black/50 hidden flex items-center justify-center backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white w-full max-w-md rounded-xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300" id="stripe-modal-content">
+            <div class="bg-[#635BFF] p-6 text-white text-center">
+                <i class="fa-brands fa-stripe text-4xl mb-2"></i>
+                <h3 class="font-bold text-lg">Identity Verification</h3>
+                <p class="text-xs opacity-80">安全な取引のため、本人確認を行います。</p>
+            </div>
+            
+            <div class="p-8">
+                <div id="verify-step-1">
+                    <p class="text-sm text-gray-600 mb-6 text-center leading-relaxed">
+                        本製品は16歳未満の方への販売が禁止されています。<br>
+                        運転免許証またはマイナンバーカードをご用意ください。
+                    </p>
+                    <button onclick="startVerification()" class="w-full bg-[#635BFF] text-white font-bold py-3 rounded-md hover:bg-[#534be0] transition mb-3">
+                        本人確認を開始する
+                    </button>
+                    <button onclick="closeModal()" class="w-full text-gray-500 text-xs py-2 hover:underline">
+                        キャンセル
+                    </button>
+                </div>
+
+                <div id="verify-step-2" class="hidden text-center py-8">
+                    <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[#635BFF] mx-auto mb-4"></div>
+                    <p class="text-sm font-bold text-gray-800">確認中...</p>
+                    <p class="text-xs text-gray-500">Stripeのセキュアな環境で情報を照合しています。</p>
+                </div>
+
+                <div id="verify-step-3" class="hidden text-center">
+                    <div class="w-12 h-12 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">確認完了</h3>
+                    <p class="text-sm text-gray-600 mb-6">年齢確認が完了しました。<br>購入手続きへ進みます。</p>
+                    <button id="go-to-cart-btn" class="w-full bg-black text-white font-bold py-3 rounded-md hover:bg-gray-800 transition">
+                        カートに追加する
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-brand-black text-white pt-10 pb-10 px-6 text-center text-xs font-en">
+        <p>&copy; 2026 eXs / Custom Japan Co., Ltd.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+/* =========================================
+   JS/components.js - 共通ヘッダー＆フッター
+   ========================================= */
+
+// サイト内のリンク先定義
+const PATHS = {
+    home: 'index.html',
+    about: 'index.html#about',
+    ebike_intro: 'product-intro-street.html',
+    ebike_buy: 'product-street.html',
+    kickboard_intro: 'product-intro-tkg.html',
+    kickboard_buy: 'product-tkg.html',
+    news: 'index.html#news',
+    partner: 'partner.html',
+    column: 'index.html#column',
+    support: 'index.html#support',
+    contact: 'contact.html'
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderHeader();
+    renderFooter();
+    highlightCurrentNav();
+});
+
+// ヘッダー生成
+function renderHeader() {
+    const headerContainer = document.getElementById('common-header');
+    if (!headerContainer) return;
+
+    const headerHTML = `
+    <div class="container mx-auto px-6 h-20 flex justify-between items-center relative z-50">
+        <a href="${PATHS.home}" class="font-en font-bold text-3xl tracking-tighter hover:opacity-70 transition">eXs</a>
+
+        <nav class="hidden lg:flex space-x-6 text-xs font-en tracking-widest font-medium items-center">
+            <a href="${PATHS.about}" class="nav-item hover:opacity-60 transition">ABOUT</a>
+            <a href="${PATHS.ebike_intro}" class="nav-item hover:opacity-60 transition">E-BIKE</a>
+            <a href="${PATHS.kickboard_intro}" class="nav-item hover:opacity-60 transition">KICKBOARD</a>
+            <a href="${PATHS.news}" class="nav-item hover:opacity-60 transition">NEWS</a>
+            <a href="${PATHS.partner}" class="nav-item hover:opacity-60 transition">PARTNER</a>
+            <a href="${PATHS.column}" class="nav-item hover:opacity-60 transition">COLUMN</a>
+            <a href="${PATHS.contact}" class="bg-white text-black px-4 py-2 hover:bg-gray-200 transition shadow-sm border border-gray-200">CONTACT</a>
+        </nav>
+
+        <button id="menu-btn" class="lg:hidden focus:outline-none w-8 h-8 flex flex-col justify-center items-end gap-1.5 z-50 relative" aria-label="メニュー">
+            <span class="w-6 h-0.5 bg-current transition-all duration-300 origin-center"></span>
+            <span class="w-6 h-0.5 bg-current transition-all duration-300 origin-center"></span>
+            <span class="w-6 h-0.5 bg-current transition-all duration-300 origin-center"></span>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-[#111111]/95 backdrop-blur-md text-white flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+        <nav class="flex flex-col space-y-6 text-center font-en text-lg tracking-widest">
+            <a href="${PATHS.home}" class="mobile-link hover:text-gray-400">HOME</a>
+            <a href="${PATHS.about}" class="mobile-link hover:text-gray-400">ABOUT</a>
+            <a href="${PATHS.ebike_intro}" class="mobile-link hover:text-gray-400">E-BIKE</a>
+            <a href="${PATHS.kickboard_intro}" class="mobile-link hover:text-gray-400">KICKBOARD</a>
+            <a href="${PATHS.news}" class="mobile-link hover:text-gray-400">NEWS</a>
+            <a href="${PATHS.partner}" class="mobile-link hover:text-gray-400">PARTNER</a>
+            <a href="${PATHS.column}" class="mobile-link hover:text-gray-400">COLUMN</a>
+            <a href="${PATHS.support}" class="mobile-link hover:text-gray-400">SUPPORT</a>
+            <a href="${PATHS.contact}" class="mobile-link hover:text-gray-400">CONTACT</a>
+        </nav>
+    </div>
+    `;
+
+    headerContainer.innerHTML = headerHTML;
+    initMobileMenu();
+}
+
+// フッター生成
+function renderFooter() {
+    const footerContainer = document.getElementById('common-footer');
+    if (!footerContainer) return;
+
+    const footerHTML = `
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start mb-16">
+            <div class="mb-10 md:mb-0">
+                <a href="${PATHS.home}" class="font-en text-4xl font-bold mb-6 tracking-tighter block hover:opacity-70 transition">eXs</a>
+                <p class="text-xs text-gray-400 leading-relaxed mb-4">Custom Japan Co., Ltd.<br>株式会社カスタムジャパン</p>
+                <p class="text-xs text-gray-500">大阪市中央区日本橋2-9-16<br>日本橋センタービル6F</p>
+            </div>
+            <div class="grid grid-cols-2 gap-x-12 gap-y-8 font-en text-xs tracking-widest">
+                <div class="flex flex-col space-y-4">
+                    <a href="${PATHS.about}" class="hover:text-gray-400 transition">ABOUT</a>
+                    <a href="${PATHS.ebike_intro}" class="hover:text-gray-400 transition">E-BIKE</a>
+                    <a href="${PATHS.kickboard_intro}" class="hover:text-gray-400 transition">KICKBOARD</a>
+                    <a href="${PATHS.news}" class="hover:text-gray-400 transition">NEWS</a>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <a href="${PATHS.partner}" class="hover:text-gray-400 transition">PARTNER</a>
+                    <a href="${PATHS.column}" class="hover:text-gray-400 transition">COLUMN</a>
+                    <a href="${PATHS.support}" class="hover:text-gray-400 transition">SUPPORT</a>
+                    <a href="${PATHS.contact}" class="hover:text-gray-400 transition">CONTACT</a>
+                    <a href="#" class="hover:text-gray-400 transition">PRIVACY POLICY</a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-en">
+            <p>&copy; 2026 eXs / Custom Japan Co., Ltd.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube text-lg"></i></a>
+            </div>
+        </div>
+    </div>
+    `;
+    footerContainer.innerHTML = footerHTML;
+}
+
+// モバイルメニュー制御
+function initMobileMenu() {
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = document.querySelectorAll('.mobile-link');
+    const header = document.getElementById('common-header');
+    
+    if (!menuBtn || !mobileMenu) return;
+
+    let isDarkText = header.classList.contains('bg-white') || header.classList.contains('bg-white/90');
+
+    function toggleMenu() {
+        const isOpen = mobileMenu.classList.contains('opacity-100');
+        const spans = menuBtn.querySelectorAll('span');
+
+        if (!isOpen) {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+            spans[0].classList.add('rotate-45', 'translate-y-2');
+            spans[1].classList.add('opacity-0');
+            spans[2].classList.add('-rotate-45', '-translate-y-2');
+            header.classList.remove('text-brand-black');
+            header.classList.add('text-white');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+            spans[0].classList.remove('rotate-45', 'translate-y-2');
+            spans[1].classList.remove('opacity-0');
+            spans[2].classList.remove('-rotate-45', '-translate-y-2');
+            if (isDarkText) {
+                header.classList.add('text-brand-black');
+                header.classList.remove('text-white');
+            }
+            document.body.style.overflow = '';
+        }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('opacity-100')) toggleMenu();
+        });
+    });
+}
+
+function highlightCurrentNav() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-item').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.includes(currentPath) && currentPath !== 'index.html') {
+            link.classList.add('border-b', 'border-current');
+            link.classList.remove('hover:opacity-60');
+        }
+    });
+}

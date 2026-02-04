@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eXs Street | Product | eXs (エクス)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { black: '#111111', gray: '#F5F5F5' }
+                    },
+                    letterSpacing: { widest: '.15em' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="font-sans text-brand-black antialiased bg-white">
+
+    <header id="common-header" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm text-brand-black shadow-sm transition-all duration-300"></header>
+
+    <main class="pt-32 pb-20 px-6 min-h-screen">
+        <div class="container mx-auto max-w-7xl">
+            
+            <nav class="text-xs text-gray-400 mb-10 font-en tracking-wider">
+                <a href="index.html" class="hover:text-black">HOME</a>
+                <span class="mx-2">/</span>
+                <a href="product-intro-street.html" class="hover:text-black">eXs Street (Intro)</a>
+                <span class="mx-2">/</span>
+                <span class="text-black">Purchase</span>
+            </nav>
+
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-20">
+                
+                <div class="w-full lg:w-3/5">
+                    <div class="bg-gray-100 aspect-[4/3] mb-4 overflow-hidden relative group cursor-zoom-in">
+                        <img src="https://placehold.co/1200x900/111/fff?text=Matte+Black" alt="Main Product Image" class="w-full h-full object-contain p-8 transition-transform duration-500 hover:scale-105" id="main-image">
+                    </div>
+                    
+                    <div class="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4">
+                        <button class="bg-gray-50 aspect-square border border-black p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/111/fff?text=Matte+Black')">
+                            <img src="https://placehold.co/200x200/111/fff?text=Black" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/888/fff?text=Matte+Gray')">
+                            <img src="https://placehold.co/200x200/888/fff?text=Gray" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/dcc/333?text=Matte+Beige')">
+                            <img src="https://placehold.co/200x200/dcc/333?text=Beige" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/eee/333?text=Front+View')">
+                            <img src="https://placehold.co/200x200/eee/333?text=Front" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/ddd/333?text=Rear+View')">
+                            <img src="https://placehold.co/200x200/ddd/333?text=Rear" class="w-full h-full object-contain">
+                        </button>
+                        <button class="bg-gray-50 aspect-square border border-transparent hover:border-gray-300 p-1 transition hover:opacity-75" onclick="updateImage('https://placehold.co/1200x900/ccc/333?text=Folded')">
+                            <img src="https://placehold.co/200x200/ccc/333?text=Folded" class="w-full h-full object-contain">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 flex flex-col">
+                    <h1 class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-2">eXs Street</h1>
+                    <p class="font-en text-sm text-gray-500 tracking-widest mb-6">ELECTRIC ASSIST BICYCLE</p>
+                    
+                    <div class="text-3xl font-en font-bold mb-8">
+                        <span>¥148,000</span>
+                        <span class="text-sm font-normal text-gray-500 ml-2">(TAX IN)</span>
+                    </div>
+
+                    <p class="text-sm text-gray-700 leading-loose mb-10 text-justify">
+                        4×20インチのファットタイヤで、街乗りもオフロードも。日常の移動を冒険に変える、パワフルなアシスト性能と洗練されたデザイン。
+                    </p>
+
+                    <div class="mb-10">
+                        <span class="block text-xs font-en font-bold tracking-widest mb-4">COLOR</span>
+                        <div class="flex space-x-4">
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="color" class="peer sr-only" checked onclick="updateImage('https://placehold.co/1200x900/111/fff?text=Matte+Black')">
+                                <div class="w-10 h-10 rounded-full bg-[#1a1a1a] border-2 border-transparent peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-black transition"></div>
+                                <span class="block text-[10px] text-center mt-2 text-gray-500 peer-checked:text-black font-en">Black</span>
+                            </label>
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="color" class="peer sr-only" onclick="updateImage('https://placehold.co/1200x900/888/fff?text=Matte+Gray')">
+                                <div class="w-10 h-10 rounded-full bg-[#888888] border-2 border-transparent peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-gray-500 transition"></div>
+                                <span class="block text-[10px] text-center mt-2 text-gray-500 peer-checked:text-black font-en">Gray</span>
+                            </label>
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="color" class="peer sr-only" onclick="updateImage('https://placehold.co/1200x900/dcc/333?text=Matte+Beige')">
+                                <div class="w-10 h-10 rounded-full bg-[#d8d2c0] border-2 border-transparent peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-[#d8d2c0] transition"></div>
+                                <span class="block text-[10px] text-center mt-2 text-gray-500 peer-checked:text-black font-en">Beige</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <span class="block text-xs font-en font-bold tracking-widest mb-4">OPTIONS</span>
+                        <div class="space-y-3">
+                            <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black">
+                                    <span class="ml-3 text-sm font-medium">リアキャリア</span>
+                                </div>
+                                <span class="text-sm font-en text-gray-500">+ ¥5,500</span>
+                            </label>
+                            <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black">
+                                    <span class="ml-3 text-sm font-medium">前後フェンダーセット</span>
+                                </div>
+                                <span class="text-sm font-en text-gray-500">+ ¥3,300</span>
+                            </label>
+                            <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black">
+                                    <span class="ml-3 text-sm font-medium">防犯登録代行</span>
+                                </div>
+                                <span class="text-sm font-en text-gray-500">+ ¥4,800</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto">
+                        <button class="w-full bg-brand-black text-white font-en font-bold py-5 tracking-widest text-lg hover:bg-gray-800 transition mb-4">
+                            ADD TO CART
+                        </button>
+                        <p class="text-xs text-gray-400 text-center">
+                            ※ 現在、注文から発送まで約<span class="font-bold text-black mx-1">1週間</span>いただいております。<br>
+                            ※ 送料はチェックアウト時に計算されます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-32 max-w-4xl mx-auto border-t border-gray-200">
+                <details class="group border-b border-gray-200" open>
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>SPECIFICATIONS</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>全長</span><span>1630 mm</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>全幅</span><span>590 mm</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>重量</span><span>27.1 kg</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>タイヤサイズ</span><span>20 × 4.0 インチ</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>バッテリー容量</span><span>10.4 Ah</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>充電時間</span><span>約 6時間</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>走行可能距離</span><span>60 - 80 km</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>変速機</span><span>Shimano 7段変速</span></div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group border-b border-gray-200">
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>WARRANTY & SUPPORT</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <h4 class="font-bold text-black mb-2">保証期間について</h4>
+                        <p class="mb-4">本体フレーム・モーター・バッテリー：ご購入日より1年間<br>消耗品（タイヤ、ブレーキパッド等）は保証対象外となります。</p>
+                        <h4 class="font-bold text-black mb-2">アフターサポート</h4>
+                        <p>全国の提携メンテナンス店にて修理・点検が可能です。</p>
+                    </div>
+                </details>
+            </div>
+
+            <section class="mt-32 mb-20 fade-up">
+                <div class="text-center mb-8">
+                    <span class="font-en text-xs font-bold tracking-widest text-gray-400 block mb-2">IMAGE MOVIE</span>
+                    <h2 class="font-en text-2xl md:text-3xl font-bold tracking-tighter">THE STREET RIDE</h2>
+                </div>
+                <div class="relative w-full aspect-video bg-black overflow-hidden group">
+                    <video class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline poster="https://placehold.co/1920x1080/111/333?text=Movie+Loading...">
+                        <source src="https://videos.pexels.com/video-files/5155396/5155396-hd_1920_1080_30fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm">
+                            <i class="fa-solid fa-play text-white ml-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-32 bg-gray-50 p-8 md:p-16 text-center fade-up">
+                <span class="font-en text-xs font-bold tracking-widest text-gray-400 block mb-4">SPEC MOVIE</span>
+                <h3 class="font-en text-xl md:text-2xl font-bold tracking-tighter mb-8">FOLDING & DETAILS</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="aspect-video bg-gray-200 relative overflow-hidden group cursor-pointer">
+                        <video class="w-full h-full object-cover" muted loop playsinline poster="https://placehold.co/800x450/ccc/333?text=Folding+Demo"></video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
+                            <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY FOLDING</div>
+                        </div>
+                    </div>
+                    <div class="aspect-video bg-gray-200 relative overflow-hidden group cursor-pointer">
+                        <video class="w-full h-full object-cover" muted loop playsinline poster="https://placehold.co/800x450/ccc/333?text=Riding+Scene"></video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
+                            <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY RIDING</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-10 fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="font-en text-xl font-bold tracking-widest">GALLERY</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="aspect-square bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x600/222/fff?text=Scene+1" alt="Gallery 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x600/333/fff?text=Scene+2" alt="Gallery 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x600/444/fff?text=Scene+3" alt="Gallery 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x600/555/fff?text=Detail+1" alt="Gallery 4" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x600/666/fff?text=Detail+2" alt="Gallery 5" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="https://placehold.co/600x600/777/fff?text=Lifestyle" alt="Gallery 6" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
+
+    <script src="JS/components.js"></script>
+    <script src="JS/script.js"></script>
+    
+    <script>
+        function updateImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+    </script>
+</body>
+</html>
