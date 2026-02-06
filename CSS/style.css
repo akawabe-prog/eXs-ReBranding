@@ -23,3 +23,45 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+/* スクロールバー非表示（機能的デザイン） */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* フェードアップアニメーション用クラス */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+/* JSでIntersectionObserverにより付与されるクラス */
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 補足: Tailwindの設定外で微調整が必要な場合のみここに記述 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* アコーディオン開閉アニメーション */
+details > summary {
+    list-style: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+details[open] summary ~ * {
+    animation: sweep .3s ease-in-out;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0; transform: translateY(-10px);}
+    100%  {opacity: 1; transform: translateY(0);}
+}

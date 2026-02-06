@@ -28,14 +28,30 @@ function renderHeader() {
     const headerContainer = document.getElementById('common-header');
     if (!headerContainer) return;
 
+    headerContainer.className = 'fixed w-full top-0 z-50 transition-all duration-300 bg-brand-black text-white';
+
     const headerHTML = `
     <div class="container mx-auto px-6 h-20 flex justify-between items-center relative z-50">
         <a href="${PATHS.home}" class="font-en font-bold text-3xl tracking-tighter hover:opacity-70 transition">eXs</a>
 
         <nav class="hidden lg:flex space-x-6 text-xs font-en tracking-widest font-medium items-center">
             <a href="${PATHS.about}" class="nav-item hover:opacity-60 transition">ABOUT</a>
-            <a href="${PATHS.ebike_intro}" class="nav-item hover:opacity-60 transition">E-BIKE</a>
-            <a href="${PATHS.kickboard_intro}" class="nav-item hover:opacity-60 transition">KICKBOARD</a>
+            <div class="relative group">
+                <a href="${PATHS.ebike_intro}" class="nav-item hover:opacity-60 transition">E-BIKE</a>
+                <span class="absolute left-0 top-full h-2 w-full"></span>
+                <div class="absolute left-0 top-full mt-2 w-44 bg-white text-brand-black border border-gray-200 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
+                    <a href="${PATHS.ebike_intro}" class="block px-4 py-3 text-[10px] tracking-widest hover:bg-gray-50">ABOUT eXs Street</a>
+                    <a href="${PATHS.ebike_buy}" class="block px-4 py-3 text-[10px] tracking-widest hover:bg-gray-50">BUY eXs Street</a>
+                </div>
+            </div>
+            <div class="relative group">
+                <a href="${PATHS.kickboard_intro}" class="nav-item hover:opacity-60 transition">KICKBOARD</a>
+                <span class="absolute left-0 top-full h-2 w-full"></span>
+                <div class="absolute left-0 top-full mt-2 w-44 bg-white text-brand-black border border-gray-200 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
+                    <a href="${PATHS.kickboard_intro}" class="block px-4 py-3 text-[10px] tracking-widest hover:bg-gray-50">About eXs 1 TKG</a>
+                    <a href="${PATHS.kickboard_buy}" class="block px-4 py-3 text-[10px] tracking-widest hover:bg-gray-50">Buy eXs 1 TKG</a>
+                </div>
+            </div>
             <a href="${PATHS.news}" class="nav-item hover:opacity-60 transition">NEWS</a>
             <a href="${PATHS.partner}" class="nav-item hover:opacity-60 transition">PARTNER</a>
             <a href="${PATHS.column}" class="nav-item hover:opacity-60 transition">COLUMN</a>
@@ -119,8 +135,6 @@ function initMobileMenu() {
     
     if (!menuBtn || !mobileMenu) return;
 
-    let isDarkText = header.classList.contains('bg-white') || header.classList.contains('bg-white/90');
-
     function toggleMenu() {
         const isOpen = mobileMenu.classList.contains('opacity-100');
         const spans = menuBtn.querySelectorAll('span');
@@ -131,8 +145,7 @@ function initMobileMenu() {
             spans[0].classList.add('rotate-45', 'translate-y-2');
             spans[1].classList.add('opacity-0');
             spans[2].classList.add('-rotate-45', '-translate-y-2');
-            header.classList.remove('text-brand-black');
-            header.classList.add('text-white');
+            if (header) header.classList.add('bg-brand-black', 'text-white');
             document.body.style.overflow = 'hidden';
         } else {
             mobileMenu.classList.add('opacity-0', 'pointer-events-none');
@@ -140,9 +153,9 @@ function initMobileMenu() {
             spans[0].classList.remove('rotate-45', 'translate-y-2');
             spans[1].classList.remove('opacity-0');
             spans[2].classList.remove('-rotate-45', '-translate-y-2');
-            if (isDarkText) {
-                header.classList.add('text-brand-black');
-                header.classList.remove('text-white');
+            if (header) {
+                header.classList.remove('bg-white', 'bg-white/90', 'bg-white/95', 'text-brand-black', 'text-black');
+                header.classList.add('bg-brand-black', 'text-white');
             }
             document.body.style.overflow = '';
         }
