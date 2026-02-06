@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Partner | eXs (エクス)</title>
-    <meta name="description" content="eXs（エクス）の正規販売代理店・ビジネスパートナー募集。次世代モビリティでビジネスを加速させる。">
+    <title>eXs (エクス) | 次世代モビリティブランド</title>
+    <meta name="description" content="移動の常識を再定義する。ストリートカルチャーの自由な精神をルーツに持つ電動モビリティブランド eXs（エクス）。">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,264 +21,274 @@
                         en: ['"Montserrat"', 'sans-serif'],
                     },
                     colors: {
-                        brand: { black: '#111111', gray: '#F5F5F5' }
+                        brand: {
+                            black: '#111111',
+                            gray: '#F5F5F5',
+                            darkgray: '#333333',
+                            accent: '#FFFFFF'
+                        }
                     },
-                    letterSpacing: { widest: '.15em' }
+                    letterSpacing: {
+                        widest: '.15em',
+                    }
                 }
             }
         }
     </script>
+
     <link rel="stylesheet" href="CSS/style.css">
-    <style>
-        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
-        
-        /* アコーディオンの開閉アニメーション用 */
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
-        @keyframes sweep {
-            0%    { opacity: 0; transform: translateY(-10px); }
-            100%  { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <style>.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; } .fade-up.visible { opacity: 1; transform: translateY(0); }</style>
 </head>
 <body class="font-sans text-brand-black antialiased bg-white">
 
-    <header id="common-header" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm text-brand-black shadow-sm transition-all duration-300"></header>
+    <header id="common-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-black text-white"></header>
 
-    <main>
-        <section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-brand-black">
-            <div class="absolute inset-0 z-0">
-                <img src="https://placehold.co/1920x1080/222/555?text=Business+Meeting" alt="Business Partner" class="w-full h-full object-cover opacity-50">
-            </div>
-            <div class="relative z-10 text-center text-white px-4 fade-up">
-                <h1 class="font-en text-4xl md:text-6xl font-bold tracking-tighter mb-4">BUSINESS PARTNER</h1>
-                <p class="text-sm md:text-base tracking-widest mb-8">次世代モビリティで、ビジネスを加速させる。</p>
-                <a href="#entry" class="inline-block border border-white px-8 py-3 text-xs hover:bg-white hover:text-black transition duration-300">代理店登録はこちら</a>
-            </div>
-        </section>
+    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+        <div class="absolute inset-0 z-0">
+            <video 
+                class="w-full h-full object-cover opacity-60" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                poster="https://placehold.co/1920x1080/111/333?text=Loading..."
+            >
+                <source src="https://exs.mobi/wp-content/uploads/sites/7/2025/06/1996482a843e944a6750bbecfea6e5e3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-4 fade-up">
+            <h1 class="font-en text-5xl md:text-8xl font-bold tracking-tighter mb-4 drop-shadow-lg">eXs</h1>
+            <p class="font-en text-sm md:text-lg tracking-[0.2em] mb-2 drop-shadow-md">REDEFINING THE STANDARDS OF MOBILITY</p>
+            <p class="text-xs md:text-sm text-gray-200 tracking-widest drop-shadow-md">移動の常識を再定義する</p>
+        </div>
+        
+       <div class="absolute bottom-10 left-0 w-full text-center z-20 animate-bounce">
+    <span class="text-white text-[10px] font-en tracking-widest">SCROLL</span>
+</div>
+    </section>
 
-        <section class="py-24 px-6 bg-white">
-            <div class="container mx-auto max-w-4xl text-center fade-up">
-                <h2 class="font-en text-3xl font-bold mb-6 tracking-widest">Why eXs Now?</h2>
-                <p class="text-xs text-gray-400 mb-12">なぜ今、eXsなのか</p>
-                
-                <div class="text-left md:text-center text-sm leading-loose text-gray-600 space-y-6">
-                    <p>
-                        2023年の改正道路交通法による「特定小型原付」の誕生。<br>
-                        2025年の排ガス規制に伴う、50ccエンジンスクーターの生産終了。<br>
-                        移動のルールが激変する今、必要なのは「新しい選択肢」です。
+    <section id="about" class="py-24 md:py-32 px-6 bg-brand-black text-white">
+        <div class="container mx-auto max-w-4xl text-center fade-up">
+            <h2 class="font-en text-3xl md:text-4xl font-bold mb-12 tracking-widest">STORY</h2>
+            <p class="text-lg md:text-2xl leading-relaxed font-medium mb-8">
+                デザインが良いモノは、高すぎる。<br>
+                手頃なモノは、心躍らない。
+            </p>
+            <p class="text-sm md:text-base text-gray-400 leading-[2.7] text-justify md:text-center max-w-2xl mx-auto">
+                eXs（エクス）は、ストリートカルチャーの自由な精神をルーツに持ちながら、日常に溶け込むデザインと実用性を両立する電動モビリティブランドです。<br><br>
+                私たちの原点には、そんなジレンマを解決したいという想いがあります。<br>
+                パーツサプライヤーとして長年培った経験と知識で、誰もが「気軽に、ラクに、そして楽しく」移動できる豊かな体験をお届けします。
+            </p>
+            <div class="mt-12">
+                <span class="inline-block px-4 py-2 border border-white/30 text-xs tracking-widest">#ノル人をツクる #カスタムジャパン</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="street" class="py-20 md:py-0 bg-white">
+        <div class="flex flex-col md:flex-row h-auto md:min-h-screen">
+            <div class="w-full md:w-1/2 bg-gray-100 relative h-[50vh] md:h-auto group overflow-hidden">
+                <img src="img/eXsStreetImage.jpg" alt="eXs Street" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute top-6 left-6">
+                    <span class="bg-black text-white text-xs px-3 py-1 font-en tracking-widest">NEW MODEL</span>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20">
+                <div class="max-w-lg w-full fade-up">
+                    <h2 class="font-en text-5xl md:text-7xl font-bold mb-2 tracking-tighter">eXs Street</h2>
+                    <p class="text-gray-500 font-en tracking-widest mb-8">ELECTRIC ASSIST BICYCLE</p>
+                    <div class="mb-10 text-justify leading-relaxed text-sm text-gray-700">
+                        <p>4×20インチのファットタイヤで、街乗りもオフロードも。<br>
+                        スタイルと走破性を両立した、折りたたみ式電動アシスト自転車。<br>
+                        マットブラック、マットグレー、マットベージュの3色展開。</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-10 border-t border-gray-200 pt-6">
+                        <div><span class="block text-xs text-gray-400 font-en">PRICE (TAX IN)</span><span class="text-xl font-bold font-en">¥148,000</span></div>
+                        <div><span class="block text-xs text-gray-400 font-en">WEIGHT</span><span class="text-sm font-en">27.1kg</span></div>
+                        <div><span class="block text-xs text-gray-400 font-en">RANGE</span><span class="text-sm font-en">60-80km</span></div>
+                        <div><span class="block text-xs text-gray-400 font-en">FEATURE</span><span class="text-sm">3STEP 折りたたみ</span></div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <a href="product-intro-street.html" class="block w-full bg-brand-black text-white text-center py-4 font-en tracking-widest hover:bg-gray-800 transition">VIEW DETAILS</a>
+                        <a href="product-street.html" class="block w-full border border-brand-black text-brand-black text-center py-4 font-en tracking-widest hover:bg-gray-50 transition">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tkg" class="py-20 md:py-0 bg-brand-gray">
+        <div class="flex flex-col md:flex-row-reverse h-auto md:min-h-screen">
+            <div class="w-full md:w-1/2 bg-white relative h-[50vh] md:h-auto group overflow-hidden">
+                <img src="https://placehold.co/800x1000/fff/333?text=eXs+1+TKG" alt="eXs 1 TKG" class="w-full h-full object-contain p-10 transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute top-6 right-6 text-right">
+                    <span class="bg-red-600 text-white text-xs px-3 py-1 font-bold tracking-widest block mb-2">大阪万博採用モデル</span>
+                    <span class="bg-brand-black text-white text-xs px-3 py-1 font-bold tracking-widest">免許不要</span>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20">
+                <div class="max-w-lg w-full fade-up">
+                    <h2 class="font-en text-5xl md:text-7xl font-bold mb-2 tracking-tighter">eXs 1 TKG</h2>
+                    <p class="text-gray-500 font-en tracking-widest mb-8">ELECTRIC KICKBOARD</p>
+                    <div class="mb-10 text-justify leading-relaxed text-sm text-gray-700">
+                        <p>特定小型原付モデル（免許不要・ヘルメット努力義務）。<br>
+                        大阪・関西万博のバックヤードでも活躍する高い信頼性。<br>
+                        コンパクトな折りたたみ設計で、都市の移動をスマートに。</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-10 border-t border-gray-300 pt-6">
+                        <div><span class="block text-xs text-gray-400 font-en">PRICE (TAX IN)</span><span class="text-xl font-bold font-en">¥64,800</span></div>
+                        <div><span class="block text-xs text-gray-400 font-en">WEIGHT</span><span class="text-sm font-en">16.0kg</span></div>
+                        <div><span class="block text-xs text-gray-400 font-en">RANGE</span><span class="text-sm font-en">20-25km</span></div>
+                        <div><span class="block text-xs text-gray-400 font-en">TYPE</span><span class="text-sm">特定小型原付</span></div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <a href="product-intro-tkg.html" class="block w-full bg-brand-black text-white text-center py-4 font-en tracking-widest hover:bg-gray-800 transition">VIEW DETAILS</a>
+                        <a href="product-tkg.html" class="block w-full border border-brand-black text-brand-black text-center py-4 font-en tracking-widest hover:bg-white transition">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="py-24 px-6 bg-white">
+        <div class="container mx-auto max-w-5xl fade-up">
+            <div class="text-center mb-16">
+                <h2 class="font-en text-3xl font-bold mb-4 tracking-widest">SUPPORT</h2>
+                <p class="text-sm text-gray-500">万全の体制であなたの走りをバックアップ</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 text-center hover:shadow-lg transition duration-300">
+                    <div class="h-12 w-12 mx-auto bg-brand-black text-white flex items-center justify-center rounded-full mb-6 font-en font-bold">01</div>
+                    <h3 class="font-bold mb-4">無料メンテナンス</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">ご購入後の定期的なメンテナンスや点検をサポートします。</p>
+                </div>
+                <div class="bg-gray-50 p-8 text-center hover:shadow-lg transition duration-300">
+                    <div class="h-12 w-12 mx-auto bg-brand-black text-white flex items-center justify-center rounded-full mb-6 font-en font-bold">02</div>
+                    <h3 class="font-bold mb-4">専用サポート窓口</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">メールと電話でのサポート対応。専門スタッフが丁寧に対応します。</p>
+                </div>
+                <div class="bg-gray-50 p-8 text-center hover:shadow-lg transition duration-300">
+                    <div class="h-12 w-12 mx-auto bg-brand-black text-white flex items-center justify-center rounded-full mb-6 font-en font-bold">03</div>
+                    <h3 class="font-bold mb-4">パーツ供給</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">消耗品や交換パーツの安定供給を実現しています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full">
+        <img src="https://placehold.co/1920x640/111111/FFFFFF?text=IMAGE+PLACEHOLDER" alt="Placeholder image" class="w-full h-auto block">
+    </section>
+
+    <section id="news" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl fade-up">
+            <h2 class="font-en text-3xl font-bold mb-12 tracking-widest text-center">NEWS</h2>
+            <div class="border-t border-gray-200">
+                <a href="#" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="mb-2 md:mb-0"><span class="text-xs font-en text-gray-400 mr-4">2026.04.01</span><span class="text-xs bg-black text-white px-2 py-0.5">PRESS</span></div>
+                        <h3 class="text-sm font-medium flex-grow md:ml-8 group-hover:text-gray-600 transition">大阪・関西万博の公式サプライヤーとしてeXs 1 TKGを提供開始しました</h3>
+                        <span class="text-gray-400 hidden md:block">→</span>
+                    </div>
+                </a>
+                <a href="#" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="mb-2 md:mb-0"><span class="text-xs font-en text-gray-400 mr-4">2026.03.15</span><span class="text-xs bg-gray-200 text-gray-600 px-2 py-0.5">EVENT</span></div>
+                        <h3 class="text-sm font-medium flex-grow md:ml-8 group-hover:text-gray-600 transition">東京モーターサイクルショー2026 出展のお知らせ</h3>
+                        <span class="text-gray-400 hidden md:block">→</span>
+                    </div>
+                </a>
+                <a href="#" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="mb-2 md:mb-0"><span class="text-xs font-en text-gray-400 mr-4">2026.03.01</span><span class="text-xs bg-gray-200 text-gray-600 px-2 py-0.5">INFO</span></div>
+                        <h3 class="text-sm font-medium flex-grow md:ml-8 group-hover:text-gray-600 transition">eXs公式サイトをリニューアルオープンしました</h3>
+                        <span class="text-gray-400 hidden md:block">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="column" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-6xl fade-up">
+            <h2 class="font-en text-3xl font-bold mb-12 tracking-widest text-center">COLUMN</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="#" class="group block">
+                    <div class="overflow-hidden mb-5 bg-gray-200 aspect-[16/9]">
+                        <img src="https://placehold.co/600x338/e5e5e5/999?text=Article+Image" alt="50cc原付記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <time class="text-xs text-gray-500 font-en mb-3 block tracking-wider">2026.03.12</time>
+                    <h3 class="text-lg font-bold mb-3 leading-snug group-hover:text-gray-600 transition">50cc原付が消えた！？今後のモビリティ市場はどうなる</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-2">
+                        環境負荷軽減に関する法改正に伴い、市場から消えた原付。それに代わる新しい移動手段としての電動モビリティの可能性について解説します。
                     </p>
-                    <p>
-                        eXs（エクス）は、「電動アシスト自転車（E-Bike）」と「免許不要の電動キックボード（TKG）」の2つの最適解を、<br class="hidden md:block">
-                        創業以来日本のモーターサイクル市場を支えてきたパーツサプライヤーとしての強固なバックアップと共にご提供します。
+                </a>
+
+                <a href="#" class="group block">
+                    <div class="overflow-hidden mb-5 bg-gray-200 aspect-[16/9]">
+                        <img src="https://placehold.co/600x338/e5e5e5/999?text=Article+Image" alt="電動モペット記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <time class="text-xs text-gray-500 font-en mb-3 block tracking-wider">2026.03.05</time>
+                    <h3 class="text-lg font-bold mb-3 leading-snug group-hover:text-gray-600 transition">危険視される電動モペットの実態と抑えるべきポイント</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-2">
+                        違法改造や交通法違反などが問題視される電動モペット。正しい知識とルールを知り、安全に楽しむための注意点をまとめました。
                     </p>
-                </div>
+                </a>
+
+                <a href="#" class="group block">
+                    <div class="overflow-hidden mb-5 bg-gray-200 aspect-[16/9]">
+                        <img src="https://placehold.co/600x338/e5e5e5/999?text=Article+Image" alt="法改正記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <time class="text-xs text-gray-500 font-en mb-3 block tracking-wider">2026.03.01</time>
+                    <h3 class="text-lg font-bold mb-3 leading-snug group-hover:text-gray-600 transition">特定小型原動機付き自転車の法改正のポイント</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-2">
+                        街中でキックボードに乗る人を見ることが増えてきました。特定小型原付の定義や、公道を走るために必要な条件を分かりやすく解説。
+                    </p>
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="py-20 px-6 bg-gray-50">
-            <div class="container mx-auto max-w-5xl fade-up">
-                <h2 class="font-en text-3xl font-bold mb-16 tracking-widest text-center">Product Lineup</h2>
+    <section id="featured-contents" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl fade-up">
+            <div class="grid md:grid-cols-2 gap-8">
                 
-                <div class="flex flex-col md:flex-row bg-white shadow-lg mb-12 group">
-                    <div class="w-full md:w-1/2 overflow-hidden">
-                        <img src="https://placehold.co/800x600/111/fff?text=eXs+Street" alt="eXs Street" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <a href="#" class="group relative h-[400px] overflow-hidden block">
+                    <img src="https://placehold.co/800x600/333/999?text=Bike+Shop+Image" alt="Brand Partner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    
+                    <div class="absolute bottom-8 left-8 text-white">
+                        <h3 class="font-en text-2xl font-bold mb-2 tracking-widest">BRAND PARTNER</h3>
+                        <p class="text-sm font-medium opacity-90">正規販売店・取扱店一覧</p>
+                        <span class="inline-block mt-4 text-xs border border-white/50 px-4 py-2 group-hover:bg-white group-hover:text-black transition">VIEW MORE</span>
                     </div>
-                    <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-brand-black text-white">
-                        <h3 class="font-en text-2xl font-bold mb-2">eXs Street</h3>
-                        <p class="text-xs text-gray-400 mb-6">走破性の高いオールテレインファットタイヤ</p>
-                        <a href="product-street.html" class="inline-block border border-white/30 px-6 py-2 text-xs mb-8 hover:bg-white hover:text-black transition w-fit">製品詳細を見る</a>
-                        
-                        <div class="space-y-3 text-xs border-t border-gray-700 pt-6">
-                            <div class="flex justify-between"><span>参考小売価格</span><span>¥148,000</span></div>
-                            <div class="flex justify-between"><span>耐荷重</span><span>~100kg</span></div>
-                            <div class="flex justify-between"><span>航続距離</span><span>~80km</span></div>
-                            <div class="flex justify-between"><span>タイヤサイズ</span><span>20 × 4 inch</span></div>
-                            <div class="flex justify-between"><span>重量</span><span>27kg</span></div>
-                        </div>
-                    </div>
-                </div>
+                </a>
 
-                <div class="flex flex-col md:flex-row bg-white shadow-lg group">
-                    <div class="w-full md:w-1/2 overflow-hidden">
-                        <img src="https://placehold.co/800x600/333/fff?text=eXs+1+TKG" alt="eXs 1 TKG" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-brand-black text-white">
-                        <h3 class="font-en text-2xl font-bold mb-2">eXs 1 TKG</h3>
-                        <p class="text-xs text-gray-400 mb-6">バックヤードにも採用された次世代モビリティ</p>
-                        <a href="product-tkg.html" class="inline-block border border-white/30 px-6 py-2 text-xs mb-8 hover:bg-white hover:text-black transition w-fit">製品詳細を見る</a>
-                        
-                        <div class="space-y-3 text-xs border-t border-gray-700 pt-6">
-                            <div class="flex justify-between"><span>参考小売価格</span><span>¥64,800</span></div>
-                            <div class="flex justify-between"><span>耐荷重</span><span>100kg</span></div>
-                            <div class="flex justify-between"><span>航続距離</span><span>25km</span></div>
-                            <div class="flex justify-between"><span>タイヤサイズ</span><span>8.5 inch</span></div>
-                            <div class="flex justify-between"><span>重量</span><span>16kg</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 px-6 bg-white">
-            <div class="container mx-auto max-w-6xl fade-up">
-                <h2 class="font-en text-3xl font-bold mb-12 tracking-widest text-center">Voice of Professionals</h2>
-                
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="w-full md:w-1/2">
-                        <div class="aspect-[4/3] bg-gray-200">
-                            <img src="https://placehold.co/800x600/555/eee?text=Mechanic+Photo" alt="Professional Mechanic" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2">
-                        <h3 class="text-xl font-bold mb-6 leading-tight">プロメカニックが選ぶ、<br>次世代モビリティ「eXs Street」</h3>
-                        <div class="text-sm text-gray-600 leading-loose space-y-4 mb-8">
-                            <p>
-                                「正直、トータルバランスの良さに驚きました。剛性感は25万円クラスのE-Bikeに匹敵します。<br>
-                                それでいて価格は一般的な電動アシスト自転車並み。
-                            </p>
-                            <p>
-                                パーツサプライヤーが母体だけあって、メンテナンス性も考慮されています。<br>
-                                お客様に自信を持って『これなら長く乗れるよ』と勧められる一台です。」
-                            </p>
-                        </div>
-                        <p class="text-xs text-gray-400 font-bold">— サイクルショップ店長（福岡県）</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 px-6 bg-brand-black text-white">
-            <div class="container mx-auto max-w-6xl fade-up">
-                <h2 class="font-en text-3xl font-bold mb-16 tracking-widest text-center">Business Partnership</h2>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center p-6 border border-gray-800">
-                        <i class="fa-solid fa-store text-4xl mb-6 text-gray-400"></i>
-                        <h3 class="font-bold mb-4">業種を問わずお取り扱い可能</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed">
-                            バイクショップ、自転車店はもちろん、アパレル、雑貨店、宿泊施設など、多様な業種での導入実績があります。
+                <a href="#" class="group relative h-[400px] overflow-hidden block">
+                    <img src="https://placehold.co/800x600/555/eee?text=Developer+Interview" alt="Developer Interview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition"></div>
+                    
+                    <div class="absolute bottom-0 left-0 p-8 text-white h-full flex flex-col justify-center">
+                        <span class="text-xs font-en tracking-widest mb-2 opacity-80">BEHIND THE SCENE</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 leading-tight">開発者インタビュー</h3>
+                        <p class="text-sm md:text-base font-medium opacity-90 mb-6">「eXs Street」が作られた背景</p>
+                        <p class="text-sm leading-relaxed opacity-80 border-l-2 border-white pl-4">
+                            私たちには長年パーツサプライヤーとして<br>
+                            蓄えてきた経験と知識があります。
                         </p>
                     </div>
-                    <div class="text-center p-6 border border-gray-800">
-                        <i class="fa-solid fa-bullhorn text-4xl mb-6 text-gray-400"></i>
-                        <h3 class="font-bold mb-4">マーケティングサポート</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed">
-                            販促用POP、画像素材の提供、SNSでの紹介など、販売を強力にバックアップします。
-                        </p>
-                    </div>
-                    <div class="text-center p-6 border border-gray-800">
-                        <i class="fa-solid fa-wrench text-4xl mb-6 text-gray-400"></i>
-                        <h3 class="font-bold mb-4">安心の企業体制</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed">
-                            運営は「株式会社カスタムジャパン」。長年のパーツ供給ノウハウで、アフターパーツも迅速に供給します。
-                        </p>
-                    </div>
-                </div>
+                </a>
+
             </div>
-        </section>
-
-        <section id="entry" class="py-24 px-6 bg-gray-50">
-            <div class="container mx-auto max-w-4xl fade-up">
-                <div class="text-center mb-16">
-                    <h2 class="font-en text-3xl font-bold mb-4 tracking-widest">3 Steps to Start</h2>
-                    <p class="text-sm text-gray-500">最短3日で販売スタート</p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8 relative">
-                    <div class="hidden md:block absolute top-8 left-1/3 w-1/3 h-0.5 bg-gray-300 -z-10"></div>
-
-                    <div class="bg-white p-8 text-center shadow-sm relative">
-                        <div class="w-16 h-16 bg-brand-black text-white rounded-full flex items-center justify-center text-xl font-en font-bold mx-auto mb-6 border-4 border-gray-50">01</div>
-                        <h3 class="font-en font-bold text-lg mb-2">Entry</h3>
-                        <p class="text-xs text-gray-600">下記フォームよりエントリー<br>(1分で完了)</p>
-                    </div>
-
-                    <div class="bg-white p-8 text-center shadow-sm relative">
-                        <div class="w-16 h-16 bg-brand-black text-white rounded-full flex items-center justify-center text-xl font-en font-bold mx-auto mb-6 border-4 border-gray-50">02</div>
-                        <h3 class="font-en font-bold text-lg mb-2">Account</h3>
-                        <p class="text-xs text-gray-600">専任担当より<br>「パートナーID」発行</p>
-                    </div>
-
-                    <div class="bg-white p-8 text-center shadow-sm relative">
-                        <div class="w-16 h-16 bg-brand-black text-white rounded-full flex items-center justify-center text-xl font-en font-bold mx-auto mb-6 border-4 border-gray-50">03</div>
-                        <h3 class="font-en font-bold text-lg mb-2">Order</h3>
-                        <p class="text-xs text-gray-600">専用サイトから<br>卸価格で発注可能</p>
-                    </div>
-                </div>
-
-                <div class="mt-16 text-center">
-                    <a href="contact.html" class="block w-full md:w-2/3 mx-auto bg-brand-black text-white py-5 font-en font-bold tracking-widest hover:bg-gray-800 transition shadow-xl transform hover:-translate-y-1">
-                        ENTRY FORM <span class="text-xs font-normal ml-2">登録・お問い合わせはこちら</span>
-                    </a>
-                    <p class="text-xs text-gray-500 mt-4">※ 審査の結果、ご希望に添えない場合がございます。</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 px-6 bg-white">
-            <div class="container mx-auto max-w-3xl fade-up">
-                <h2 class="font-en text-2xl font-bold mb-10 tracking-widest text-center">FAQ</h2>
-                
-                <div class="space-y-4">
-                    <details class="group bg-gray-50 border border-gray-200 overflow-hidden transition-all duration-300 hover:border-gray-400">
-                        <summary class="flex justify-between items-center cursor-pointer p-6 list-none select-none">
-                            <span class="font-bold text-sm text-brand-black">ノルマはありますか？</span>
-                            <div class="relative w-4 h-4 flex items-center justify-center">
-                                <span class="absolute w-4 h-0.5 bg-gray-400 transition-transform duration-300 group-open:rotate-180"></span>
-                                <span class="absolute w-4 h-0.5 bg-gray-400 rotate-90 transition-transform duration-300 group-open:rotate-180"></span>
-                            </div>
-                        </summary>
-                        <div class="px-6 pb-6 pt-0 text-xs text-gray-600 leading-relaxed">
-                            <p>いいえ、販売ノルマは一切ございません。1台からの小ロット発注も可能ですので、リスクなく開始いただけます。</p>
-                        </div>
-                    </details>
-
-                    <details class="group bg-gray-50 border border-gray-200 overflow-hidden transition-all duration-300 hover:border-gray-400">
-                        <summary class="flex justify-between items-center cursor-pointer p-6 list-none select-none">
-                            <span class="font-bold text-sm text-brand-black">試乗車は用意できますか？</span>
-                            <div class="relative w-4 h-4 flex items-center justify-center">
-                                <span class="absolute w-4 h-0.5 bg-gray-400 transition-transform duration-300 group-open:rotate-180"></span>
-                                <span class="absolute w-4 h-0.5 bg-gray-400 rotate-90 transition-transform duration-300 group-open:rotate-180"></span>
-                            </div>
-                        </summary>
-                        <div class="px-6 pb-6 pt-0 text-xs text-gray-600 leading-relaxed">
-                            <p>はい、パートナー様向けの特別価格にて試乗車（デモカー）をご用意しております。詳細はお問い合わせください。</p>
-                        </div>
-                    </details>
-
-                    <details class="group bg-gray-50 border border-gray-200 overflow-hidden transition-all duration-300 hover:border-gray-400">
-                        <summary class="flex justify-between items-center cursor-pointer p-6 list-none select-none">
-                            <span class="font-bold text-sm text-brand-black">修理やアフターサポートはどうなりますか？</span>
-                            <div class="relative w-4 h-4 flex items-center justify-center">
-                                <span class="absolute w-4 h-0.5 bg-gray-400 transition-transform duration-300 group-open:rotate-180"></span>
-                                <span class="absolute w-4 h-0.5 bg-gray-400 rotate-90 transition-transform duration-300 group-open:rotate-180"></span>
-                            </div>
-                        </summary>
-                        <div class="px-6 pb-6 pt-0 text-xs text-gray-600 leading-relaxed">
-                            <p>基本的なメンテナンスは販売店様にお願いしておりますが、パーツ供給や技術的なサポートは弊社が全面的にバックアップいたします。</p>
-                        </div>
-                    </details>
-
-                    <details class="group bg-gray-50 border border-gray-200 overflow-hidden transition-all duration-300 hover:border-gray-400">
-                        <summary class="flex justify-between items-center cursor-pointer p-6 list-none select-none">
-                            <span class="font-bold text-sm text-brand-black">バイクショップ以外でも取り扱えますか？</span>
-                            <div class="relative w-4 h-4 flex items-center justify-center">
-                                <span class="absolute w-4 h-0.5 bg-gray-400 transition-transform duration-300 group-open:rotate-180"></span>
-                                <span class="absolute w-4 h-0.5 bg-gray-400 rotate-90 transition-transform duration-300 group-open:rotate-180"></span>
-                            </div>
-                        </summary>
-                        <div class="px-6 pb-6 pt-0 text-xs text-gray-600 leading-relaxed">
-                            <p>はい、可能です。アパレルショップや雑貨店、ホテルやグランピング施設など、多様な業態での導入実績がございます。</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
 
