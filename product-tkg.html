@@ -94,35 +94,36 @@
                 </div>
 
                 <div class="w-full lg:w-2/5 flex flex-col">
-                    <h1 class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-2">eXs 1 TKG</h1>
+                    <img src="img/exs-tkg-logo-black.svg" alt="eXs 1 TKG ロゴ" class="h-9 md:h-10 w-auto mb-3">
+                    <h1 class="sr-only">eXs 1 TKG</h1>
                     <p class="font-en text-sm text-gray-500 tracking-widest mb-6">ELECTRIC KICKBOARD</p>
                     
                     <div class="text-3xl font-en font-bold mb-8">
-                        <span id="base-price" data-price="64800">¥64,800</span>
+                        <span id="base-price" data-price="69080">69,080円</span>
                         <span class="text-sm font-normal text-gray-500 ml-2">(TAX IN)</span>
                     </div>
 
                     <p class="text-sm text-gray-700 leading-loose mb-10 text-justify">
-                        免許不要（16歳以上）で乗れる特定小型原動機付自転車モデル。大阪・関西万博の運営管理業務でも採用された高い信頼性。コンパクトに折りたため、車載や室内保管も容易です。
+                        免許不要（16歳以上）で乗れる特定小型原動機付自転車モデル。大阪・関西万博のバックヤードでも活躍した高い信頼性。コンパクトに折りたため、車載や室内保管も容易です。
                     </p>
 
                     <div class="mb-8">
                         <span class="block text-xs font-en font-bold tracking-widest mb-4">SELECT TYPE</span>
                         <div class="grid grid-cols-1 gap-3">
                             <label class="cursor-pointer group relative border border-gray-200 p-4 rounded hover:bg-gray-50 transition has-[:checked]:border-black has-[:checked]:bg-gray-50">
-                                <input type="radio" name="product_type" class="peer sr-only" data-price="54,999" data-rakuten-url="https://item.rakuten.co.jp/partsdirect/27882603/" data-yahoo-url="https://store.shopping.yahoo.co.jp/partsdirect2/27882603.html" checked>
+                                <input type="radio" name="product_type" class="peer sr-only" data-price="69,080" data-rakuten-url="https://item.rakuten.co.jp/partsdirect/27882603/" data-yahoo-url="https://store.shopping.yahoo.co.jp/partsdirect2/27882603.html" checked>
                                 <div class="flex justify-between items-center">
                                     <span class="font-bold text-sm">eXs 1 TKG (車体のみ)</span>
-                                    <span class="text-sm font-en">¥54,999</span>
+                                    <span class="text-sm font-en">69,080円</span>
                                 </div>
                                 <div class="absolute inset-0 border-2 border-black rounded opacity-0 peer-checked:opacity-100 pointer-events-none"></div>
                             </label>
 
                             <label class="cursor-pointer group relative border border-gray-200 p-4 rounded hover:bg-gray-50 transition has-[:checked]:border-black has-[:checked]:bg-gray-50">
-                                <input type="radio" name="product_type" class="peer sr-only" data-price="64,799" data-rakuten-url="https://item.rakuten.co.jp/partsdirect39/28021582/" data-yahoo-url="https://store.shopping.yahoo.co.jp/partsdirect2/28021582.html">
+                                <input type="radio" name="product_type" class="peer sr-only" data-price="69,080" data-rakuten-url="https://item.rakuten.co.jp/partsdirect39/28021582/" data-yahoo-url="https://store.shopping.yahoo.co.jp/partsdirect2/28021582.html">
                                 <div class="flex justify-between items-center">
                                     <span class="font-bold text-sm">eXs 1 TKG + サドルセット</span>
-                                    <span class="text-sm font-en">¥64,799</span>
+                                    <span class="text-sm font-en">69,080円</span>
                                 </div>
                                 <span class="absolute -top-2 right-4 bg-brand-stripe text-white text-[10px] px-2 py-0.5 font-bold tracking-wider rounded-full">POPULAR</span>
                                 <div class="absolute inset-0 border-2 border-black rounded opacity-0 peer-checked:opacity-100 pointer-events-none"></div>
@@ -160,13 +161,13 @@
                     <div class="mt-auto">
                         <div class="text-3xl font-en font-bold mb-4">
                             <span class="text-sm font-normal text-gray-500 mr-2">TOTAL</span>
-                            <span id="total-price">¥64,800</span>
+                            <span id="total-price">69,080円</span>
                         </div>
                         <div class="grid gap-3 mb-6">
                             <a id="rakuten-link-btn" href="https://item.rakuten.co.jp/partsdirect/27882603/" target="_blank" class="block w-full text-center bg-[#bf0000] text-white font-en font-bold py-4 tracking-widest text-sm hover:opacity-90 transition">
                                 楽天市場で購入手続きへ
                             </a>
-                            <a id="yahoo-link-btn" href="https://store.shopping.yahoo.co.jp/partsdirect2/27882603.html" target="_blank" class="block w-full text-center bg-[#ff0033] text-white font-en font-bold py-4 tracking-widest text-sm hover:opacity-90 transition">
+                            <a id="yahoo-link-btn" href="https://store.shopping.yahoo.co.jp/partsdirect2/27882603.html" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#ff0033] text-white font-en font-bold py-4 tracking-widest text-sm hover:opacity-90 transition">
                                 Yahoo!ショッピングで購入する
                             </a>
                         </div>
@@ -175,7 +176,8 @@
                         </button>
                         <p class="text-xs text-gray-400 text-center">
                             ※ 特定小型原付のため、Stripe Identityによる本人確認（16歳以上）が必要です。<br>
-                            ※ 注文から発送まで約<span class="font-bold text-black mx-1">3〜5営業日</span>いただいております。
+                            ※ 送料無料キャンペーン実施中 ※沖縄・離島は別途送料 ¥11,000がかかります
+                            <!-- TODO(campaign-end): キャンペーン終了後の送料テキストに差し替え -->
                         </p>
                     </div>
                 </div>
@@ -237,9 +239,9 @@
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. COMPACT FOLDING</span>
-                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">3ステップで折りたたみ。<br>持ち運びもスマートに。</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">3ステップでコンパクトに変形。<br>大きな車体も、折りたたむことで移動と保管の幅が広がります。</h3>
                         <p class="text-sm text-gray-600 leading-loose text-justify">
-                            ロックを外してレバーを倒すだけの簡単3ステップで、コンパクトに折りたたみが可能。重量16kgと軽量設計のため、オフィスへの持ち込みや車のトランクへの積載もスムーズです。
+                            3ステップでコンパクトに変形。大きな車体も、折りたたむことで移動と保管の幅が広がります。
                         </p>
                     </div>
                 </div>

@@ -77,16 +77,17 @@
                 </div>
 
                 <div class="w-full lg:w-2/5 flex flex-col">
-                    <h1 class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-2">eXs Street</h1>
+                    <img src="img/exs-street-logo-black.svg" alt="eXs Street ロゴ" class="h-9 md:h-10 w-auto mb-3">
+                    <h1 class="sr-only">eXs Street</h1>
                     <p class="font-en text-sm text-gray-500 tracking-widest mb-6">ELECTRIC ASSIST BICYCLE</p>
                     
                     <div class="text-3xl font-en font-bold mb-8">
-                        <span id="base-price" data-price="148000">¥148,000</span>
+                        <span id="base-price" data-price="149800">149,800円</span>
                         <span class="text-sm font-normal text-gray-500 ml-2">(TAX IN)</span>
                     </div>
 
                     <p class="text-sm text-gray-700 leading-loose mb-10 text-justify">
-                        4×20インチのファットタイヤで、街乗りもオフロードも。日常の移動を冒険に変える、パワフルなアシスト性能と洗練されたデザイン。
+                        20×4インチのファットタイヤで、街乗りもオフロードも。日常の移動を冒険に変える、パワフルなアシスト性能と洗練されたデザイン。
                     </p>
 
                     <div class="mb-10">
@@ -115,24 +116,17 @@
                         <div class="space-y-3">
                             <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
                                 <div class="flex items-center">
-                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black option-checkbox" data-price="5500">
+                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black option-checkbox" data-price="5478">
                                     <span class="ml-3 text-sm font-medium">リアキャリア</span>
                                 </div>
-                                <span class="text-sm font-en text-gray-500">+ ¥5,500</span>
+                                <span class="text-sm font-en text-gray-500">+ 5,478円</span>
                             </label>
                             <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
                                 <div class="flex items-center">
-                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black option-checkbox" data-price="3300">
+                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black option-checkbox" data-price="7678">
                                     <span class="ml-3 text-sm font-medium">前後フェンダーセット</span>
                                 </div>
-                                <span class="text-sm font-en text-gray-500">+ ¥3,300</span>
-                            </label>
-                            <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
-                                <div class="flex items-center">
-                                    <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black option-checkbox" data-price="4800">
-                                    <span class="ml-3 text-sm font-medium">防犯登録代行</span>
-                                </div>
-                                <span class="text-sm font-en text-gray-500">+ ¥4,800</span>
+                                <span class="text-sm font-en text-gray-500">+ 7,678円</span>
                             </label>
                         </div>
                     </div>
@@ -140,7 +134,7 @@
                     <div class="mt-auto">
                         <div class="text-3xl font-en font-bold mb-4">
                             <span class="text-sm font-normal text-gray-500 mr-2">TOTAL</span>
-                            <span id="total-price">¥148,000</span>
+                            <span id="total-price">149,800円</span>
                         </div>
                         <button class="w-full bg-brand-black text-white font-en font-bold py-5 tracking-widest text-lg hover:bg-gray-800 transition mb-4">
                             ADD TO CART
@@ -149,13 +143,14 @@
                             <a id="rakuten-link-btn" href="https://item.rakuten.co.jp/partsdirect/29044337/" target="_blank" class="block w-full text-center bg-[#bf0000] text-white font-en font-bold py-4 tracking-widest text-sm hover:opacity-90 transition">
                                 楽天市場で購入手続きへ
                             </a>
-                            <a id="yahoo-link-btn" href="https://store.shopping.yahoo.co.jp/partsdirect2/29044337.html" class="block w-full text-center bg-[#ff0033] text-white font-en font-bold py-4 tracking-widest text-sm hover:opacity-90 transition">
+                            <a id="yahoo-link-btn" href="https://store.shopping.yahoo.co.jp/partsdirect2/29044337.html" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#ff0033] text-white font-en font-bold py-4 tracking-widest text-sm hover:opacity-90 transition">
                                 Yahoo!ショッピングで購入する
                             </a>
                         </div>
                         <p class="text-xs text-gray-400 text-center">
                             ※ 現在、注文から発送まで約<span class="font-bold text-black mx-1">1週間</span>いただいております。<br>
-                            ※ 送料はチェックアウト時に計算されます。
+                            ※ 送料無料キャンペーン実施中 ※沖縄・離島は別途送料 ¥11,000がかかります
+                            <!-- TODO(campaign-end): キャンペーン終了後の送料テキストに差し替え -->
                         </p>
                     </div>
                 </div>
@@ -494,7 +489,7 @@
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. ALL TERRAIN TIRES</span>
-                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">4×20インチのファットタイヤで<br>街乗りもオフロードも。</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">20×4インチのファットタイヤで<br>街乗りもオフロードも。</h3>
                         <p class="text-sm text-gray-600 leading-loose text-justify">
                             存在感のある極太タイヤは、単なるデザインではありません。路面の凹凸を吸収し、段差の多い市街地から砂利道などのオフロードまで、あらゆるシーンで安定した走行を実現します。
                         </p>
@@ -533,8 +528,8 @@
                             <li class="flex items-start">
                                 <span class="text-lg mr-4 opacity-30 font-en">B</span>
                                 <div>
-                                    <h4 class="font-bold text-sm mb-2">前後ディスクブレーキ</h4>
-                                    <p class="text-xs text-gray-500 leading-relaxed">雨天時でも安定した制動力を発揮するメカニカルディスクブレーキ。</p>
+                                    <h4 class="font-bold text-sm mb-2">FRONT FORK (フロントフォーク)</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">路面からの衝撃を和らげ、タフな走りを支えるフロントフォーク。</p>
                                 </div>
                             </li>
                             <li class="flex items-start">

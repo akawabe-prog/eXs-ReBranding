@@ -13,8 +13,12 @@ const PATHS = {
     news: 'index.html#news',
     partner: 'partner.html',
     column: 'index.html#column',
-    support: 'index.html#support',
-    contact: 'contact.html'
+    support: 'contact.html',
+    contact: 'contact.html',
+    privacy: 'contact.html', // TODO: プライバシーポリシー公開ページURLへ差し替え
+    instagram: 'contact.html', // TODO: 公式Instagram URLへ差し替え
+    x: 'contact.html', // TODO: 公式X URLへ差し替え
+    youtube: 'contact.html' // TODO: 公式YouTube URLへ差し替え
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,7 +36,9 @@ function renderHeader() {
 
     const headerHTML = `
     <div class="container mx-auto px-6 h-20 flex justify-between items-center relative z-50">
-        <a href="${PATHS.home}" class="font-en font-bold text-3xl tracking-tighter hover:opacity-70 transition">eXs</a>
+        <a href="${PATHS.home}" class="hover:opacity-70 transition inline-flex items-center">
+            <img src="img/exs-logo-white.svg" alt="eXs ロゴ" class="h-8 md:h-9 w-auto object-contain">
+        </a>
 
         <nav class="hidden lg:flex space-x-6 text-xs font-en tracking-widest font-medium items-center">
             <a href="${PATHS.about}" class="nav-item hover:opacity-60 transition">ABOUT</a>
@@ -93,7 +99,9 @@ function renderFooter() {
     <div class="container mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start mb-16">
             <div class="mb-10 md:mb-0">
-                <a href="${PATHS.home}" class="font-en text-4xl font-bold mb-6 tracking-tighter block hover:opacity-70 transition">eXs</a>
+                <a href="${PATHS.home}" class="mb-6 block hover:opacity-70 transition">
+                    <img src="img/exs-logo-white.svg" alt="eXs ロゴ" class="h-10 w-auto object-contain">
+                </a>
                 <p class="text-xs text-gray-400 leading-relaxed mb-4">Custom Japan Co., Ltd.<br>株式会社カスタムジャパン</p>
                 <p class="text-xs text-gray-500">大阪市中央区日本橋2-9-16<br>日本橋センタービル6F</p>
             </div>
@@ -109,16 +117,16 @@ function renderFooter() {
                     <a href="${PATHS.column}" class="hover:text-gray-400 transition">COLUMN</a>
                     <a href="${PATHS.support}" class="hover:text-gray-400 transition">SUPPORT</a>
                     <a href="${PATHS.contact}" class="hover:text-gray-400 transition">CONTACT</a>
-                    <a href="#" class="hover:text-gray-400 transition">PRIVACY POLICY</a>
+                    <a href="${PATHS.privacy}" class="hover:text-gray-400 transition">PRIVACY POLICY</a>
                 </div>
             </div>
         </div>
         <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-en">
             <p>&copy; 2026 eXs / Custom Japan Co., Ltd.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram text-lg"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube text-lg"></i></a>
+                <a href="${PATHS.instagram}" class="hover:text-white transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="${PATHS.x}" class="hover:text-white transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                <a href="${PATHS.youtube}" class="hover:text-white transition"><i class="fa-brands fa-youtube text-lg"></i></a>
             </div>
         </div>
     </div>

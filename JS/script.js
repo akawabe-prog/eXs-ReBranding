@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productTypeRadios = document.querySelectorAll('input[name="product_type"]');
     if (basePriceEl && totalPriceEl && optionCheckboxes.length > 0 && productTypeRadios.length === 0) {
         const basePrice = parseInt(basePriceEl.dataset.price || '0', 10);
-        const formatYen = (num) => `¥${num.toLocaleString('ja-JP')}`;
+        const formatYen = (num) => `${num.toLocaleString('ja-JP')}円`;
         const updateTotal = () => {
             let optionsTotal = 0;
             optionCheckboxes.forEach(cb => {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (productTypeRadios.length > 0 && basePriceEl && totalPriceEl) {
         const rakutenBtn = document.getElementById('rakuten-link-btn');
         const yahooBtn = document.getElementById('yahoo-link-btn');
-        const formatYen = (num) => `¥${num.toLocaleString('ja-JP')}`;
+        const formatYen = (num) => `${num.toLocaleString('ja-JP')}円`;
         const parsePrice = (str) => parseInt(String(str).replace(/[^0-9]/g, ''), 10) || 0;
 
         const updateState = () => {
