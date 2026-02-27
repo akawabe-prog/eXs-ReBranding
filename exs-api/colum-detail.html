@@ -205,7 +205,7 @@
                     <article class="border border-gray-100 rounded-xl p-5 hover:shadow-md transition related-item" data-category="Market" data-year="2026" data-month="03">
                         <p class="text-[10px] font-en font-bold tracking-widest text-gray-400 uppercase mb-2">Market</p>
                         <time datetime="2026-03-12" class="text-xs text-gray-400 font-en tracking-wider">2026.03.12</time>
-                        <a href="colum-detail.html" class="block">
+                        <a href="colum-detail-50cc.html" class="block">
                             <h3 class="text-base font-bold mt-3 mb-2 hover:text-gray-600 transition-colors">50cc原付が消えた！？今後のモビリティ市場はどうなる</h3>
                             <p class="text-sm text-gray-600 line-clamp-2">法規制の変化を背景に、電動モビリティへ市場がシフトする流れを整理します。</p>
                         </a>
@@ -214,7 +214,7 @@
                     <article class="border border-gray-100 rounded-xl p-5 hover:shadow-md transition related-item" data-category="Safety" data-year="2026" data-month="03">
                         <p class="text-[10px] font-en font-bold tracking-widest text-gray-400 uppercase mb-2">Safety</p>
                         <time datetime="2026-03-05" class="text-xs text-gray-400 font-en tracking-wider">2026.03.05</time>
-                        <a href="colum-detail.html" class="block">
+                        <a href="colum-detail-mopet.html" class="block">
                             <h3 class="text-base font-bold mt-3 mb-2 hover:text-gray-600 transition-colors">危険視される電動モペットの実態と抑えるべきポイント</h3>
                             <p class="text-sm text-gray-600 line-clamp-2">違法改造や交通違反を避けるため、購入前に確認すべき安全情報を解説します。</p>
                         </a>
@@ -263,6 +263,7 @@
     <!-- 共通スクリプト -->
     <script src="JS/components.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/column-detail-filter.js"></script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -284,52 +285,6 @@
                 "https://images.unsplash.com/photo-1620802051782-726fa6b9337d?auto=format&fit=crop&q=80&w=1200"
             ]
         }
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const categoryButtons = document.querySelectorAll('#detail-category-filter .filter-btn');
-            const yearFilter = document.getElementById('detail-year-filter');
-            const monthFilter = document.getElementById('detail-month-filter');
-            const relatedItems = document.querySelectorAll('.related-item');
-            const noResult = document.getElementById('detail-no-result');
-
-            if (!categoryButtons.length || !yearFilter || !monthFilter || !relatedItems.length || !noResult) {
-                return;
-            }
-
-            let activeCategory = 'all';
-
-            const applyFilters = () => {
-                const selectedYear = yearFilter.value;
-                const selectedMonth = monthFilter.value;
-                let visibleCount = 0;
-
-                relatedItems.forEach((item) => {
-                    const categoryMatch = activeCategory === 'all' || item.dataset.category === activeCategory;
-                    const yearMatch = selectedYear === 'all' || item.dataset.year === selectedYear;
-                    const monthMatch = selectedMonth === 'all' || item.dataset.month === selectedMonth;
-                    const isVisible = categoryMatch && yearMatch && monthMatch;
-
-                    item.classList.toggle('hidden', !isVisible);
-                    if (isVisible) visibleCount += 1;
-                });
-
-                noResult.classList.toggle('hidden', visibleCount > 0);
-            };
-
-            categoryButtons.forEach((button) => {
-                button.addEventListener('click', () => {
-                    activeCategory = button.dataset.filter;
-                    categoryButtons.forEach((btn) => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    applyFilters();
-                });
-            });
-
-            yearFilter.addEventListener('change', applyFilters);
-            monthFilter.addEventListener('change', applyFilters);
-            applyFilters();
-        });
     </script>
 </body>
 </html>

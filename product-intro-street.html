@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eXs Street | Concept | eXs (エクス)</title>
-    <meta name="description" content="移動の常識を再定義する。4×20インチのファットタイヤで街乗りもオフロードも。eXs Streetのプロダクトストーリー。">
+    <title>eXs Street Concept | ファットバイクeBikeの思想 | eXs</title>
+    <meta name="description" content="eXs Streetのコンセプトページ。ファットバイク設計のeBikeとして、街乗りと快適性を両立する魅力を紹介します。">
+    <meta name="keywords" content="電動アシスト自転車,ファットバイク,eBike,電動キックボード,特定小型原付,eXs">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://exs.customjapan.net/product-intro-street.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="eXs">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://exs.customjapan.net/product-intro-street.html">
+    <meta property="og:title" content="eXs Street Concept | ファットバイクeBikeの思想 | eXs">
+    <meta property="og:description" content="eXs Streetのコンセプトページ。ファットバイク設計のeBikeとして、街乗りと快適性を両立する魅力を紹介します。">
+    <meta property="og:image" content="img/eXsStreetImage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="eXs Street Concept | ファットバイクeBikeの思想 | eXs">
+    <meta name="twitter:description" content="eXs Streetのコンセプトページ。ファットバイク設計のeBikeとして、街乗りと快適性を両立する魅力を紹介します。">
+    <meta name="twitter:image" content="img/eXsStreetImage.jpg">
+
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,11 +56,12 @@
     <header id="common-header" class="fixed w-full top-0 z-50 bg-brand-black/90 backdrop-blur-sm text-white shadow-sm transition-all duration-300"></header>
 
     <section class="relative h-screen w-full overflow-hidden bg-black">
-        <video class="w-full h-full object-cover opacity-70" autoplay muted loop playsinline poster="https://placehold.co/1920x1080/111/333?text=eXs+Street">
-            <source src="https://videos.pexels.com/video-files/5155396/5155396-hd_1920_1080_30fps.mp4" type="video/mp4">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="video/eXs.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-4">
-            <h1 class="font-en text-6xl md:text-9xl font-bold tracking-tighter mb-6 fade-up">eXs Street</h1>
+            <img src="img/exs-street-logo-white.svg" alt="eXs Street ロゴ" class="h-32 md:h-44 w-auto mb-6 fade-up">
+            <h1 class="sr-only">eXs Street</h1>
             <p class="font-en text-sm md:text-lg tracking-[0.3em] fade-up delay-200">THE URBAN ADVENTURE</p>
         </div>
        <div class="absolute bottom-10 left-0 w-full text-center z-20 animate-bounce">
@@ -70,7 +86,7 @@
 
    <section class="relative flex flex-col md:flex-row md:h-[80vh] items-center bg-gray-100 overflow-hidden">
         <div class="w-full h-[50vh] md:w-1/2 md:h-full relative">
-            <img src="https://placehold.co/1000x1200/222/fff?text=Fat+Tire+CloseUp" alt="Fat Tire" class="w-full h-full object-cover">
+            <img src="img/eXs-steet_fattire_closeup.jpg" alt="Fat Tire" class="w-full h-full object-cover">
         </div>
         
         <div class="w-full md:w-1/2 relative z-10 px-6 py-16 md:py-0 flex items-center justify-center md:justify-start">
@@ -85,8 +101,11 @@
     </section>
 
     <section class="relative flex flex-col md:flex-row-reverse md:h-[80vh] items-center bg-white overflow-hidden">
-        <div class="w-full h-[50vh] md:w-1/2 md:h-full relative">
-            <img src="https://placehold.co/1000x1200/333/fff?text=Matte+Design" alt="Design" class="w-full h-full object-cover">
+        <div class="w-full h-[50vh] md:w-1/2 md:h-full relative" id="street-color-showcase">
+            <img src="img/eXs-steet_black_image.jpg" alt="Matte Black" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700" data-index="0">
+            <img src="img/eXs-steet_mattegray_image.jpg" alt="Matte Gray" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" data-index="1">
+            <img src="img/eXs-steet_mattebeige_image.jpg" alt="Matte Beige" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" data-index="2">
+            <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
         </div>
         
         <div class="w-full md:w-1/2 relative z-10 px-6 py-16 md:py-0 flex items-center justify-center md:justify-end">
@@ -97,9 +116,9 @@
                     過度な装飾を削ぎ落としたミニマルなフレームデザイン。光の反射を抑えたマット塗装は、スーツスタイルにもカジュアルな装いにも調和します。
                 </p>
                 <div class="flex gap-4">
-                    <div class="w-8 h-8 rounded-full bg-[#1a1a1a] border border-gray-300"></div>
-                    <div class="w-8 h-8 rounded-full bg-[#888888] border border-gray-300"></div>
-                    <div class="w-8 h-8 rounded-full bg-[#d8d2c0] border border-gray-300"></div>
+                    <button type="button" class="street-color-dot w-8 h-8 rounded-full bg-[#1a1a1a] border border-gray-300 ring-2 ring-black ring-offset-2 transition" data-index="0" aria-label="Matte Black"></button>
+                    <button type="button" class="street-color-dot w-8 h-8 rounded-full bg-[#888888] border border-gray-300 transition" data-index="1" aria-label="Matte Gray"></button>
+                    <button type="button" class="street-color-dot w-8 h-8 rounded-full bg-[#d8d2c0] border border-gray-300 transition" data-index="2" aria-label="Matte Beige"></button>
                 </div>
             </div>
         </div>
@@ -109,9 +128,60 @@
         <div class="container mx-auto px-6 fade-up">
             <h3 class="font-en text-2xl mb-8 tracking-widest">START YOUR RIDE</h3>
             <p class="text-gray-400 mb-10 text-sm">在庫状況・カラーバリエーションを確認する</p>
-            <a href="product-street.html" class="inline-block border border-white px-12 py-4 hover:bg-white hover:text-black transition duration-300 font-en tracking-widest">
-                VIEW PURCHASE PAGE
+            <a href="product-street.html" class="group relative inline-flex items-center justify-center w-[280px] h-[56px] border border-white hover:bg-white hover:text-black transition-colors duration-300 font-en tracking-widest overflow-hidden">
+                <span class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 opacity-100 group-hover:opacity-0">VIEW PURCHASE PAGE</span>
+                <span class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 opacity-0 group-hover:opacity-100">購入ページはこちら</span>
             </a>
+        </div>
+    </section>
+
+    <section class="bg-black overflow-hidden">
+        <div id="street-intro-parallax-visual" class="relative w-screen left-1/2 right-1/2 -translate-x-1/2">
+            <img id="street-intro-parallax-image" src="img/eXsイメージ.png" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1100px] object-cover will-change-transform">
+            <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
+        </div>
+    </section>
+
+    <section class="py-28 px-6 bg-[#0b0b0b] text-white">
+        <div class="container mx-auto max-w-[1440px]">
+            <div class="flex items-center gap-4 mb-14 fade-up">
+                <span class="h-px w-10 bg-white/40"></span>
+                <h3 class="font-en text-2xl md:text-3xl font-bold tracking-widest">PRODUCT FEATURE</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <article class="fade-up group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                    <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_battely.jpg" alt="Battery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">48V 10Ahの高性能バッテリー</h4>
+                    <p class="text-sm text-gray-300/90 leading-[1.9]">フレームにすっきりと内蔵された48V・10Ahバッテリーは、スタイルを損なわずに最長約80kmの走行性能を発揮します。</p>
+                </article>
+
+                <article class="fade-up group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                    <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_display.jpg" alt="Display" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">コンパクトな液晶ディスプレイ</h4>
+                    <p class="text-sm text-gray-300/90 leading-[1.9]">フレームの世界観を壊さず、静かに機能美を引き立てるカラー液晶。アシストレベル・速度・バッテリー残量をひと目で把握できます。</p>
+                </article>
+
+                <article class="fade-up group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                    <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg" alt="Compact Folding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">車にも積み込める収納性</h4>
+                    <p class="text-sm text-gray-300/90 leading-[1.9]">スリーステップで折りたたみ可能。アトリエや車のトランクにも収まり、ファットタイヤモデルながら高い収納性を備えています。</p>
+                </article>
+
+                <article class="fade-up group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                    <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_air.jpg?_t=1765150905" alt="Air Pump Saddle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">空気入れ内蔵のサドルポスト</h4>
+                    <p class="text-sm text-gray-300/90 leading-[1.9]">サドルを抜けばすぐ空気を入れられる便利機構を搭載。出先やオフロードでも安心の実用性を備えています。</p>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -139,9 +209,14 @@
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 fade-up">
-                    <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-xl">
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-xl hidden md:block">
                         <video class="w-full h-full object-cover" autoplay muted loop playsinline>
                             <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="max-w-[320px] mx-auto aspect-[9/16] bg-black rounded-lg overflow-hidden shadow-xl md:hidden">
+                        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                            <source src="video/eXs.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -178,22 +253,58 @@
                     <p class="text-xs text-gray-500">前後ディスクブレーキ<br>強力な制動力</p>
                 </div>
             </div>
+
+            <div class="mt-14 py-8">
+                <div class="text-gray-600 text-sm leading-relaxed">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>全長</span><span>1630 mm</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>全幅</span><span>590 mm</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>重量</span><span>27.1 kg</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>タイヤサイズ</span><span>20 × 4.0 インチ</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>バッテリー容量</span><span>10.4 Ah</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>充電時間</span><span>約 6時間</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>走行可能距離</span><span>60 - 80 km</span></div>
+                            <div class="flex justify-between border-b border-gray-100 py-2"><span>変速機</span><span>Shimano 7段変速</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="py-20 px-6 bg-gray-100">
-        <div class="container mx-auto max-w-4xl flex flex-col md:flex-row items-center gap-12 fade-up">
-            <div class="w-full md:w-1/2">
-                <img src="https://placehold.co/600x400/ddd/333?text=Maintenance" alt="Maintenance" class="w-full rounded shadow-md">
-            </div>
-            <div class="w-full md:w-1/2">
-                <h3 class="text-xl font-bold mb-4">安心のサポート体制</h3>
-                <p class="text-sm text-gray-600 leading-loose mb-6">
-                    国内パーツサプライヤー「カスタムジャパン」が運営。購入後のメンテナンスやパーツ供給も万全の体制でバックアップします。
-                </p>
-                <a href="index.html#support" class="text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">
-                    サポート詳細を見る →
-                </a>
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_38px_rgba(0,0,0,0.12)] transition duration-300 fade-up">
+                    <figure class="aspect-[16/9] overflow-hidden">
+                        <img src="img/customer.jpg" alt="Maintenance" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </figure>
+                    <div class="p-7">
+                        <p class="font-en text-[11px] tracking-widest text-gray-400 mb-3">AFTER SUPPORT</p>
+                        <h3 class="text-xl font-bold mb-4">安心のサポート体制</h3>
+                        <p class="text-sm text-gray-600 leading-loose mb-6">
+                            国内パーツサプライヤー「カスタムジャパン」が運営。購入後のメンテナンスやパーツ供給も万全の体制でバックアップします。
+                        </p>
+                        <a href="index.html#support" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">
+                            サポート詳細を見る →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_38px_rgba(0,0,0,0.12)] transition duration-300 fade-up">
+                    <figure class="aspect-[16/9] overflow-hidden">
+                        <img src="img/parter_image.jpg" alt="Brand Partner" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </figure>
+                    <div class="p-7">
+                        <p class="font-en text-[11px] tracking-widest text-gray-400 mb-3">BRAND PARTNER</p>
+                        <h3 class="text-xl font-bold mb-4">正規販売店・取扱店一覧</h3>
+                        <p class="text-sm text-gray-600 leading-loose mb-6">
+                            eXs Street / eXs 1 TKG を取り扱う正規販売店をご紹介。試乗や在庫確認、導入相談はお近くの取扱店へお問い合わせください。
+                        </p>
+                        <a href="partner-list.html" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">
+                            取扱店一覧を見る →
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -203,8 +314,9 @@
             <h2 class="text-4xl md:text-6xl font-en font-bold mb-4 tracking-tighter">eXs Street</h2>
             <p class="text-2xl font-bold mb-10">¥148,000 <span class="text-sm font-normal text-gray-500">(TAX IN)</span></p>
             
-            <a href="product-street.html" class="block w-full bg-brand-black text-white font-en font-bold py-6 tracking-widest text-xl hover:bg-gray-800 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1 duration-300">
-                BUY NOW
+            <a href="product-street.html" class="block w-full bg-brand-black text-white font-en font-bold py-5 tracking-widest text-xl hover:bg-gray-800 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1 duration-300 text-center">
+                <span class="block leading-none">BUY NOW</span>
+                <span class="block mt-2 text-[11px] tracking-normal font-sans font-medium opacity-85">購入ページはこちらから</span>
             </a>
             <p class="text-xs text-gray-400 mt-6">
                 ※ オプションパーツの追加や送料の確認は購入ページへお進みください。
@@ -216,5 +328,69 @@
 
     <script src="JS/components.js"></script>
     <script src="JS/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = Array.from(document.querySelectorAll('.street-color-slide'));
+            const dots = Array.from(document.querySelectorAll('.street-color-dot'));
+            const parallaxVisual = document.getElementById('street-intro-parallax-visual');
+            const parallaxImage = document.getElementById('street-intro-parallax-image');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (slides.length === 0 || dots.length === 0) return;
+
+            let currentIndex = 0;
+            let autoSlideTimer = null;
+
+            const setActiveSlide = (index) => {
+                currentIndex = index;
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('opacity-100', i === index);
+                    slide.classList.toggle('opacity-0', i !== index);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('ring-2', i === index);
+                    dot.classList.toggle('ring-black', i === index);
+                    dot.classList.toggle('ring-offset-2', i === index);
+                });
+            };
+
+            const startAutoSlide = () => {
+                if (autoSlideTimer) clearInterval(autoSlideTimer);
+                autoSlideTimer = setInterval(() => {
+                    setActiveSlide((currentIndex + 1) % slides.length);
+                }, 2200);
+            };
+
+            dots.forEach((dot) => {
+                dot.addEventListener('click', () => {
+                    setActiveSlide(Number(dot.dataset.index || 0));
+                    startAutoSlide();
+                });
+            });
+
+            setActiveSlide(0);
+            startAutoSlide();
+
+            if (!prefersReducedMotion && parallaxVisual && parallaxImage) {
+                const maxParallax = 180;
+                let ticking = false;
+                const applyParallax = () => {
+                    const rect = parallaxVisual.getBoundingClientRect();
+                    const viewportCenter = window.innerHeight * 0.5;
+                    const offset = (viewportCenter - (rect.top + rect.height / 2)) * 0.22;
+                    const parallaxY = Math.max(-maxParallax, Math.min(maxParallax, offset));
+                    parallaxImage.style.transform = `translate3d(0, ${parallaxY}px, 0)`;
+                    ticking = false;
+                };
+                const onScroll = () => {
+                    if (ticking) return;
+                    ticking = true;
+                    window.requestAnimationFrame(applyParallax);
+                };
+                applyParallax();
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', onScroll);
+            }
+        });
+    </script>
 </body>
 </html>

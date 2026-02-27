@@ -5,17 +5,20 @@
 // サイト内のリンク先定義
 const PATHS = {
     home: 'index.html',
-    about: 'index.html#about',
+    about: 'about.html',
     ebike_intro: 'product-intro-street.html',
     ebike_buy: 'product-street.html',
     kickboard_intro: 'product-intro-tkg.html',
     kickboard_buy: 'product-tkg.html',
-    news: 'index.html#news',
-    partner: 'partner.html',
-    column: 'index.html#column',
-    support: 'contact.html',
+    accessories: 'accessories.html',
+    news: 'news-list.html',
+    partner: 'partner-list.html',
+    column: 'colum-list.html',
+    support: 'support.html',
     contact: 'contact.html',
-    privacy: 'contact.html', // TODO: プライバシーポリシー公開ページURLへ差し替え
+    privacy: 'privacy.html',
+    company: 'company.html',
+    faq: 'FAQ.html',
     instagram: 'contact.html', // TODO: 公式Instagram URLへ差し替え
     x: 'contact.html', // TODO: 公式X URLへ差し替え
     youtube: 'contact.html' // TODO: 公式YouTube URLへ差し替え
@@ -58,9 +61,11 @@ function renderHeader() {
                     <a href="${PATHS.kickboard_buy}" class="block px-4 py-3 text-[10px] tracking-widest hover:bg-gray-50">Buy eXs 1 TKG</a>
                 </div>
             </div>
+            <a href="${PATHS.accessories}" class="nav-item hover:opacity-60 transition">ACCESSORIES</a>
             <a href="${PATHS.news}" class="nav-item hover:opacity-60 transition">NEWS</a>
             <a href="${PATHS.partner}" class="nav-item hover:opacity-60 transition">PARTNER</a>
             <a href="${PATHS.column}" class="nav-item hover:opacity-60 transition">COLUMN</a>
+            <a href="${PATHS.support}" class="nav-item hover:opacity-60 transition">SUPPORT</a>
             <a href="${PATHS.contact}" class="bg-white text-black px-4 py-2 hover:bg-gray-200 transition shadow-sm border border-gray-200">CONTACT</a>
         </nav>
 
@@ -77,6 +82,7 @@ function renderHeader() {
             <a href="${PATHS.about}" class="mobile-link hover:text-gray-400">ABOUT</a>
             <a href="${PATHS.ebike_intro}" class="mobile-link hover:text-gray-400">E-BIKE</a>
             <a href="${PATHS.kickboard_intro}" class="mobile-link hover:text-gray-400">KICKBOARD</a>
+            <a href="${PATHS.accessories}" class="mobile-link hover:text-gray-400">ACCESSORIES</a>
             <a href="${PATHS.news}" class="mobile-link hover:text-gray-400">NEWS</a>
             <a href="${PATHS.partner}" class="mobile-link hover:text-gray-400">PARTNER</a>
             <a href="${PATHS.column}" class="mobile-link hover:text-gray-400">COLUMN</a>
@@ -97,26 +103,33 @@ function renderFooter() {
 
     const footerHTML = `
     <div class="container mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-start mb-16">
-            <div class="mb-10 md:mb-0">
+        <div class="grid grid-cols-1 md:grid-cols-[minmax(220px,1fr)_minmax(560px,1.45fr)] gap-12 items-start mb-16">
+            <div>
                 <a href="${PATHS.home}" class="mb-6 block hover:opacity-70 transition">
                     <img src="img/exs-logo-white.svg" alt="eXs ロゴ" class="h-10 w-auto object-contain">
                 </a>
                 <p class="text-xs text-gray-400 leading-relaxed mb-4">Custom Japan Co., Ltd.<br>株式会社カスタムジャパン</p>
                 <p class="text-xs text-gray-500">大阪市中央区日本橋2-9-16<br>日本橋センタービル6F</p>
             </div>
-            <div class="grid grid-cols-2 gap-x-12 gap-y-8 font-en text-xs tracking-widest">
-                <div class="flex flex-col space-y-4">
-                    <a href="${PATHS.about}" class="hover:text-gray-400 transition">ABOUT</a>
-                    <a href="${PATHS.ebike_intro}" class="hover:text-gray-400 transition">E-BIKE</a>
-                    <a href="${PATHS.kickboard_intro}" class="hover:text-gray-400 transition">KICKBOARD</a>
-                    <a href="${PATHS.news}" class="hover:text-gray-400 transition">NEWS</a>
+            <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-x-12 gap-y-8 font-en text-xs tracking-widest">
+                <div class="w-full flex flex-col space-y-4">
+                    <a href="${PATHS.ebike_intro}" class="hover:text-gray-400 transition">eXs Street (商品詳細)</a>
+                    <a href="${PATHS.ebike_buy}" class="hover:text-gray-400 transition">eXs Street (購入)</a>
+                    <a href="${PATHS.kickboard_intro}" class="hover:text-gray-400 transition">eXs 1 TKG (商品詳細)</a>
+                    <a href="${PATHS.kickboard_buy}" class="hover:text-gray-400 transition">eXs 1 TKG (購入)</a>
+                    <a href="${PATHS.accessories}" class="hover:text-gray-400 transition">ACCESSORIES</a>
                 </div>
-                <div class="flex flex-col space-y-4">
-                    <a href="${PATHS.partner}" class="hover:text-gray-400 transition">PARTNER</a>
+                <div class="w-full flex flex-col space-y-4">
+                    <a href="${PATHS.about}" class="hover:text-gray-400 transition">ABOUT</a>
+                    <a href="${PATHS.news}" class="hover:text-gray-400 transition">NEWS</a>
                     <a href="${PATHS.column}" class="hover:text-gray-400 transition">COLUMN</a>
+                    <a href="${PATHS.partner}" class="hover:text-gray-400 transition">PARTNER</a>
+                </div>
+                <div class="w-full flex flex-col space-y-4">
+                    <a href="${PATHS.faq}" class="hover:text-gray-400 transition">FAQ</a>
                     <a href="${PATHS.support}" class="hover:text-gray-400 transition">SUPPORT</a>
                     <a href="${PATHS.contact}" class="hover:text-gray-400 transition">CONTACT</a>
+                    <a href="${PATHS.company}" class="hover:text-gray-400 transition">COMPANY</a>
                     <a href="${PATHS.privacy}" class="hover:text-gray-400 transition">PRIVACY POLICY</a>
                 </div>
             </div>

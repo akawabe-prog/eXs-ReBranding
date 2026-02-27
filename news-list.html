@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS | 電動アシスト自転車・eBike・電動キックボード最新情報 | eXs</title>
+    <meta name="description" content="電動アシスト自転車、ファットバイク、eBike、電動キックボードに関する新製品、イベント、プレスリリースの最新情報を掲載。">
+    <meta name="keywords" content="電動アシスト自転車,ファットバイク,eBike,電動キックボード,特定小型原付,eXs">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://exs.customjapan.net/news-list.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="eXs">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://exs.customjapan.net/news-list.html">
+    <meta property="og:title" content="NEWS | 電動アシスト自転車・eBike・電動キックボード最新情報 | eXs">
+    <meta property="og:description" content="電動アシスト自転車、ファットバイク、eBike、電動キックボードに関する新製品、イベント、プレスリリースの最新情報を掲載。">
+    <meta property="og:image" content="img/eXsStreetImage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NEWS | 電動アシスト自転車・eBike・電動キックボード最新情報 | eXs">
+    <meta name="twitter:description" content="電動アシスト自転車、ファットバイク、eBike、電動キックボードに関する新製品、イベント、プレスリリースの最新情報を掲載。">
+    <meta name="twitter:image" content="img/eXsStreetImage.jpg">
+
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                        inter: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#111111',
+                            gray: '#F9FAFB',
+                            darkgray: '#333333',
+                            accent: '#FFFFFF'
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.15em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* style.css (User Provided) */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .font-en {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* スクロール連動フェードイン */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), transform 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* フィルターボタンのアクティブスタイル */
+        .filter-btn.active {
+            background-color: #111;
+            color: #fff;
+            border-color: #111;
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="font-sans text-brand-black antialiased bg-white pt-20 flex flex-col min-h-screen">
+
+    <!-- 共通ヘッダー -->
+    <header id="common-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-black text-white"></header>
+
+    <main class="flex-grow">
+        <!-- タイトルセクション -->
+        <section class="bg-brand-gray py-24 md:py-32 px-6 text-center relative overflow-hidden">
+            <!-- 装飾的な背景文字 -->
+            <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10rem] md:text-[15rem] font-en font-bold text-gray-200/50 pointer-events-none select-none z-0">NEWS</span>
+            
+            <div class="relative z-10">
+                <h1 class="font-en text-4xl md:text-5xl font-bold tracking-tighter mb-6 reveal">NEWS</h1>
+                <p class="text-xs md:text-sm text-gray-500 tracking-[0.2em] reveal" style="transition-delay: 100ms;">最新情報・お知らせ</p>
+            </div>
+        </section>
+
+        <!-- フィルターセクション -->
+        <section class="container mx-auto max-w-5xl px-6 mt-16 mb-12 reveal" style="transition-delay: 200ms;">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-gray-200 pb-8">
+                <!-- カテゴリフィルター -->
+                <div class="flex flex-wrap justify-center gap-3" id="category-filter">
+                    <button class="filter-btn active px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="all">ALL</button>
+                    <button class="filter-btn px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="PRESS">PRESS</button>
+                    <button class="filter-btn px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="EVENT">EVENT</button>
+                    <button class="filter-btn px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="INFO">INFO</button>
+                    <button class="filter-btn px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="MEDIA">MEDIA</button>
+                </div>
+
+                <!-- 年別アーカイブ -->
+                <div class="relative group">
+                    <select id="year-filter" class="appearance-none bg-transparent border-b border-gray-300 py-2 pr-8 pl-2 text-sm font-en font-bold cursor-pointer focus:outline-none focus:border-black transition-colors text-gray-600 hover:text-black">
+                        <option value="all">ALL YEARS</option>
+                        <option value="2026">2026</option>
+                        <option value="2025">2025</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-gray-400 pointer-events-none transition-transform group-hover:text-black"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- ニュースリスト -->
+        <section class="container mx-auto max-w-5xl px-6 pb-32">
+            <div class="space-y-0" id="news-container">
+                <!-- News Item Loop -->
+                <article id="news-event-20260315" class="reveal border-b border-gray-100 news-item" data-year="2026" data-category="EVENT">
+                    <details class="group">
+                        <summary class="list-none py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 cursor-pointer flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12">
+                            <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
+                                <time datetime="2026-03-15" class="text-sm text-gray-400 font-en tracking-wider">2026.03.15</time>
+                                <span class="text-[10px] font-bold px-2.5 py-1 bg-black text-white tracking-wider">EVENT</span>
+                            </div>
+                            <div class="flex-grow flex justify-between items-center gap-4">
+                                <h2 class="text-base md:text-lg font-medium leading-relaxed">東京モーターサイクルショー2026 出展のお知らせ</h2>
+                                <span class="hidden md:inline-block text-gray-400 transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="pb-10 md:pb-12 px-4 -mx-4 text-sm leading-relaxed text-gray-600">
+                            eXs最新モデルの展示・試乗に関する情報を公開予定です。詳細は順次お知らせします。
+                        </div>
+                    </details>
+                </article>
+
+                <article id="news-info-20260302" class="reveal border-b border-gray-100 news-item" data-year="2026" data-category="INFO">
+                    <details class="group">
+                        <summary class="list-none py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 cursor-pointer flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12">
+                            <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
+                                <time datetime="2026-03-02" class="text-sm text-gray-400 font-en tracking-wider">2026.03.02</time>
+                                <span class="text-[10px] font-bold px-2.5 py-1 bg-gray-200 text-gray-700 tracking-wider">INFO</span>
+                            </div>
+                            <div class="flex-grow flex justify-between items-center gap-4">
+                                <h2 class="text-base md:text-lg font-medium leading-relaxed">eXs公式サイトをリニューアルオープンしました</h2>
+                                <span class="hidden md:inline-block text-gray-400 transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="pb-10 md:pb-12 px-4 -mx-4 text-sm leading-relaxed text-gray-600">
+                            新製品情報・サポート・ブランドストーリーをより見やすく再構成し、モバイル表示も最適化しました。
+                        </div>
+                    </details>
+                </article>
+
+                <article id="press-cyclemode" class="reveal border-b border-gray-100 news-item" data-year="2026" data-category="PRESS">
+                    <details class="group">
+                        <summary class="list-none py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 cursor-pointer flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12">
+                            <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
+                                <time datetime="2026-02-24" class="text-sm text-gray-400 font-en tracking-wider">2026.02.24</time>
+                                <span class="text-[10px] font-bold px-2.5 py-1 bg-black text-white tracking-wider">PRESS</span>
+                            </div>
+                            <div class="flex-grow flex justify-between items-center gap-4">
+                                <h2 class="text-base md:text-lg font-medium leading-relaxed">サイクルモードライド大阪2026への初出展が決定しました。</h2>
+                                <span class="hidden md:inline-block text-gray-400 transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="pb-10 md:pb-12 px-4 -mx-4 text-sm leading-relaxed text-gray-600 space-y-4">
+                            <p>CYCLE MODE RIDE OSAKA 2026への初出展を決定しました。eXs Streetの試乗体験や、会場限定企画の実施を予定しています。</p>
+                            <p>
+                                詳細リリース：
+                                <a href="https://prtimes.jp/main/html/rd/p/000000074.000070755.html" target="_blank" rel="noopener noreferrer" class="underline hover:text-black transition-colors">https://prtimes.jp/main/html/rd/p/000000074.000070755.html</a>
+                            </p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="reveal border-b border-gray-100 group news-item" data-year="2026" data-category="MEDIA">
+                    <a href="#" class="block py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 group">
+                        <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
+                            <time datetime="2026-02-20" class="text-sm text-gray-400 font-en tracking-wider group-hover:text-black transition-colors">2026.02.20</time>
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-gray-200 text-gray-700 tracking-wider">MEDIA</span>
+                        </div>
+                        <div class="flex-grow flex justify-between items-center gap-4">
+                            <h2 class="text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-600 transition-colors">
+                                雑誌「MonoMax」3月号にeXs Streetが掲載されました
+                            </h2>
+                            <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-300 group-hover:border-black group-hover:bg-black group-hover:text-white transition-all duration-300 transform group-hover:translate-x-2">
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="reveal border-b border-gray-100 group news-item" data-year="2026" data-category="INFO">
+                    <a href="#" class="block py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 group">
+                        <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
+                            <time datetime="2026-02-10" class="text-sm text-gray-400 font-en tracking-wider group-hover:text-black transition-colors">2026.02.10</time>
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-gray-200 text-gray-700 tracking-wider">INFO</span>
+                        </div>
+                        <div class="flex-grow flex justify-between items-center gap-4">
+                            <h2 class="text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-600 transition-colors">
+                                システムメンテナンスのお知らせ（2/15 2:00-4:00）
+                            </h2>
+                            <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-300 group-hover:border-black group-hover:bg-black group-hover:text-white transition-all duration-300 transform group-hover:translate-x-2">
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article id="news-press-20250314" class="reveal border-b border-gray-100 news-item" data-year="2025" data-category="PRESS">
+                    <details class="group">
+                        <summary class="list-none py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 cursor-pointer flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12">
+                            <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
+                                <time datetime="2025-03-14" class="text-sm text-gray-400 font-en tracking-wider">2025.03.14</time>
+                                <span class="text-[10px] font-bold px-2.5 py-1 bg-black text-white tracking-wider">PRESS</span>
+                            </div>
+                            <div class="flex-grow flex justify-between items-center gap-4">
+                                <h2 class="text-base md:text-lg font-medium leading-relaxed">大阪・関西万博の公式サプライヤーとしてeXs 1 TKGを提供開始しました。</h2>
+                                <span class="hidden md:inline-block text-gray-400 transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="pb-10 md:pb-12 px-4 -mx-4 text-sm leading-relaxed text-gray-600">
+                            万博会場バックヤードでの関係者移動に向け、eXs 1 TKGの提供を開始しました。
+                        </div>
+                    </details>
+                </article>
+
+                <!-- 該当なしメッセージ -->
+                <div id="no-result" class="hidden py-32 text-center text-gray-400 text-sm tracking-widest">該当する記事はありません。</div>
+            </div>
+
+            <!-- ページネーション -->
+            <div class="mt-24 text-center reveal">
+                <nav class="inline-flex space-x-4" aria-label="Pagination">
+                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-brand-black text-white text-sm font-en font-bold shadow-lg hover:bg-gray-800 transition-transform hover:-translate-y-1">1</a>
+                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-500 text-sm font-en font-bold hover:border-black hover:text-black transition-all">2</a>
+                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-500 text-sm font-en font-bold hover:border-black hover:text-black transition-all"><i class="fa-solid fa-chevron-right text-xs"></i></a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- 共通フッター -->
+    <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
+
+    <!-- 共通スクリプト -->
+    <script src="JS/components.js"></script>
+    <script src="JS/script.js"></script>
+
+    <!-- ユーザー指定スクリプト -->
+    <script>
+        // script.js (User Provided)
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealOptions = {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.1
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+
+            // ニュースフィルタリング機能
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const yearFilter = document.getElementById('year-filter');
+            const newsItems = document.querySelectorAll('.news-item');
+            const noResultMsg = document.getElementById('no-result');
+
+            let currentCategory = 'all';
+            let currentYear = 'all';
+
+            function filterNews() {
+                let visibleCount = 0;
+
+                newsItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    const itemYear = item.getAttribute('data-year');
+
+                    const categoryMatch = currentCategory === 'all' || itemCategory === currentCategory;
+                    const yearMatch = currentYear === 'all' || itemYear === currentYear;
+
+                    if (categoryMatch && yearMatch) {
+                        item.style.display = 'block';
+                        // フェードインアニメーションを再適用するためにクラスを操作（任意）
+                        setTimeout(() => item.classList.add('is-visible'), 50);
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                noResultMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+            }
+
+            // カテゴリボタンクリックイベント
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    currentCategory = btn.getAttribute('data-filter');
+                    filterNews();
+                });
+            });
+
+            // 年セレクトボックス変更イベント
+            yearFilter.addEventListener('change', (e) => {
+                currentYear = e.target.value;
+                filterNews();
+            });
+        });
+    </script>
+</body>
+</html>

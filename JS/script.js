@@ -159,28 +159,50 @@ function updateImage(src) {
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. フェードアップアニメーション (全ページ共通)
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    // 1. フェードアップアニメーション (全ページ共通) - prefers-reduced-motion対応
+    const fadeElements = document.querySelectorAll('.fade-up, .fade-in-up');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const fadeElements = document.querySelectorAll('.fade-up');
-    if (fadeElements.length > 0) {
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -10% 0px', // 少し画面内に入ってから発火
+            threshold: 0.1
+        };
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // 既存CSS用
+                    entry.target.classList.add('is-visible'); // 新規CSS用
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
         fadeElements.forEach(el => observer.observe(el));
+    } else {
+        // アニメーション無効設定または非対応ブラウザの場合は即時表示
+        fadeElements.forEach(el => {
+            el.classList.add('visible', 'is-visible');
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
     }
 
-    // 2. FAQ タブ切り替え
+    // 2. スクロール時のヘッダー制御（共通ヘッダー用）
+    const header = document.getElementById('common-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    }
+
+    // 3. FAQ タブ切り替え
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     if (tabButtons.length > 0 && tabContents.length > 0) {

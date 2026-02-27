@@ -110,6 +110,7 @@
                 <!-- カテゴリフィルター -->
                 <div class="flex flex-wrap justify-center gap-3" id="category-filter">
                     <button class="filter-btn active px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="all">ALL</button>
+                    <button class="filter-btn px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="PRESS">PRESS</button>
                     <button class="filter-btn px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="EVENT">EVENT</button>
                     <button class="filter-btn px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="INFO">INFO</button>
                     <button class="filter-btn px-6 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition-all duration-300" data-filter="MEDIA">MEDIA</button>
@@ -120,6 +121,7 @@
                     <select id="year-filter" class="appearance-none bg-transparent border-b border-gray-300 py-2 pr-8 pl-2 text-sm font-en font-bold cursor-pointer focus:outline-none focus:border-black transition-colors text-gray-600 hover:text-black">
                         <option value="all">ALL YEARS</option>
                         <option value="2026">2026</option>
+                        <option value="2025">2025</option>
                     </select>
                     <i class="fa-solid fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-gray-400 pointer-events-none transition-transform group-hover:text-black"></i>
                 </div>
@@ -129,7 +131,6 @@
         <!-- ニュースリスト -->
         <section class="container mx-auto max-w-5xl px-6 pb-32">
             <div class="space-y-0" id="news-container">
-                
                 <!-- News Item Loop -->
                 <article class="reveal border-b border-gray-100 group news-item" data-year="2026" data-category="EVENT">
                     <a href="#" class="block py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 group">
@@ -151,18 +152,42 @@
                 <article class="reveal border-b border-gray-100 group news-item" data-year="2026" data-category="INFO">
                     <a href="#" class="block py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 group">
                         <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
-                            <time datetime="2026-03-01" class="text-sm text-gray-400 font-en tracking-wider group-hover:text-black transition-colors">2026.03.01</time>
+                            <time datetime="2026-03-02" class="text-sm text-gray-400 font-en tracking-wider group-hover:text-black transition-colors">2026.03.02</time>
                             <span class="text-[10px] font-bold px-2.5 py-1 bg-gray-200 text-gray-700 tracking-wider">INFO</span>
                         </div>
                         <div class="flex-grow flex justify-between items-center gap-4">
                             <h2 class="text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-600 transition-colors">
-                                eXs 1 TKG 予約販売開始と発送時期について
+                                eXs公式サイトをリニューアルオープンしました
                             </h2>
                             <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-300 group-hover:border-black group-hover:bg-black group-hover:text-white transition-all duration-300 transform group-hover:translate-x-2">
                                 <i class="fa-solid fa-arrow-right text-sm"></i>
                             </div>
                         </div>
                     </a>
+                </article>
+
+                <article id="press-cyclemode" class="reveal border-b border-gray-100 news-item" data-year="2026" data-category="PRESS">
+                    <details class="group">
+                        <summary class="list-none py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 cursor-pointer flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12">
+                            <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
+                                <time datetime="2026-02-24" class="text-sm text-gray-400 font-en tracking-wider">2026.02.24</time>
+                                <span class="text-[10px] font-bold px-2.5 py-1 bg-black text-white tracking-wider">PRESS</span>
+                            </div>
+                            <div class="flex-grow flex justify-between items-center gap-4">
+                                <h2 class="text-base md:text-lg font-medium leading-relaxed">サイクルモードライド大阪2026への初出展が決定しました。</h2>
+                                <span class="hidden md:inline-block text-gray-400 transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="pb-10 md:pb-12 px-4 -mx-4 text-sm leading-relaxed text-gray-600 space-y-4">
+                            <p>CYCLE MODE RIDE OSAKA 2026への初出展を決定しました。eXs Streetの試乗体験や、会場限定企画の実施を予定しています。</p>
+                            <p>
+                                詳細リリース：
+                                <a href="https://prtimes.jp/main/html/rd/p/000000074.000070755.html" target="_blank" rel="noopener noreferrer" class="underline hover:text-black transition-colors">https://prtimes.jp/main/html/rd/p/000000074.000070755.html</a>
+                            </p>
+                        </div>
+                    </details>
                 </article>
 
                 <article class="reveal border-b border-gray-100 group news-item" data-year="2026" data-category="MEDIA">
@@ -191,6 +216,23 @@
                         <div class="flex-grow flex justify-between items-center gap-4">
                             <h2 class="text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-600 transition-colors">
                                 システムメンテナンスのお知らせ（2/15 2:00-4:00）
+                            </h2>
+                            <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-300 group-hover:border-black group-hover:bg-black group-hover:text-white transition-all duration-300 transform group-hover:translate-x-2">
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="reveal border-b border-gray-100 group news-item" data-year="2025" data-category="PRESS">
+                    <a href="contact.html" class="block py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 group">
+                        <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
+                            <time datetime="2025-03-14" class="text-sm text-gray-400 font-en tracking-wider group-hover:text-black transition-colors">2025.03.14</time>
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-black text-white tracking-wider">PRESS</span>
+                        </div>
+                        <div class="flex-grow flex justify-between items-center gap-4">
+                            <h2 class="text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-600 transition-colors">
+                                大阪・関西万博の公式サプライヤーとしてeXs 1 TKGを提供開始しました。
                             </h2>
                             <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-300 group-hover:border-black group-hover:bg-black group-hover:text-white transition-all duration-300 transform group-hover:translate-x-2">
                                 <i class="fa-solid fa-arrow-right text-sm"></i>
