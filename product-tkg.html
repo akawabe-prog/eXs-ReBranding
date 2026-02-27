@@ -70,7 +70,7 @@
                 
                 <div class="w-full lg:w-3/5">
                     <div class="bg-gray-100 aspect-[4/3] mb-4 overflow-hidden relative group cursor-zoom-in">
-                        <img src="https://placehold.co/1200x900/111/fff?text=eXs+1+TKG+Main" alt="eXs 1 TKG" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" id="main-image">
+                        <img src="img/eXs-1-TKG_item_1.jpg" alt="eXs 1 TKG" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" id="main-image">
                         
                         <div class="absolute top-4 right-4 flex flex-col items-end gap-2">
                             <span class="bg-red-600 text-white text-xs px-3 py-1 font-bold tracking-widest shadow-sm">大阪万博採用モデル</span>
@@ -130,12 +130,11 @@
                                 Yahoo!ショッピングで購入する
                             </a>
                         </div>
-                        <button id="verify-btn" type="button" class="w-full bg-brand-stripe text-white font-en font-bold py-5 tracking-widest text-lg hover:opacity-90 transition mb-2 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-id-card"></i> 年齢確認をして購入へ
+                        <button id="add-to-cart-btn" type="button" class="w-full bg-brand-black text-white font-en font-bold py-5 tracking-widest text-lg hover:bg-gray-800 transition mb-2">
+                            ADD TO CART
                         </button>
                         <p id="cart-message" class="text-xs text-center mb-4 hidden"></p>
                         <p class="text-xs text-gray-400 text-center">
-                            ※ 特定小型原付のため、Stripe Identityによる本人確認（16歳以上）が必要です。<br>
                             ※ 送料無料キャンペーン実施中 ※沖縄・離島は別途送料 ¥11,000がかかります<span id="shipping-estimate" class="hidden"></span>
                             <!-- TODO(campaign-end): キャンペーン終了後の送料テキストに差し替え -->
                         </p>
@@ -165,6 +164,94 @@
                         <a href="support.html" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">SUPPORTの詳細はこちら</a>
                     </div>
                 </details>
+
+                <details class="group border-b border-gray-200">
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>FAQ</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <details class="group border-b border-gray-200 mb-6">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">法規・ルール</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">免許やナンバー登録は必要ですか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>eXs 1 TKGは特定小型原付区分です。運転免許は不要ですが、ナンバー取得と自賠責保険加入が必要です。16歳未満は運転できません。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">ヘルメット着用は必須ですか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>ヘルメットは努力義務です。安全のため、乗車時はヘルメット着用を推奨します。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+
+                        <details class="group border-b border-gray-200 mb-6">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">購買・配送</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">注文後どのくらいで届きますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>発送目安は3〜5営業日です。配送地域や繁忙期により前後する場合があります。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">返品・キャンセルは可能ですか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>商品到着後7日以内にご連絡いただいた場合、キャンセルポリシーに基づき対応します。走行済み車両や開封済み品は対象外です。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+
+                        <details class="group border-b border-gray-200 mb-2">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">バッテリー・充電</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">充電時間と走行距離の目安は？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>満充電の目安は約4〜6時間、走行距離は使用条件により約20〜25kmです。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">雨の日でも使用できますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>生活防水仕様ですが、豪雨や深い水たまり走行は故障リスクがあります。雨天時は十分注意してご使用ください。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+                    </div>
+                </details>
             </div>
 
             <section class="mt-32 mb-20 fade-up">
@@ -187,20 +274,23 @@
             <section class="mb-32">
                 <div class="flex flex-col md:flex-row items-center gap-12 mb-24 fade-up">
                     <div class="w-full md:w-1/2">
-                        <img src="https://placehold.co/800x600/222/fff?text=Compact+Folding" alt="Folding Mechanism" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <div class="relative overflow-hidden">
+                            <img src="img/eXs 1 TKG_item_folding.jpg" alt="Fold and Carry Design" class="w-full h-auto object-cover transition duration-700">
+                            <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
+                        </div>
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
-                        <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. COMPACT FOLDING</span>
-                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">3ステップでコンパクトに変形。<br>大きな車体も、折りたたむことで移動と保管の幅が広がります。</h3>
+                        <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. FOLD & CARRY</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">2ステップでコンパクトに折りたたみ。<br>移動も持ち運びも、もっと軽やかに。</h3>
                         <p class="text-sm text-gray-600 leading-loose text-justify">
-                            3ステップでコンパクトに変形。大きな車体も、折りたたむことで移動と保管の幅が広がります。
+                            車載時の積み込みや保管時の取り回しに配慮した設計。折りたたみ後は扱いやすいサイズになり、日常の移動や持ち運びをスムーズにします。
                         </p>
                     </div>
                 </div>
 
                 <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24 fade-up">
                     <div class="w-full md:w-1/2">
-                        <img src="img/expo_eXs.jpg" alt="Expo 2025 Official" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="img/expo_eXs.jpg" alt="Expo 2025 Official" class="w-full h-auto object-cover transition duration-700">
                     </div>
                     <div class="w-full md:w-1/2 md:pr-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">02. OFFICIAL ADOPTION</span>
@@ -213,8 +303,11 @@
 
                 <div class="flex flex-col md:flex-row items-center gap-12 fade-up">
                     <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
-                        <img src="https://placehold.co/400x400/111/fff?text=Puncture+Free" alt="Tire" class="w-full h-auto object-cover">
-                        <img src="https://placehold.co/400x400/111/fff?text=License+Free" alt="Plate" class="w-full h-auto object-cover">
+                        <img src="https://exs.mobi/wp-content/uploads/sites/7/2023/08/eXs1TKG_product_02-300x200.jpg" alt="Tire" class="w-full h-auto object-cover">
+                        <div class="relative overflow-hidden">
+                            <img src="https://exs.mobi/wp-content/uploads/sites/7/2023/08/eXs1TKG_product_03-300x249.jpg" alt="Plate" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
+                        </div>
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">03. SAFETY & LEGAL</span>
@@ -289,46 +382,6 @@
         </div>
     </main>
 
-    <div id="stripe-modal" class="fixed inset-0 z-[60] bg-black/50 hidden flex items-center justify-center backdrop-blur-sm">
-        <div class="bg-white w-full max-w-md rounded-xl shadow-2xl overflow-hidden p-0 m-4">
-            <div class="bg-[#635BFF] p-6 text-white text-center">
-                <i class="fa-brands fa-stripe text-4xl mb-2"></i>
-                <h3 class="font-bold text-lg">Identity Verification</h3>
-                <p class="text-xs opacity-80">安全な取引のため、本人確認を行います。</p>
-            </div>
-            
-            <div class="p-8">
-                <div id="verify-step-1">
-                    <p class="text-sm text-gray-600 mb-6 text-center leading-relaxed">
-                        本製品は16歳未満の方への販売が禁止されています。<br>
-                        運転免許証またはマイナンバーカードをご用意ください。
-                    </p>
-                    <button id="start-verification-btn" type="button" class="w-full bg-[#635BFF] text-white font-bold py-3 rounded-md hover:bg-[#534be0] transition mb-3">
-                        本人確認を開始する
-                    </button>
-                    <button id="close-modal-btn" type="button" class="w-full text-gray-500 text-xs py-2 hover:underline">
-                        キャンセル
-                    </button>
-                </div>
-                <div id="verify-step-2" class="hidden text-center py-8">
-                    <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[#635BFF] mx-auto mb-4"></div>
-                    <p class="text-sm font-bold text-gray-800">確認中...</p>
-                    <p class="text-xs text-gray-500">Stripeのセキュアな環境で情報を照合しています。</p>
-                </div>
-                <div id="verify-step-3" class="hidden text-center">
-                    <div class="w-12 h-12 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">確認完了</h3>
-                    <p class="text-sm text-gray-600 mb-6">年齢確認が完了しました。<br>購入手続きへ進みます。</p>
-                    <button id="go-to-cart-btn" type="button" class="w-full bg-black text-white font-bold py-3 rounded-md hover:bg-gray-800 transition">
-                        カートに追加する
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
 
     <script src="JS/components.js"></script>
@@ -344,12 +397,12 @@
                 description: '免許不要（16歳以上）で乗れる特定小型原動機付自転車モデル。大阪・関西万博のバックヤードでも活躍した高い信頼性。コンパクトに折りたため、車載や室内保管も容易です。',
                 shippingEstimate: '3〜5営業日',
                 images: [
-                    { label: 'Main', src: 'https://placehold.co/1200x900/111/fff?text=Main', thumb: 'https://placehold.co/200x200/111/fff?text=Main' },
-                    { label: 'Fold', src: 'https://placehold.co/1200x900/333/fff?text=Fold', thumb: 'https://placehold.co/200x200/333/fff?text=Fold' },
-                    { label: 'Panel', src: 'https://placehold.co/1200x900/555/fff?text=Panel', thumb: 'https://placehold.co/200x200/555/fff?text=Panel' },
-                    { label: 'Light', src: 'https://placehold.co/1200x900/777/fff?text=Light', thumb: 'https://placehold.co/200x200/777/fff?text=Light' },
-                    { label: 'Tire', src: 'https://placehold.co/1200x900/999/fff?text=Tire', thumb: 'https://placehold.co/200x200/999/fff?text=Tire' },
-                    { label: 'Back', src: 'https://placehold.co/1200x900/bbb/fff?text=Back', thumb: 'https://placehold.co/200x200/bbb/fff?text=Back' }
+                    { label: 'Main', src: 'img/eXs-1-TKG_item_1.jpg', thumb: 'img/eXs-1-TKG_item_1.jpg' },
+                    { label: 'Display', src: 'img/eXs 1 TKG_item_display.JPG', thumb: 'img/eXs 1 TKG_item_display.JPG' },
+                    { label: 'Rear', src: 'img/eXs 1 TKG_item_rear.JPG', thumb: 'img/eXs 1 TKG_item_rear.JPG' },
+                    { label: 'Folding A', src: 'img/eXs 1 TKG_item_folding.jpg', thumb: 'img/eXs 1 TKG_item_folding.jpg' },
+                    { label: 'Top', src: 'img/eXs-1-TKG_item_5.jpg', thumb: 'img/eXs-1-TKG_item_5.jpg' },
+                    { label: 'Sadle', src: 'img/eXs-1-TKG_item_sadle.png', thumb: 'img/eXs-1-TKG_item_sadle.png' }
                 ],
                 productTypes: [
                     { id: '27882603', label: 'eXs 1 TKG (車体のみ)', price: 69080, rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/27882603/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/27882603.html' },
@@ -431,7 +484,7 @@
                 if (!container) return;
                 container.innerHTML = images.map((image, index) => `
                     <button type="button" data-index="${index}" class="thumbnail-btn bg-gray-50 aspect-square border p-1 transition hover:opacity-75 ${state.selectedImageIndex === index ? 'border-black' : 'border-transparent hover:border-gray-300'}">
-                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-contain">
+                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-cover">
                     </button>
                 `).join('');
                 container.querySelectorAll('.thumbnail-btn').forEach((button) => {
@@ -463,6 +516,15 @@
                         state.selectedTypeIndex = Number(radio.value);
                         updateShopLinks();
                         updateTotalPrice();
+
+                        const selectedType = state.data.productTypes[state.selectedTypeIndex];
+                        const isSaddleSet = selectedType?.label && selectedType.label.includes('サドル');
+                        const nextImageIndex = isSaddleSet ? 5 : 0;
+                        if (state.data.images[nextImageIndex]) {
+                            state.selectedImageIndex = nextImageIndex;
+                            updateImage(state.data.images[nextImageIndex].src);
+                            renderThumbnails(state.data.images);
+                        }
                     });
                 });
             };
@@ -538,36 +600,16 @@
                 $('product-container')?.classList.remove('opacity-0');
             };
 
-            const openModal = () => {
-                $('stripe-modal')?.classList.remove('hidden');
-            };
-
-            const closeModal = () => {
-                $('stripe-modal')?.classList.add('hidden');
-                $('verify-step-1')?.classList.remove('hidden');
-                $('verify-step-2')?.classList.add('hidden');
-                $('verify-step-3')?.classList.add('hidden');
-            };
-
-            const startVerification = () => {
-                $('verify-step-1')?.classList.add('hidden');
-                $('verify-step-2')?.classList.remove('hidden');
-                window.setTimeout(() => {
-                    $('verify-step-2')?.classList.add('hidden');
-                    $('verify-step-3')?.classList.remove('hidden');
-                }, 1200);
-            };
-
             const addCurrentItemToCart = async () => {
                 const selected = state.data.productTypes[state.selectedTypeIndex];
                 if (!selected?.id) {
                     setCartMessage('商品IDが取得できないため、カート追加できません。', 'error');
                     return;
                 }
-                const goBtn = $('go-to-cart-btn');
-                if (goBtn) {
-                    goBtn.disabled = true;
-                    goBtn.classList.add('opacity-60', 'cursor-not-allowed');
+                const addToCartBtn = $('add-to-cart-btn');
+                if (addToCartBtn) {
+                    addToCartBtn.disabled = true;
+                    addToCartBtn.classList.add('opacity-60', 'cursor-not-allowed');
                 }
                 setCartMessage('カートに追加中です...', 'info');
                 try {
@@ -577,24 +619,20 @@
                         setCartMessage(message, 'error');
                     } else {
                         setCartMessage('カートに追加しました。', 'success');
-                        closeModal();
                     }
                 } catch (error) {
                     console.error('[product-tkg(API)] add to cart failed', error);
                     setCartMessage('通信エラーのため、カート追加に失敗しました。', 'error');
                 } finally {
-                    if (goBtn) {
-                        goBtn.disabled = false;
-                        goBtn.classList.remove('opacity-60', 'cursor-not-allowed');
+                    if (addToCartBtn) {
+                        addToCartBtn.disabled = false;
+                        addToCartBtn.classList.remove('opacity-60', 'cursor-not-allowed');
                     }
                 }
             };
 
-            const bindModalEvents = () => {
-                $('verify-btn')?.addEventListener('click', openModal);
-                $('close-modal-btn')?.addEventListener('click', closeModal);
-                $('start-verification-btn')?.addEventListener('click', startVerification);
-                $('go-to-cart-btn')?.addEventListener('click', addCurrentItemToCart);
+            const bindCartButton = () => {
+                $('add-to-cart-btn')?.addEventListener('click', addCurrentItemToCart);
             };
 
             const renderProduct = (data) => {
@@ -628,7 +666,7 @@
                 }
                 const data = await fetchApiData();
                 renderProduct(data);
-                bindModalEvents();
+                bindCartButton();
                 showContent();
             });
         })();

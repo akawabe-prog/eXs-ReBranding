@@ -641,7 +641,7 @@
                         data-index="${index}"
                         class="thumbnail-btn bg-gray-50 aspect-square border p-1 transition hover:opacity-75 ${selectedIndex === index ? 'border-black' : 'border-transparent hover:border-gray-300'}"
                     >
-                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-contain">
+                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-cover">
                     </button>
                 `).join('');
                 container.querySelectorAll('.thumbnail-btn').forEach((button) => {

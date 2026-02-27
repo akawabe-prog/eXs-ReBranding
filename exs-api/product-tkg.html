@@ -70,7 +70,7 @@
                 
                 <div class="w-full lg:w-3/5">
                     <div class="bg-gray-100 aspect-[4/3] mb-4 overflow-hidden relative group cursor-zoom-in">
-                        <img src="https://placehold.co/1200x900/111/fff?text=eXs+1+TKG+Main" alt="eXs 1 TKG" class="w-full h-full object-contain p-8 transition-transform duration-500 hover:scale-105" id="main-image">
+                        <img src="img/eXs-1-TKG_item_1.jpg" alt="eXs 1 TKG" class="w-full h-full object-contain p-8 transition-transform duration-500 hover:scale-105" id="main-image">
                         
                         <div class="absolute top-4 right-4 flex flex-col items-end gap-2">
                             <span class="bg-red-600 text-white text-xs px-3 py-1 font-bold tracking-widest shadow-sm">大阪万博採用モデル</span>
@@ -344,12 +344,12 @@
                 description: '免許不要（16歳以上）で乗れる特定小型原動機付自転車モデル。大阪・関西万博のバックヤードでも活躍した高い信頼性。コンパクトに折りたため、車載や室内保管も容易です。',
                 shippingEstimate: '3〜5営業日',
                 images: [
-                    { label: 'Main', src: 'https://placehold.co/1200x900/111/fff?text=Main', thumb: 'https://placehold.co/200x200/111/fff?text=Main' },
-                    { label: 'Fold', src: 'https://placehold.co/1200x900/333/fff?text=Fold', thumb: 'https://placehold.co/200x200/333/fff?text=Fold' },
-                    { label: 'Panel', src: 'https://placehold.co/1200x900/555/fff?text=Panel', thumb: 'https://placehold.co/200x200/555/fff?text=Panel' },
-                    { label: 'Light', src: 'https://placehold.co/1200x900/777/fff?text=Light', thumb: 'https://placehold.co/200x200/777/fff?text=Light' },
-                    { label: 'Tire', src: 'https://placehold.co/1200x900/999/fff?text=Tire', thumb: 'https://placehold.co/200x200/999/fff?text=Tire' },
-                    { label: 'Back', src: 'https://placehold.co/1200x900/bbb/fff?text=Back', thumb: 'https://placehold.co/200x200/bbb/fff?text=Back' }
+                    { label: 'Main', src: 'img/eXs-1-TKG_item_1.jpg', thumb: 'img/eXs-1-TKG_item_1.jpg' },
+                    { label: 'Display', src: 'img/eXs 1 TKG_item_display.JPG', thumb: 'img/eXs 1 TKG_item_display.JPG' },
+                    { label: 'Rear', src: 'img/eXs 1 TKG_item_rear.JPG', thumb: 'img/eXs 1 TKG_item_rear.JPG' },
+                    { label: 'Folding A', src: 'img/eXs 1 TKG_item_folding.jpg', thumb: 'img/eXs 1 TKG_item_folding.jpg' },
+                    { label: 'Top', src: 'img/eXs-1-TKG_item_5.jpg', thumb: 'img/eXs-1-TKG_item_5.jpg' },
+                    { label: 'Sadle', src: 'img/eXs-1-TKG_item_sadle.png', thumb: 'img/eXs-1-TKG_item_sadle.png' }
                 ],
                 productTypes: [
                     { id: '27882603', label: 'eXs 1 TKG (車体のみ)', price: 69080, rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/27882603/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/27882603.html' },
@@ -431,7 +431,7 @@
                 if (!container) return;
                 container.innerHTML = images.map((image, index) => `
                     <button type="button" data-index="${index}" class="thumbnail-btn bg-gray-50 aspect-square border p-1 transition hover:opacity-75 ${state.selectedImageIndex === index ? 'border-black' : 'border-transparent hover:border-gray-300'}">
-                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-contain">
+                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-cover">
                     </button>
                 `).join('');
                 container.querySelectorAll('.thumbnail-btn').forEach((button) => {
@@ -463,6 +463,15 @@
                         state.selectedTypeIndex = Number(radio.value);
                         updateShopLinks();
                         updateTotalPrice();
+
+                        const selectedType = state.data.productTypes[state.selectedTypeIndex];
+                        const isSaddleSet = selectedType?.label && selectedType.label.includes('サドル');
+                        const nextImageIndex = isSaddleSet ? 5 : 0;
+                        if (state.data.images[nextImageIndex]) {
+                            state.selectedImageIndex = nextImageIndex;
+                            updateImage(state.data.images[nextImageIndex].src);
+                            renderThumbnails(state.data.images);
+                        }
                     });
                 });
             };

@@ -12,6 +12,7 @@ const PATHS = {
     kickboard_buy: 'product-tkg.html',
     accessories: 'accessories.html',
     news: 'news-list.html',
+    developer: 'developer.html',
     partner: 'partner-list.html',
     column: 'colum-list.html',
     support: 'support.html',
@@ -124,6 +125,7 @@ function renderFooter() {
                     <a href="${PATHS.news}" class="hover:text-gray-400 transition">NEWS</a>
                     <a href="${PATHS.column}" class="hover:text-gray-400 transition">COLUMN</a>
                     <a href="${PATHS.partner}" class="hover:text-gray-400 transition">PARTNER</a>
+                    <a href="${PATHS.developer}" class="hover:text-gray-400 transition">DEVELOPER INTERVIEW</a>
                 </div>
                 <div class="w-full flex flex-col space-y-4">
                     <a href="${PATHS.faq}" class="hover:text-gray-400 transition">FAQ</a>

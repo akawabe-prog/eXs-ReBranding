@@ -132,25 +132,6 @@
         <section class="container mx-auto max-w-5xl px-6 pb-32">
             <div class="space-y-0" id="news-container">
                 <!-- News Item Loop -->
-                <article id="news-event-20260315" class="reveal border-b border-gray-100 news-item" data-year="2026" data-category="EVENT">
-                    <details class="group">
-                        <summary class="list-none py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 cursor-pointer flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12">
-                            <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
-                                <time datetime="2026-03-15" class="text-sm text-gray-400 font-en tracking-wider">2026.03.15</time>
-                                <span class="text-[10px] font-bold px-2.5 py-1 bg-black text-white tracking-wider">EVENT</span>
-                            </div>
-                            <div class="flex-grow flex justify-between items-center gap-4">
-                                <h2 class="text-base md:text-lg font-medium leading-relaxed">東京モーターサイクルショー2026 出展のお知らせ</h2>
-                                <span class="hidden md:inline-block text-gray-400 transition-transform duration-300 group-open:rotate-180">
-                                    <i class="fa-solid fa-chevron-down text-sm"></i>
-                                </span>
-                            </div>
-                        </summary>
-                        <div class="pb-10 md:pb-12 px-4 -mx-4 text-sm leading-relaxed text-gray-600">
-                            eXs最新モデルの展示・試乗に関する情報を公開予定です。詳細は順次お知らせします。
-                        </div>
-                    </details>
-                </article>
 
                 <article id="news-info-20260302" class="reveal border-b border-gray-100 news-item" data-year="2026" data-category="INFO">
                     <details class="group">
@@ -196,39 +177,6 @@
                     </details>
                 </article>
 
-                <article class="reveal border-b border-gray-100 group news-item" data-year="2026" data-category="MEDIA">
-                    <a href="#" class="block py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 group">
-                        <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
-                            <time datetime="2026-02-20" class="text-sm text-gray-400 font-en tracking-wider group-hover:text-black transition-colors">2026.02.20</time>
-                            <span class="text-[10px] font-bold px-2.5 py-1 bg-gray-200 text-gray-700 tracking-wider">MEDIA</span>
-                        </div>
-                        <div class="flex-grow flex justify-between items-center gap-4">
-                            <h2 class="text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-600 transition-colors">
-                                雑誌「MonoMax」3月号にeXs Streetが掲載されました
-                            </h2>
-                            <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-300 group-hover:border-black group-hover:bg-black group-hover:text-white transition-all duration-300 transform group-hover:translate-x-2">
-                                <i class="fa-solid fa-arrow-right text-sm"></i>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="reveal border-b border-gray-100 group news-item" data-year="2026" data-category="INFO">
-                    <a href="#" class="block py-10 md:py-12 px-4 -mx-4 hover:bg-gray-50 transition-colors duration-500 flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 group">
-                        <div class="flex items-center gap-5 md:w-64 flex-shrink-0">
-                            <time datetime="2026-02-10" class="text-sm text-gray-400 font-en tracking-wider group-hover:text-black transition-colors">2026.02.10</time>
-                            <span class="text-[10px] font-bold px-2.5 py-1 bg-gray-200 text-gray-700 tracking-wider">INFO</span>
-                        </div>
-                        <div class="flex-grow flex justify-between items-center gap-4">
-                            <h2 class="text-base md:text-lg font-medium leading-relaxed group-hover:text-gray-600 transition-colors">
-                                システムメンテナンスのお知らせ（2/15 2:00-4:00）
-                            </h2>
-                            <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-300 group-hover:border-black group-hover:bg-black group-hover:text-white transition-all duration-300 transform group-hover:translate-x-2">
-                                <i class="fa-solid fa-arrow-right text-sm"></i>
-                            </div>
-                        </div>
-                    </a>
-                </article>
 
                 <article id="news-press-20250314" class="reveal border-b border-gray-100 news-item" data-year="2025" data-category="PRESS">
                     <details class="group">
@@ -254,13 +202,37 @@
                 <div id="no-result" class="hidden py-32 text-center text-gray-400 text-sm tracking-widest">該当する記事はありません。</div>
             </div>
 
-            <!-- ページネーション -->
-            <div class="mt-24 text-center reveal">
-                <nav class="inline-flex space-x-4" aria-label="Pagination">
-                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-brand-black text-white text-sm font-en font-bold shadow-lg hover:bg-gray-800 transition-transform hover:-translate-y-1">1</a>
-                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-500 text-sm font-en font-bold hover:border-black hover:text-black transition-all">2</a>
-                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-500 text-sm font-en font-bold hover:border-black hover:text-black transition-all"><i class="fa-solid fa-chevron-right text-xs"></i></a>
-                </nav>
+            <div class="mt-20 reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="about.html" class="group relative overflow-hidden rounded-2xl min-h-[148px] md:min-h-[164px] border border-gray-200">
+                        <div class="absolute inset-0 bg-[linear-gradient(120deg,#111111_0%,#2b2b2b_100%)]"></div>
+                        <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_18%_20%,#ffffff_0%,transparent_38%)]"></div>
+                        <div class="relative h-full p-6 md:p-7 flex flex-col justify-between text-white">
+                            <p class="text-[10px] font-en tracking-[0.24em] text-white/70">EXPLORE eXs</p>
+                            <div class="flex items-end justify-between gap-4">
+                                <div>
+                                    <h3 class="text-xl font-en font-bold tracking-widest">ABOUT</h3>
+                                    <p class="text-xs text-white/75 mt-1">ブランドの思想と世界観</p>
+                                </div>
+                                <span class="text-sm font-en tracking-widest transition-transform duration-300 group-hover:translate-x-1">VIEW</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="company.html" class="group relative overflow-hidden rounded-2xl min-h-[148px] md:min-h-[164px] border border-gray-200">
+                        <div class="absolute inset-0 bg-[linear-gradient(120deg,#f3f4f6_0%,#e5e7eb_100%)]"></div>
+                        <div class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_80%_18%,#ffffff_0%,transparent_44%)]"></div>
+                        <div class="relative h-full p-6 md:p-7 flex flex-col justify-between text-brand-black">
+                            <p class="text-[10px] font-en tracking-[0.24em] text-gray-500">EXPLORE eXs</p>
+                            <div class="flex items-end justify-between gap-4">
+                                <div>
+                                    <h3 class="text-xl font-en font-bold tracking-widest">COMPANY</h3>
+                                    <p class="text-xs text-gray-600 mt-1">企業情報・運営体制</p>
+                                </div>
+                                <span class="text-sm font-en tracking-widest transition-transform duration-300 group-hover:translate-x-1">VIEW</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>

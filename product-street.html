@@ -45,6 +45,21 @@
     <style>
         .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .street-frame-slider { position: relative; overflow: hidden; }
+        .street-frame-slider::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.16);
+            pointer-events: none;
+        }
+        .street-frame-image { display: block; width: 100%; height: auto; object-fit: cover; opacity: 1; transition: opacity 0.45s ease; }
+        .street-frame-image.is-fading { opacity: 0; }
+        .street-frame-image.is-soft-in { animation: streetSoftIn 0.8s ease; }
+        @keyframes streetSoftIn {
+            from { opacity: 0; filter: blur(5px); }
+            to { opacity: 1; filter: blur(0); }
+        }
     </style>
 </head>
 <body class="font-sans text-brand-black antialiased bg-white" id="product-page-street-api">
@@ -447,7 +462,7 @@
             <section class="mb-32">
                 <div class="flex flex-col md:flex-row items-center gap-12 mb-24 fade-up">
                     <div class="w-full md:w-1/2">
-                        <img src="img/eXs-steet_item_front.jpg" alt="4x20 Fat Tire" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="img/eXs-steet_item_front.jpg" alt="4x20 Fat Tire" class="w-full h-auto object-cover transition duration-700">
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. ALL TERRAIN TIRES</span>
@@ -460,7 +475,15 @@
 
                 <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24 fade-up">
                     <div class="w-full md:w-1/2">
-                        <img src="img/eXs-street_framedesign.jpg" alt="Matte Frame Design" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <div class="street-frame-slider" data-street-frame-slider>
+                            <img
+                                src="img/eXs-street_product_black.jpg"
+                                alt="Matte Color Product"
+                                class="street-frame-image"
+                                data-street-frame-image
+                                data-images="img/eXs-street_product_black.jpg|img/eXs-street_product_gray.jpg|img/eXs-steet_product_beige.jpg"
+                            >
+                        </div>
                     </div>
                     <div class="w-full md:w-1/2 md:pr-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">02. SOPHISTICATED DESIGN</span>
@@ -473,8 +496,8 @@
 
                 <div class="flex flex-col md:flex-row items-center gap-12 fade-up">
                     <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
-                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_display.jpg" alt="LCD Display" class="w-full h-auto object-cover">
-                        <img src="https://placehold.co/400x400/111/fff?text=Disc+Brake" alt="Disc Brake" class="w-full h-auto object-cover">
+                        <img src="img/eXs-steet_display_square.jpg" alt="LCD Display" class="w-full h-auto object-cover">
+                        <img src="img/eXs-steet_diskbrake_square.jpg" alt="Disc Brake" class="w-full h-auto object-cover">
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">03. HIGH PERFORMANCE</span>
@@ -531,17 +554,20 @@
                     <h3 class="font-en text-xl font-bold tracking-widest">GALLERY</h3>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="https://placehold.co/600x900/222/fff?text=Scene+1" alt="Gallery 1" class="w-full h-full object-cover">
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img/eXs-street_gallery1.jpg" alt="Gallery 1" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
+                    </div>
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img/eXs-street_gallery2.jpg" alt="Gallery 2" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
+                    </div>
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img/eXs-street_gallery3.jpg" alt="Gallery 3" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
                     </div>
                     <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="https://placehold.co/600x900/333/fff?text=Scene+2" alt="Gallery 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="https://placehold.co/600x900/444/fff?text=Scene+3" alt="Gallery 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="https://placehold.co/600x900/555/fff?text=Detail+1" alt="Gallery 4" class="w-full h-full object-cover">
+                        <img src="img/eXs-street_gallery4.jpg" alt="Gallery 4" class="w-full h-full object-cover">
                     </div>
                 </div>
             </section>
@@ -569,8 +595,7 @@
                     { label: 'Gray', colorHex: '#888888', src: 'img/eXs steet_item_mattegray.jpg', thumb: 'img/eXs steet_item_mattegray.jpg', productId: '29044344', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044344/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044344.html' },
                     { label: 'Beige', colorHex: '#d8d2c0', src: 'img/eXs steet_item_mattebeige.jpg', thumb: 'img/eXs steet_item_mattebeige.jpg', productId: '29044351', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044351/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044351.html' },
                     { label: 'Front', colorHex: '#eeeeee', src: 'img/eXs-steet_item_front.jpg', thumb: 'img/eXs-steet_item_front.jpg' },
-                    { label: 'Rear', colorHex: '#dddddd', src: 'img/eXs-steet_item_rear.jpg', thumb: 'img/eXs-steet_item_rear.jpg' },
-                    { label: 'Folded', colorHex: '#cccccc', src: 'https://placehold.co/1200x900/ccc/333?text=Folded', thumb: 'https://placehold.co/200x200/ccc/333?text=Folded' }
+                    { label: 'Rear', colorHex: '#dddddd', src: 'img/eXs-steet_item_rear.jpg', thumb: 'img/eXs-steet_item_rear.jpg' }
                 ],
                 options: [
                     { label: 'リアキャリア', price: 5478 },
@@ -641,7 +666,7 @@
                         data-index="${index}"
                         class="thumbnail-btn bg-gray-50 aspect-square border p-1 transition hover:opacity-75 ${selectedIndex === index ? 'border-black' : 'border-transparent hover:border-gray-300'}"
                     >
-                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-contain">
+                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-cover">
                     </button>
                 `).join('');
                 container.querySelectorAll('.thumbnail-btn').forEach((button) => {
@@ -820,6 +845,57 @@
                 if (container) container.classList.remove('opacity-0');
             }
 
+            function initStreetFrameSlider() {
+                const slider = document.querySelector('[data-street-frame-slider]');
+                if (!slider) return;
+
+                const imageEl = slider.querySelector('[data-street-frame-image]');
+                if (!imageEl) return;
+
+                const images = (imageEl.dataset.images || '')
+                    .split('|')
+                    .map((src) => src.trim())
+                    .filter(Boolean);
+                if (images.length < 2) return;
+
+                let currentIndex = 0;
+                let timerId = null;
+                let switching = false;
+
+                const setSlide = (nextIndex) => {
+                    if (switching) return;
+                    switching = true;
+                    imageEl.classList.add('is-fading');
+
+                    window.setTimeout(() => {
+                        currentIndex = (nextIndex + images.length) % images.length;
+                        imageEl.src = images[currentIndex];
+                        imageEl.classList.remove('is-soft-in');
+                        void imageEl.offsetWidth;
+                        imageEl.classList.add('is-soft-in');
+                        imageEl.classList.remove('is-fading');
+                        switching = false;
+                    }, 260);
+                };
+
+                const start = () => {
+                    if (timerId) return;
+                    timerId = setInterval(() => setSlide(currentIndex + 1), 3400);
+                };
+
+                const stop = () => {
+                    if (!timerId) return;
+                    clearInterval(timerId);
+                    timerId = null;
+                };
+
+                slider.addEventListener('mouseenter', stop);
+                slider.addEventListener('mouseleave', start);
+                imageEl.addEventListener('animationend', () => imageEl.classList.remove('is-soft-in'));
+
+                start();
+            }
+
             document.addEventListener('DOMContentLoaded', async () => {
                 initApiClient((window.EXS_API_CONFIG && window.EXS_API_CONFIG.apiBaseUrl) || undefined);
                 try {
@@ -830,6 +906,7 @@
                 const data = await fetchApiData();
                 renderProduct(data);
                 bindCartButton();
+                initStreetFrameSlider();
                 showContent();
             });
         })();
