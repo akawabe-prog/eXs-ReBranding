@@ -11,8 +11,10 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 SRC_DIR="$ROOT_DIR/img"
 OUT_DIR="$ROOT_DIR/img-webp"
-MAX_WIDTH="${MAX_WIDTH:-1920}"
+MAX_WIDTH="${MAX_WIDTH:-2200}"
 MIN_KB="${MIN_KB:-300}"
+JPG_QUALITY="${JPG_QUALITY:-84}"
+PNG_QUALITY="${PNG_QUALITY:-90}"
 
 if ! command -v cwebp >/dev/null 2>&1; then
   echo "cwebp not found. Install webp tools first."
@@ -48,9 +50,9 @@ while IFS= read -r -d '' src; do
 
   ext="${src##*.}"
   ext="$(printf '%s' "$ext" | tr '[:upper:]' '[:lower:]')"
-  quality=76
+  quality="$JPG_QUALITY"
   if [[ "$ext" == "png" ]]; then
-    quality=82
+    quality="$PNG_QUALITY"
   fi
 
   width=$(sips -g pixelWidth "$src" 2>/dev/null | awk '/pixelWidth/{print $2; exit}')
