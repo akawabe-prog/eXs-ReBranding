@@ -669,8 +669,8 @@
                             <span class="font-bold text-sm">${type.label}</span>
                             <span class="text-sm font-en">${formatYen(type.price)}</span>
                         </div>
-                        ${type.badge ? `<span class="absolute -top-2 right-4 bg-brand-stripe text-white text-[10px] px-2 py-0.5 font-bold tracking-wider rounded-full">${type.badge}</span>` : ''}
-                        <div class="absolute inset-0 border-2 border-black rounded opacity-0 peer-checked:opacity-100 pointer-events-none"></div>
+                        ${type.badge ? `<span class="absolute -top-2 right-4 z-20 bg-brand-stripe text-white text-[10px] px-2 py-0.5 font-bold tracking-wider rounded-full">${type.badge}</span>` : ''}
+                        <div class="absolute inset-0 z-10 border-2 border-black rounded opacity-0 peer-checked:opacity-100 pointer-events-none"></div>
                     </label>
                 `).join('');
                 container.querySelectorAll('input[name="product_type"]').forEach((radio) => {

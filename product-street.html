@@ -533,7 +533,7 @@
 
             <section class="relative w-screen left-1/2 -translate-x-1/2 bg-black overflow-hidden mb-0">
                 <div id="street-product-parallax-visual" class="relative w-full fade-up">
-                    <img id="street-product-parallax-image" src="img-webp/eXs-street_image_city&offload.webp" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1000px] object-cover will-change-transform" loading="lazy" decoding="async">
+                    <img id="street-product-parallax-image" src="img-webp/eXsStreetImage.webp" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1000px] object-cover will-change-transform" loading="lazy" decoding="async">
                     <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
                 </div>
             </section>
@@ -720,12 +720,15 @@
             initSlideshow('street-ride-slideshow', 'street-ride-slideshow-image', { intervalMs: 650, fade: false });
 
             if (!prefersReducedMotion && parallaxVisual && parallaxImage) {
-                const maxParallax = 180;
+                const desktopQuery = window.matchMedia('(min-width: 1024px)');
                 let ticking = false;
                 const applyParallax = () => {
                     const rect = parallaxVisual.getBoundingClientRect();
                     const viewportCenter = window.innerHeight * 0.5;
-                    const offset = (viewportCenter - (rect.top + rect.height / 2)) * 0.22;
+                    const isDesktop = desktopQuery.matches;
+                    const maxParallax = isDesktop ? 340 : 140;
+                    const multiplier = isDesktop ? 0.42 : 0.18;
+                    const offset = (viewportCenter - (rect.top + rect.height / 2)) * multiplier;
                     const parallaxY = Math.max(-maxParallax, Math.min(maxParallax, offset));
                     parallaxImage.style.transform = `translate3d(0, ${parallaxY}px, 0)`;
                     ticking = false;
@@ -738,6 +741,7 @@
                 applyParallax();
                 window.addEventListener('scroll', onScroll, { passive: true });
                 window.addEventListener('resize', onScroll);
+                desktopQuery.addEventListener('change', onScroll);
             }
         });
     </script>

@@ -72,7 +72,7 @@ function renderProductTypes(types, container) {
         const label = document.createElement('label');
         label.className = 'cursor-pointer group relative border border-gray-200 p-4 rounded hover:bg-gray-50 transition has-[:checked]:border-black has-[:checked]:bg-gray-50';
         
-        const badgeHtml = type.badge ? `<span class="absolute -top-2 right-4 bg-brand-stripe text-white text-[10px] px-2 py-0.5 font-bold tracking-wider rounded-full">${type.badge}</span>` : '';
+        const badgeHtml = type.badge ? `<span class="absolute -top-2 right-4 z-20 bg-brand-stripe text-white text-[10px] px-2 py-0.5 font-bold tracking-wider rounded-full">${type.badge}</span>` : '';
         const checkedAttr = type.isDefault ? 'checked' : '';
 
         label.innerHTML = `
@@ -82,7 +82,7 @@ function renderProductTypes(types, container) {
                 <span class="text-sm font-en">${type.price.toLocaleString()}円</span>
             </div>
             ${badgeHtml}
-            <div class="absolute inset-0 border-2 border-black rounded opacity-0 peer-checked:opacity-100 pointer-events-none"></div>
+            <div class="absolute inset-0 z-10 border-2 border-black rounded opacity-0 peer-checked:opacity-100 pointer-events-none"></div>
         `;
         container.appendChild(label);
     });
