@@ -1,0 +1,83 @@
+# Clean URL rewrite rules for eXs
+# Requirements:
+# - mod_rewrite enabled
+# - AllowOverride FileInfo (or All)
+
+RewriteEngine On
+
+# Skip rewrite for existing files/directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 301 redirects: old product/column URLs -> new clean URLs
+RewriteRule ^product-intro-street/?$ product/exs-street [R=301,L,NC]
+RewriteRule ^product-intro-tkg/?$ product/exs-1-tkg [R=301,L,NC]
+RewriteRule ^product-street/?$ product/exs-street/purchase [R=301,L,NC]
+RewriteRule ^product-tkg/?$ product/exs-1-tkg/purchase [R=301,L,NC]
+RewriteRule ^colum-list/?$ colum [R=301,L,NC]
+RewriteRule ^colum-detail-50cc/?$ colum/50cc [R=301,L,NC]
+RewriteRule ^colum-detail-tkg/?$ colum/tkg [R=301,L,NC]
+RewriteRule ^colum-detail-mopet/?$ colum/mopet [R=301,L,NC]
+RewriteRule ^colum-detail-cyclemodeosaka2026/?$ colum/cyclemodeosaka2026 [R=301,L,NC]
+RewriteRule ^colum-detail/?$ colum/detail [R=301,L,NC]
+
+# 301 redirects: old exs-api product/column URLs -> new clean URLs
+RewriteRule ^exs-api/product-intro-street/?$ exs-api/product/exs-street [R=301,L,NC]
+RewriteRule ^exs-api/product-intro-tkg/?$ exs-api/product/exs-1-tkg [R=301,L,NC]
+RewriteRule ^exs-api/product-street/?$ exs-api/product/exs-street/purchase [R=301,L,NC]
+RewriteRule ^exs-api/product-tkg/?$ exs-api/product/exs-1-tkg/purchase [R=301,L,NC]
+RewriteRule ^exs-api/colum-list/?$ exs-api/colum [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail-50cc/?$ exs-api/colum/50cc [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail-tkg/?$ exs-api/colum/tkg [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail-mopet/?$ exs-api/colum/mopet [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail-cyclemodeosaka2026/?$ exs-api/colum/cyclemodeosaka2026 [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail/?$ exs-api/colum/detail [R=301,L,NC]
+
+# -----------------------------
+# Root site clean URLs
+# -----------------------------
+
+# Product routes
+RewriteRule ^product/exs-street/?$ product-intro-street.html [L,NC,QSA]
+RewriteRule ^product/exs-1-tkg/?$ product-intro-tkg.html [L,NC,QSA]
+RewriteRule ^product/exs-street/purchase/?$ product-street.html [L,NC,QSA]
+RewriteRule ^product/exs-1-tkg/purchase/?$ product-tkg.html [L,NC,QSA]
+
+# Column routes
+RewriteRule ^colum/?$ colum-list.html [L,NC,QSA]
+RewriteRule ^colum/50cc/?$ colum-detail-50cc.html [L,NC,QSA]
+RewriteRule ^colum/tkg/?$ colum-detail-tkg.html [L,NC,QSA]
+RewriteRule ^colum/mopet/?$ colum-detail-mopet.html [L,NC,QSA]
+RewriteRule ^colum/cyclemodeosaka2026/?$ colum-detail-cyclemodeosaka2026.html [L,NC,QSA]
+RewriteRule ^colum/detail/?$ colum-detail.html [L,NC,QSA]
+
+# Alias for FAQ (actual file: faq.html)
+RewriteRule ^faq/?$ faq.html [L,NC,QSA]
+
+# Generic clean URL fallback: /about -> /about.html
+RewriteRule ^([A-Za-z0-9_-]+)/?$ $1.html [L,NC,QSA]
+
+# -----------------------------
+# /exs-api clean URLs (if served from same vhost)
+# -----------------------------
+
+# Product routes
+RewriteRule ^exs-api/product/exs-street/?$ exs-api/product-intro-street.html [L,NC,QSA]
+RewriteRule ^exs-api/product/exs-1-tkg/?$ exs-api/product-intro-tkg.html [L,NC,QSA]
+RewriteRule ^exs-api/product/exs-street/purchase/?$ exs-api/product-street.html [L,NC,QSA]
+RewriteRule ^exs-api/product/exs-1-tkg/purchase/?$ exs-api/product-tkg.html [L,NC,QSA]
+
+# Column routes
+RewriteRule ^exs-api/colum/?$ exs-api/colum-list.html [L,NC,QSA]
+RewriteRule ^exs-api/colum/50cc/?$ exs-api/colum-detail-50cc.html [L,NC,QSA]
+RewriteRule ^exs-api/colum/tkg/?$ exs-api/colum-detail-tkg.html [L,NC,QSA]
+RewriteRule ^exs-api/colum/mopet/?$ exs-api/colum-detail-mopet.html [L,NC,QSA]
+RewriteRule ^exs-api/colum/cyclemodeosaka2026/?$ exs-api/colum-detail-cyclemodeosaka2026.html [L,NC,QSA]
+RewriteRule ^exs-api/colum/detail/?$ exs-api/colum-detail.html [L,NC,QSA]
+
+# Alias for FAQ (actual file: faq.html)
+RewriteRule ^exs-api/faq/?$ exs-api/faq.html [L,NC,QSA]
+
+# Generic clean URL fallback: /exs-api/about -> /exs-api/about.html
+RewriteRule ^exs-api/([A-Za-z0-9_-]+)/?$ exs-api/$1.html [L,NC,QSA]

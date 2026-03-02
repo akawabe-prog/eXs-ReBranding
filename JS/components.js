@@ -4,22 +4,22 @@
 
 // サイト内のリンク先定義
 const PATHS = {
-    home: 'index.html',
-    about: 'about.html',
-    ebike_intro: 'product-intro-street.html',
-    ebike_buy: 'product-street.html',
-    kickboard_intro: 'product-intro-tkg.html',
-    kickboard_buy: 'product-tkg.html',
-    accessories: 'accessories.html',
-    news: 'news-list.html',
-    developer: 'developer.html',
-    partner: 'partner.html',
-    column: 'colum-list.html',
-    support: 'support.html',
-    contact: 'contact.html',
-    privacy: 'privacy.html',
-    company: 'company.html',
-    faq: 'FAQ.html',
+    home: 'index',
+    about: 'about',
+    ebike_intro: 'product/exs-street',
+    ebike_buy: 'product/exs-street/purchase',
+    kickboard_intro: 'product/exs-1-tkg',
+    kickboard_buy: 'product/exs-1-tkg/purchase',
+    accessories: 'accessories',
+    news: 'news-list',
+    developer: 'developer',
+    partner: 'partner',
+    column: 'colum',
+    support: 'support',
+    contact: 'contact',
+    privacy: 'privacy',
+    company: 'company',
+    faq: 'faq',
     instagram: 'https://www.instagram.com/exs.mobi/',
     facebook: 'https://www.facebook.com/exs.mobi',
     youtube: 'https://www.youtube.com/@CustomJapan39'
@@ -193,12 +193,23 @@ function initMobileMenu() {
 }
 
 function highlightCurrentNav() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = normalizeRoute(window.location.pathname);
     document.querySelectorAll('.nav-item').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.includes(currentPath) && currentPath !== 'index.html') {
+        const href = normalizeRoute(link.getAttribute('href'));
+        if (href && href === currentPath && currentPath !== 'index') {
             link.classList.add('border-b', 'border-current');
             link.classList.remove('hover:opacity-60');
         }
     });
+}
+
+function normalizeRoute(path) {
+    if (!path) return 'index';
+    return path
+        .replace(/^https?:\/\/[^/]+/, '')
+        .replace(/^\//, '')
+        .split('?')[0]
+        .split('#')[0]
+        .replace(/\.html$/, '')
+        .replace(/\/$/, '') || 'index';
 }

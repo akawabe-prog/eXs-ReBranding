@@ -14,18 +14,18 @@
     <meta name="description" content="eXs Street（API用ページ）。電動アシスト自転車の機能性とファットバイクの走破性を備えたeBikeの仕様・価格情報を掲載。">
     <meta name="keywords" content="電動アシスト自転車,ファットバイク,eBike,電動キックボード,特定小型原付,eXs">
     <meta name="robots" content="index,follow,max-image-preview:large">
-    <link rel="canonical" href="https://exs.customjapan.net/product-street.html">
+    <link rel="canonical" href="https://exs.customjapan.net/product/exs-street/purchase">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="eXs">
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:url" content="https://exs.customjapan.net/product-street.html">
+    <meta property="og:url" content="https://exs.customjapan.net/product/exs-street/purchase">
     <meta property="og:title" content="eXs Street | 電動アシスト自転車・ファットバイクeBike | eXs">
     <meta property="og:description" content="eXs Street（API用ページ）。電動アシスト自転車の機能性とファットバイクの走破性を備えたeBikeの仕様・価格情報を掲載。">
-    <meta property="og:image" content="img-webp/eXsStreetImage.webp">
+    <meta property="og:image" content="assets/images/img-webp/eXsStreetImage.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="eXs Street | 電動アシスト自転車・ファットバイクeBike | eXs">
     <meta name="twitter:description" content="eXs Street（API用ページ）。電動アシスト自転車の機能性とファットバイクの走破性を備えたeBikeの仕様・価格情報を掲載。">
-    <meta name="twitter:image" content="img-webp/eXsStreetImage.webp">
+    <meta name="twitter:image" content="assets/images/img-webp/eXsStreetImage.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -85,9 +85,9 @@
         <div class="container mx-auto max-w-7xl opacity-0 transition-opacity duration-500" id="product-container">
             
             <nav class="text-xs text-gray-400 mb-10 font-en tracking-wider">
-                <a href="index.html" class="hover:text-black">HOME</a>
+                <a href="index" class="hover:text-black">HOME</a>
                 <span class="mx-2">/</span>
-                <a href="product-intro-street.html" class="hover:text-black">eXs Street (Intro)</a>
+                <a href="product/exs-street" class="hover:text-black">eXs Street (Intro)</a>
                 <span class="mx-2">/</span>
                 <span id="breadcrumb-name" class="text-black">eXs Street (Purchase)</span>
             </nav>
@@ -96,14 +96,14 @@
                 
                 <div class="w-full lg:w-3/5">
                     <div class="bg-gray-100 aspect-[4/3] mb-4 overflow-hidden relative group cursor-zoom-in">
-                        <img src="img-webp/eXs street_item_matteblack.webp" alt="Main Product Image" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" id="main-image" loading="lazy" decoding="async">
+                        <img src="assets/images/img-webp/eXs street_item_matteblack.webp" alt="Main Product Image" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" id="main-image" loading="lazy" decoding="async">
                     </div>
                     
                     <div id="thumbnail-container" class="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4"></div>
                 </div>
 
                 <div class="w-full lg:w-2/5 flex flex-col">
-                    <img src="img/exs-street-logo-black.svg" alt="eXs Street ロゴ" class="h-9 md:h-10 w-auto mb-3" loading="lazy" decoding="async">
+                    <img src="assets/images/img/exs-street-logo-black.svg" alt="eXs Street ロゴ" class="h-9 md:h-10 w-auto mb-3" loading="lazy" decoding="async">
                     <h1 id="product-name" class="sr-only">eXs Street</h1>
                     <p id="product-category" class="font-en text-sm text-gray-500 tracking-widest mb-6">ELECTRIC ASSIST BICYCLE</p>
                     
@@ -140,8 +140,8 @@
                         </div>
                         <p class="text-xs text-gray-400 text-center">
                             ※ 現在、注文から発送まで約<span id="shipping-estimate" class="font-bold text-black mx-1">1週間</span>いただいております。<br>
-                            ※ 送料無料キャンペーン実施中 ※沖縄・離島は別途送料 ¥11,000がかかります
-                            <!-- TODO(campaign-end): キャンペーン終了後の送料テキストに差し替え -->
+                            ※ 送料無料キャンペーン実施中 ※沖縄・離島は別途送料 ¥11,000がかかります<br>
+                            <span id="shipping-fee-fallback" class="hidden">※ 全国一律:¥5,500(税込) / 沖縄・離島:¥11,000(税込)</span>
                         </p>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                         <p class="mb-4">eXs Streetはお届けから12ヶ月間（1年間）、フレーム・モーター等の主要部品の不具合に部品・工賃とも無償対応します。<br>※タイヤ・ブレーキ等の消耗品、使用上の不注意による故障は対象外です。</p>
                         <h4 class="font-bold text-black mb-2">アフターサポート</h4>
                         <p class="mb-4">お近くで修理対応が難しい場合は、お預かり修理にて専門スタッフが対応します。メール・電話での専用窓口に加え、交換パーツ供給も実施しています。</p>
-                        <a href="support.html" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">SUPPORTの詳細はこちら</a>
+                        <a href="support" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">SUPPORTの詳細はこちら</a>
                     </div>
                 </details>
 
@@ -451,7 +451,7 @@
             <section class="mt-32 mb-20 fade-up">
                 <div class="relative w-screen left-1/2 -translate-x-1/2 h-[58vh] md:h-[72vh] bg-black overflow-hidden">
                     <video class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline>
-                        <source src="video/eXs-optimized.mp4" type="video/mp4">
+                        <source src="assets/videos/eXs-optimized.mp4" type="assets/videos/mp4">
                     </video>
                     <div class="absolute inset-0 bg-black/20"></div>
                     <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
@@ -464,7 +464,7 @@
             <section class="mb-32">
                 <div class="flex flex-col md:flex-row items-center gap-12 mb-24 fade-up">
                     <div class="w-full md:w-1/2">
-                        <img src="img-webp/eXs-street_item_front.webp" alt="4x20 Fat Tire" class="w-full h-auto object-cover transition duration-700" loading="lazy" decoding="async">
+                        <img src="assets/images/img-webp/eXs-street_item_front.webp" alt="4x20 Fat Tire" class="w-full h-auto object-cover transition duration-700" loading="lazy" decoding="async">
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. ALL TERRAIN TIRES</span>
@@ -479,11 +479,11 @@
                     <div class="w-full md:w-1/2">
                         <div class="street-frame-slider" data-street-frame-slider>
                             <img
-                                src="img-webp/eXs-street_product_black.webp"
+                                src="assets/images/img-webp/eXs-street_product_black.webp"
                                 alt="Matte Color Product"
                                 class="street-frame-image"
                                 data-street-frame-image
-                                data-images="img-webp/eXs-street_product_black.webp|img-webp/eXs-street_product_gray.webp|img-webp/eXs-street_product_beige.webp"
+                                data-images="assets/images/img-webp/eXs-street_product_black.webp|img-webp/eXs-street_product_gray.webp|img-webp/eXs-street_product_beige.webp"
                              loading="lazy" decoding="async">
                         </div>
                     </div>
@@ -491,15 +491,15 @@
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">02. SOPHISTICATED DESIGN</span>
                         <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">都市に溶け込む、<br>洗練されたマットカラー。</h3>
                         <p class="text-sm text-gray-600 leading-loose text-justify">
-                            フレームの溶接痕を極力目立たせないスムースウェルディング加工に加え、光の反射を抑えたマット塗装を採用。「マットブラック」「マットグレー」「マットベージュ」の3色は、どんなファッションや都市の風景にも馴染みます。
+                            光の反射を抑えたマット塗装を採用。「マットブラック」「マットグレー」「マットベージュ」の3色は、どんなファッションや都市の風景にも馴染みます。
                         </p>
                     </div>
                 </div>
 
                 <div class="flex flex-col md:flex-row items-center gap-12 fade-up">
                     <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
-                        <img src="img-webp/eXs-street_display_square.webp" alt="LCD Display" class="w-full h-auto object-cover" loading="lazy" decoding="async">
-                        <img src="img-webp/eXs-street_diskbrake_square.webp" alt="Disc Brake" class="w-full h-auto object-cover" loading="lazy" decoding="async">
+                        <img src="assets/images/img-webp/eXs-street_display_square.webp" alt="LCD Display" class="w-full h-auto object-cover" loading="lazy" decoding="async">
+                        <img src="assets/images/img-webp/eXs-street_diskbrake_square.webp" alt="Disc Brake" class="w-full h-auto object-cover" loading="lazy" decoding="async">
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">03. HIGH PERFORMANCE</span>
@@ -533,7 +533,7 @@
 
             <section class="relative w-screen left-1/2 -translate-x-1/2 bg-black overflow-hidden mb-0">
                 <div id="street-product-parallax-visual" class="relative w-full fade-up">
-                    <img id="street-product-parallax-image" src="img/eXs-steet_image_city&offload.jpg" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1000px] object-cover will-change-transform" loading="lazy" decoding="async">
+                    <img id="street-product-parallax-image" src="assets/images/img-webp/eXsStreetImage.webp" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1000px] object-cover will-change-transform" loading="lazy" decoding="async">
                     <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
                 </div>
             </section>
@@ -586,14 +586,14 @@
                 <h3 class="font-en text-xl md:text-2xl font-bold tracking-tighter mb-8">FOLDING & DETAILS</h3>
                 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div id="street-folding-slideshow" class="aspect-video bg-white relative overflow-hidden group cursor-pointer" data-images="img-webp/eXs-street_folding_1.webp|img-webp/eXs-street_folding_2.webp|https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg">
-                        <img id="street-folding-slideshow-image" src="img-webp/eXs-street_folding_1.webp" alt="Folding Demo" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
+                    <div id="street-folding-slideshow" class="aspect-video bg-white relative overflow-hidden group cursor-pointer" data-images="assets/images/img-webp/eXs-street_folding_1.webp|img-webp/eXs-street_folding_2.webp|https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg">
+                        <img id="street-folding-slideshow-image" src="assets/images/img-webp/eXs-street_folding_1.webp" alt="Folding Demo" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
                         <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
                             <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY FOLDING</div>
                         </div>
                     </div>
-                    <div id="street-ride-slideshow" class="aspect-video bg-black relative overflow-hidden group cursor-pointer" data-images="img-webp/eXs-street_ride_1.webp|img-webp/eXs-street_ride_2.webp|img-webp/eXs-street_ride_3.webp|img-webp/eXs-street_ride_4.webp|img-webp/eXs-street_ride_5.webp|img-webp/eXs-street_ride_6.webp|img-webp/eXs-street_ride_7.webp">
-                        <img id="street-ride-slideshow-image" src="img-webp/eXs-street_ride_1.webp" alt="Riding Scene" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
+                    <div id="street-ride-slideshow" class="aspect-video bg-black relative overflow-hidden group cursor-pointer" data-images="assets/images/img-webp/eXs-street_ride_1.webp|img-webp/eXs-street_ride_2.webp|img-webp/eXs-street_ride_3.webp|img-webp/eXs-street_ride_4.webp|img-webp/eXs-street_ride_5.webp|img-webp/eXs-street_ride_6.webp|img-webp/eXs-street_ride_7.webp">
+                        <img id="street-ride-slideshow-image" src="assets/images/img-webp/eXs-street_ride_1.webp" alt="Riding Scene" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
                         <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
                             <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY RIDING</div>
                         </div>
@@ -607,30 +607,30 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="img-webp/eXs-street_gallery1.webp" alt="Gallery 1" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <img src="assets/images/img-webp/eXs-street_gallery1.webp" alt="Gallery 1" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
                     </div>
                     <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="img-webp/eXs-street_gallery2.webp" alt="Gallery 2" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <img src="assets/images/img-webp/eXs-street_gallery2.webp" alt="Gallery 2" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
                     </div>
                     <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="img-webp/eXs-street_gallery3.webp" alt="Gallery 3" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <img src="assets/images/img-webp/eXs-street_gallery3.webp" alt="Gallery 3" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
                     </div>
                     <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="img-webp/eXs-street_gallery4.webp" alt="Gallery 4" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <img src="assets/images/img-webp/eXs-street_gallery4.webp" alt="Gallery 4" class="w-full h-full object-cover" loading="lazy" decoding="async">
                     </div>
                 </div>
             </section>
 
             <section class="py-16 border-t border-gray-200 fade-up">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <a href="product-intro-street.html" class="block border border-gray-300 px-6 py-6 hover:border-black hover:bg-gray-50 transition">
+                    <a href="product/exs-street" class="block border border-gray-300 px-6 py-6 hover:border-black hover:bg-gray-50 transition">
                         <p class="font-en text-[10px] tracking-[0.2em] text-gray-400 mb-2">PRODUCT DETAIL</p>
                         <p class="text-base font-bold">eXs Street の商品詳細を見る</p>
                     </a>
-                    <a href="product-tkg.html" class="block border border-gray-300 px-6 py-6 hover:border-black hover:bg-gray-50 transition">
+                    <a href="product/exs-1-tkg/purchase" class="block border border-gray-300 px-6 py-6 hover:border-black hover:bg-gray-50 transition">
                         <p class="font-en text-[10px] tracking-[0.2em] text-gray-400 mb-2">NEXT PRODUCT</p>
                         <p class="text-base font-bold">eXs 1 TKG へ</p>
                     </a>
@@ -642,8 +642,8 @@
 
     <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
 
-    <script src="JS/components.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/script.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -757,12 +757,12 @@
                 basePrice: 149800,
                 shippingEstimate: '1週間',
                 images: [
-                    { label: 'Black', colorHex: '#1a1a1a', src: 'img-webp/eXs street_item_matteblack.webp', thumb: 'img-webp/eXs street_item_matteblack.webp', productId: '29044337', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044337/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044337.html' },
-                    { label: 'Gray', colorHex: '#888888', src: 'img-webp/eXs street_item_mattegray.webp', thumb: 'img-webp/eXs street_item_mattegray.webp', productId: '29044344', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044344/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044344.html' },
-                    { label: 'Beige', colorHex: '#d8d2c0', src: 'img-webp/eXs street_item_mattebeige.webp', thumb: 'img-webp/eXs street_item_mattebeige.webp', productId: '29044351', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044351/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044351.html' },
-                    { label: 'Front', colorHex: '#eeeeee', src: 'img-webp/eXs-street_item_front.webp', thumb: 'img-webp/eXs-street_item_front.webp' },
-                    { label: 'Rear', colorHex: '#dddddd', src: 'img-webp/eXs-street_item_rear.webp', thumb: 'img-webp/eXs-street_item_rear.webp' },
-                    { label: 'Detail', colorHex: '#cccccc', src: 'img-webp/eXsStreetImage.webp', thumb: 'img-webp/eXsStreetImage.webp' }
+                    { label: 'Black', colorHex: '#1a1a1a', src: 'assets/images/img-webp/eXs street_item_matteblack.webp', thumb: 'assets/images/img-webp/eXs street_item_matteblack.webp', productId: '29044337', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044337/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044337.html' },
+                    { label: 'Gray', colorHex: '#888888', src: 'assets/images/img-webp/eXs street_item_mattegray.webp', thumb: 'assets/images/img-webp/eXs street_item_mattegray.webp', productId: '29044344', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044344/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044344.html' },
+                    { label: 'Beige', colorHex: '#d8d2c0', src: 'assets/images/img-webp/eXs street_item_mattebeige.webp', thumb: 'assets/images/img-webp/eXs street_item_mattebeige.webp', productId: '29044351', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044351/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044351.html' },
+                    { label: 'Front', colorHex: '#eeeeee', src: 'assets/images/img-webp/eXs-street_item_front.webp', thumb: 'assets/images/img-webp/eXs-street_item_front.webp' },
+                    { label: 'Rear', colorHex: '#dddddd', src: 'assets/images/img-webp/eXs-street_item_rear.webp', thumb: 'assets/images/img-webp/eXs-street_item_rear.webp' },
+                    { label: 'Detail', colorHex: '#cccccc', src: 'assets/images/img-webp/eXsStreetImage.webp', thumb: 'assets/images/img-webp/eXsStreetImage.webp' }
                 ],
                 options: [
                     { label: 'リアキャリア', price: 5478 },

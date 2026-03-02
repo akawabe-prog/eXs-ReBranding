@@ -4,22 +4,22 @@
 
 // サイト内のリンク先定義
 const PATHS = {
-    home: 'index.html',
-    about: 'about.html',
-    ebike_intro: 'product-intro-street.html',
-    ebike_buy: 'product-street.html',
-    kickboard_intro: 'product-intro-tkg.html',
-    kickboard_buy: 'product-tkg.html',
-    accessories: 'accessories.html',
-    news: 'news-list.html',
-    developer: 'developer.html',
-    partner: 'partner.html',
-    column: 'colum-list.html',
-    support: 'support.html',
-    contact: 'contact.html',
-    privacy: 'privacy.html',
-    company: 'company.html',
-    faq: 'FAQ.html',
+    home: 'index',
+    about: 'about',
+    ebike_intro: 'product/exs-street',
+    ebike_buy: 'product/exs-street/purchase',
+    kickboard_intro: 'product/exs-1-tkg',
+    kickboard_buy: 'product/exs-1-tkg/purchase',
+    accessories: 'accessories',
+    news: 'news-list',
+    developer: 'developer',
+    partner: 'partner',
+    column: 'colum',
+    support: 'support',
+    contact: 'contact',
+    privacy: 'privacy',
+    company: 'company',
+    faq: 'faq',
     instagram: 'https://www.instagram.com/exs.mobi/',
     facebook: 'https://www.facebook.com/exs.mobi',
     youtube: 'https://www.youtube.com/@CustomJapan39'
@@ -41,7 +41,7 @@ function renderHeader() {
     const headerHTML = `
     <div class="container mx-auto px-6 h-20 flex justify-between items-center relative z-50">
         <a href="${PATHS.home}" class="hover:opacity-70 transition inline-flex items-center">
-            <img src="img/exs-logo-white.svg" alt="eXs ロゴ" class="h-8 md:h-9 w-auto object-contain">
+            <img src="assets/images/img/exs-logo-white.svg" alt="eXs ロゴ" class="h-8 md:h-9 w-auto object-contain">
         </a>
 
         <nav class="hidden lg:flex space-x-6 text-xs font-en tracking-widest font-medium items-center">
@@ -107,7 +107,7 @@ function renderFooter() {
         <div class="grid grid-cols-1 md:grid-cols-[minmax(220px,1fr)_minmax(560px,1.45fr)] gap-12 items-start mb-16">
             <div>
                 <a href="${PATHS.home}" class="mb-6 block hover:opacity-70 transition">
-                    <img src="img/exs-logo-white.svg" alt="eXs ロゴ" class="h-10 w-auto object-contain">
+                    <img src="assets/images/img/exs-logo-white.svg" alt="eXs ロゴ" class="h-10 w-auto object-contain">
                 </a>
                 <p class="text-xs text-gray-400 leading-relaxed mb-4">Custom Japan Co., Ltd.<br>株式会社カスタムジャパン</p>
                 <p class="text-xs text-gray-500">大阪市中央区日本橋2-9-16<br>日本橋センタービル6F</p>
@@ -193,12 +193,23 @@ function initMobileMenu() {
 }
 
 function highlightCurrentNav() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = normalizeRoute(window.location.pathname);
     document.querySelectorAll('.nav-item').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.includes(currentPath) && currentPath !== 'index.html') {
+        const href = normalizeRoute(link.getAttribute('href'));
+        if (href && href === currentPath && currentPath !== 'index') {
             link.classList.add('border-b', 'border-current');
             link.classList.remove('hover:opacity-60');
         }
     });
+}
+
+function normalizeRoute(path) {
+    if (!path) return 'index';
+    return path
+        .replace(/^https?:\/\/[^/]+/, '')
+        .replace(/^\//, '')
+        .split('?')[0]
+        .split('#')[0]
+        .replace(/\.html$/, '')
+        .replace(/\/$/, '') || 'index';
 }
