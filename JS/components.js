@@ -81,8 +81,8 @@ function renderHeader() {
         <nav class="flex flex-col space-y-6 text-center font-en text-lg tracking-widest">
             <a href="${PATHS.home}" class="mobile-link hover:text-gray-400">HOME</a>
             <a href="${PATHS.about}" class="mobile-link hover:text-gray-400">ABOUT</a>
-            <a href="${PATHS.ebike_intro}" class="mobile-link hover:text-gray-400">E-BIKE</a>
-            <a href="${PATHS.kickboard_intro}" class="mobile-link hover:text-gray-400">KICKBOARD</a>
+            <a href="${PATHS.ebike_buy}" class="mobile-link hover:text-gray-400">E-BIKE</a>
+            <a href="${PATHS.kickboard_buy}" class="mobile-link hover:text-gray-400">KICKBOARD</a>
             <a href="${PATHS.accessories}" class="mobile-link hover:text-gray-400">ACCESSORIES</a>
             <a href="${PATHS.news}" class="mobile-link hover:text-gray-400">NEWS</a>
             <a href="${PATHS.partner}" class="mobile-link hover:text-gray-400">PARTNER</a>

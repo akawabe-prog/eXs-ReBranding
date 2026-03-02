@@ -191,7 +191,7 @@ function setupAddToCartButtons(container) {
 
 // モックデータ (API実装までの仮データ)
 function getMockData() {
-    return [
+    const items = [
         { id: 'acc-001', name: "eXsダックテールヘルメット（マットブラック）", category: "helmet", categoryLabel: "HELMET", compatibility: "全モデル", description: "街乗りに馴染むダックテール形状。落ち着いたマットブラック。", image: "https://placehold.co/600x450/ffffff/333?text=Helmet+Black", url: "https://item.rakuten.co.jp/partsdirect/" },
         { id: 'acc-002', name: "eXsダックテールヘルメット（マットグレー）", category: "helmet", categoryLabel: "HELMET", compatibility: "全モデル", description: "軽快な印象のマットグレー。日常使いしやすい定番カラー。", image: "https://placehold.co/600x450/ffffff/333?text=Helmet+Gray", url: "https://item.rakuten.co.jp/partsdirect/" },
         { id: 'acc-003', name: "eXsダックテールヘルメット（マットアイボリー）", category: "helmet", categoryLabel: "HELMET", compatibility: "全モデル", description: "上品で柔らかな印象のマットアイボリー。", image: "https://placehold.co/600x450/ffffff/333?text=Helmet+Ivory", url: "https://item.rakuten.co.jp/partsdirect/" },
@@ -218,4 +218,13 @@ function getMockData() {
         { id: 'acc-020', name: "WINDPRO P アルミフロアポンプ（レッド）", category: "maintenance", categoryLabel: "MAINTENANCE", compatibility: "全モデル", description: "高圧対応のアルミフロアポンプ。レッドカラー。", image: "https://placehold.co/600x450/ffffff/333?text=WINDPRO+Red", url: "https://item.rakuten.co.jp/partsdirect/" },
         { id: 'acc-021', name: "WINDPRO P アルミフロアポンプ（ブルー）", category: "maintenance", categoryLabel: "MAINTENANCE", compatibility: "全モデル", description: "高圧対応のアルミフロアポンプ。ブルーカラー。", image: "https://placehold.co/600x450/ffffff/333?text=WINDPRO+Blue", url: "https://item.rakuten.co.jp/partsdirect/" }
     ];
+
+    return items.map((item) => {
+        const isDefaultRakutenTop = item.url === 'https://item.rakuten.co.jp/partsdirect/';
+        if (!isDefaultRakutenTop) return item;
+        return {
+            ...item,
+            url: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(item.name)}/`
+        };
+    });
 }

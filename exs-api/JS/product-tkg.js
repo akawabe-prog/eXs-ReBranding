@@ -176,7 +176,7 @@ function getMockProductData() {
             {
                 id: 'type-1',
                 name: 'eXs 1 TKG (車体のみ)',
-                price: 69080,
+                price: 54999,
                 rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/27882603/',
                 yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/27882603.html',
                 isDefault: true
@@ -184,7 +184,7 @@ function getMockProductData() {
             {
                 id: 'type-2',
                 name: 'eXs 1 TKG + サドルセット',
-                price: 69080,
+                price: 64799,
                 rakutenUrl: 'https://item.rakuten.co.jp/partsdirect39/28021582/',
                 yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/28021582.html',
                 badge: 'POPULAR'
