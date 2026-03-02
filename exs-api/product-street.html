@@ -14,11 +14,11 @@
     <meta property="og:url" content="https://exs.customjapan.net/product-street.html">
     <meta property="og:title" content="eXs Street | 電動アシスト自転車・ファットバイクeBike | eXs">
     <meta property="og:description" content="eXs Street（API用ページ）。電動アシスト自転車の機能性とファットバイクの走破性を備えたeBikeの仕様・価格情報を掲載。">
-    <meta property="og:image" content="img/eXsStreetImage.jpg">
+    <meta property="og:image" content="img-webp/eXsStreetImage.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="eXs Street | 電動アシスト自転車・ファットバイクeBike | eXs">
     <meta name="twitter:description" content="eXs Street（API用ページ）。電動アシスト自転車の機能性とファットバイクの走破性を備えたeBikeの仕様・価格情報を掲載。">
-    <meta name="twitter:image" content="img/eXsStreetImage.jpg">
+    <meta name="twitter:image" content="img-webp/eXsStreetImage.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -45,6 +45,21 @@
     <style>
         .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .street-frame-slider { position: relative; overflow: hidden; }
+        .street-frame-slider::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.16);
+            pointer-events: none;
+        }
+        .street-frame-image { display: block; width: 100%; height: auto; object-fit: cover; opacity: 1; transition: opacity 0.45s ease; }
+        .street-frame-image.is-fading { opacity: 0; }
+        .street-frame-image.is-soft-in { animation: streetSoftIn 0.8s ease; }
+        @keyframes streetSoftIn {
+            from { opacity: 0; filter: blur(5px); }
+            to { opacity: 1; filter: blur(0); }
+        }
     </style>
 </head>
 <body class="font-sans text-brand-black antialiased bg-white" id="product-page-street-api">
@@ -70,14 +85,14 @@
                 
                 <div class="w-full lg:w-3/5">
                     <div class="bg-gray-100 aspect-[4/3] mb-4 overflow-hidden relative group cursor-zoom-in">
-                        <img src="https://placehold.co/1200x900/111/fff?text=Matte+Black" alt="Main Product Image" class="w-full h-full object-contain p-8 transition-transform duration-500 hover:scale-105" id="main-image">
+                        <img src="img-webp/eXs street_item_matteblack.webp" alt="Main Product Image" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" id="main-image" loading="lazy" decoding="async">
                     </div>
                     
                     <div id="thumbnail-container" class="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4"></div>
                 </div>
 
                 <div class="w-full lg:w-2/5 flex flex-col">
-                    <img src="img/exs-street-logo-black.svg" alt="eXs Street ロゴ" class="h-9 md:h-10 w-auto mb-3">
+                    <img src="img/exs-street-logo-black.svg" alt="eXs Street ロゴ" class="h-9 md:h-10 w-auto mb-3" loading="lazy" decoding="async">
                     <h1 id="product-name" class="sr-only">eXs Street</h1>
                     <p id="product-category" class="font-en text-sm text-gray-500 tracking-widest mb-6">ELECTRIC ASSIST BICYCLE</p>
                     
@@ -95,18 +110,13 @@
                         <div id="color-container" class="flex space-x-4"></div>
                     </div>
 
-                    <div class="mb-10">
-                        <span class="block text-xs font-en font-bold tracking-widest mb-4">OPTIONS</span>
-                        <div id="option-container" class="space-y-3"></div>
-                    </div>
-
                     <div class="mt-auto">
                         <div class="text-3xl font-en font-bold mb-4">
                             <span class="text-sm font-normal text-gray-500 mr-2">TOTAL</span>
                             <span id="total-price">149,800円</span>
                         </div>
                         <button id="add-to-cart-btn" type="button" class="w-full bg-brand-black text-white font-en font-bold py-5 tracking-widest text-lg hover:bg-gray-800 transition mb-2">
-                            ADD TO CART
+                            GO TO CART
                         </button>
                         <p id="cart-message" class="text-xs text-center mb-4 hidden"></p>
                         <div class="grid gap-3 mb-6">
@@ -142,7 +152,7 @@
                     </summary>
                     <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
                         <h4 class="font-bold text-black mb-2">保証期間について</h4>
-                        <p class="mb-4">ご購入日より6ヶ月間、フレーム・モーター・コントローラー等の主要電子部品の不具合に無償対応します。<br>※タイヤ・ブレーキ等の消耗品、使用上の不注意による故障は対象外です。</p>
+                        <p class="mb-4">eXs Streetはお届けから12ヶ月間（1年間）、フレーム・モーター等の主要部品の不具合に部品・工賃とも無償対応します。<br>※タイヤ・ブレーキ等の消耗品、使用上の不注意による故障は対象外です。</p>
                         <h4 class="font-bold text-black mb-2">アフターサポート</h4>
                         <p class="mb-4">お近くで修理対応が難しい場合は、お預かり修理にて専門スタッフが対応します。メール・電話での専用窓口に加え、交換パーツ供給も実施しています。</p>
                         <a href="support.html" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">SUPPORTの詳細はこちら</a>
@@ -247,7 +257,7 @@
                                         <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
                                     </summary>
                                     <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
-                                        <p><strong>初期不良：</strong>到着後14日以内<br><strong>部品保証：</strong>ご購入日から6ヶ月間（フレーム、モーター、バッテリー等）<br>※タイヤ、ブレーキパッドなどの消耗品や、転倒・誤使用による故障は対象外です。</p>
+                                        <p><strong>初期不良：</strong>到着後14日以内<br><strong>製品保証：</strong>お届けから12ヶ月間（フレーム、モーター、バッテリー等の主要部品）<br>※タイヤ、ブレーキパッドなどの消耗品や、転倒・誤使用による故障は対象外です。</p>
                                     </div>
                                 </details>
                                 <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
@@ -428,18 +438,14 @@
             </div>
 
             <section class="mt-32 mb-20 fade-up">
-                <div class="text-center mb-8">
-                    <span class="font-en text-xs font-bold tracking-widest text-gray-400 block mb-2">IMAGE MOVIE</span>
-                    <h2 class="font-en text-2xl md:text-3xl font-bold tracking-tighter">THE STREET RIDE</h2>
-                </div>
-                <div class="relative w-full aspect-video bg-black overflow-hidden group">
-                    <video class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline poster="https://placehold.co/1920x1080/111/333?text=Movie+Loading...">
-                        <source src="https://videos.pexels.com/video-files/5155396/5155396-hd_1920_1080_30fps.mp4" type="video/mp4">
+                <div class="relative w-screen left-1/2 -translate-x-1/2 h-[58vh] md:h-[72vh] bg-black overflow-hidden">
+                    <video class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline>
+                        <source src="video/eXs-optimized.mp4" type="video/mp4">
                     </video>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm">
-                            <i class="fa-solid fa-play text-white ml-1"></i>
-                        </div>
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
+                        <span class="font-en text-xs md:text-sm tracking-[0.25em] mb-4">IMAGE MOVIE</span>
+                        <h2 class="font-en text-3xl md:text-5xl font-bold tracking-tight">THE STREET RIDE</h2>
                     </div>
                 </div>
             </section>
@@ -447,7 +453,7 @@
             <section class="mb-32">
                 <div class="flex flex-col md:flex-row items-center gap-12 mb-24 fade-up">
                     <div class="w-full md:w-1/2">
-                        <img src="https://placehold.co/800x600/222/fff?text=Fat+Tire+Detail" alt="4x20 Fat Tire" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="img-webp/eXs-street_item_front.webp" alt="4x20 Fat Tire" class="w-full h-auto object-cover transition duration-700" loading="lazy" decoding="async">
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. ALL TERRAIN TIRES</span>
@@ -460,7 +466,15 @@
 
                 <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24 fade-up">
                     <div class="w-full md:w-1/2">
-                        <img src="https://placehold.co/800x600/333/fff?text=Matte+Frame+Design" alt="Matte Frame Design" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <div class="street-frame-slider" data-street-frame-slider>
+                            <img
+                                src="img-webp/eXs-street_product_black.webp"
+                                alt="Matte Color Product"
+                                class="street-frame-image"
+                                data-street-frame-image
+                                data-images="img-webp/eXs-street_product_black.webp|img-webp/eXs-street_product_gray.webp|img-webp/eXs-street_product_beige.webp"
+                             loading="lazy" decoding="async">
+                        </div>
                     </div>
                     <div class="w-full md:w-1/2 md:pr-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">02. SOPHISTICATED DESIGN</span>
@@ -473,8 +487,8 @@
 
                 <div class="flex flex-col md:flex-row items-center gap-12 fade-up">
                     <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
-                        <img src="https://placehold.co/400x400/111/fff?text=Display" alt="LCD Display" class="w-full h-auto object-cover">
-                        <img src="https://placehold.co/400x400/111/fff?text=Disc+Brake" alt="Disc Brake" class="w-full h-auto object-cover">
+                        <img src="img-webp/eXs-street_display_square.webp" alt="LCD Display" class="w-full h-auto object-cover" loading="lazy" decoding="async">
+                        <img src="img-webp/eXs-street_diskbrake_square.webp" alt="Disc Brake" class="w-full h-auto object-cover" loading="lazy" decoding="async">
                     </div>
                     <div class="w-full md:w-1/2 md:pl-10">
                         <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">03. HIGH PERFORMANCE</span>
@@ -506,19 +520,69 @@
                 </div>
             </section>
 
+            <section class="relative w-screen left-1/2 -translate-x-1/2 bg-black overflow-hidden mb-0">
+                <div id="street-product-parallax-visual" class="relative w-full fade-up">
+                    <img id="street-product-parallax-image" src="img-webp/eXs-street_image_city&offload.webp" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1000px] object-cover will-change-transform" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
+                </div>
+            </section>
+
+            <section class="relative w-screen left-1/2 -translate-x-1/2 py-20 px-4 md:px-8 lg:px-10 bg-[#0b0b0b] text-white mb-24">
+                <div class="w-full fade-up">
+                    <div class="flex items-center gap-4 mb-14">
+                        <span class="h-px w-10 bg-white/40"></span>
+                        <h3 class="font-en text-2xl md:text-3xl font-bold tracking-widest">PRODUCT FEATURE</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <article class="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                            <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                                <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_battely.jpg" alt="Battery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            </div>
+                            <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">48V 10Ahの高性能バッテリー</h4>
+                            <p class="text-sm text-gray-300/90 leading-[1.9]">フレームにすっきりと内蔵された48V・10Ahバッテリーは、スタイルを損なわずに最長約80kmの走行性能を発揮します。</p>
+                        </article>
+
+                        <article class="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                            <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                                <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_display.jpg" alt="Display" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            </div>
+                            <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">コンパクトな液晶ディスプレイ</h4>
+                            <p class="text-sm text-gray-300/90 leading-[1.9]">フレームの世界観を壊さず、静かに機能美を引き立てるカラー液晶。アシストレベル・速度・バッテリー残量をひと目で把握できます。</p>
+                        </article>
+
+                        <article class="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                            <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                                <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg" alt="Compact Folding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            </div>
+                            <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">車にも積み込める収納性</h4>
+                            <p class="text-sm text-gray-300/90 leading-[1.9]">スリーステップで折りたたみ可能。自宅や車のトランクにも収まり、ファットタイヤモデルながら高い収納性を備えています。</p>
+                        </article>
+
+                        <article class="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                            <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                                <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_air.jpg?_t=1765150905" alt="Air Pump Saddle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            </div>
+                            <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">空気入れ内蔵のサドルポスト</h4>
+                            <p class="text-sm text-gray-300/90 leading-[1.9]">サドルを抜けばすぐ空気を入れられる便利機構を搭載。出先やオフロードでも安心の実用性を備えています。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
             <section class="mb-32 bg-gray-50 p-8 md:p-16 text-center fade-up">
                 <span class="font-en text-xs font-bold tracking-widest text-gray-400 block mb-4">SPEC MOVIE</span>
                 <h3 class="font-en text-xl md:text-2xl font-bold tracking-tighter mb-8">FOLDING & DETAILS</h3>
                 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="aspect-video bg-gray-200 relative overflow-hidden group cursor-pointer">
-                        <video class="w-full h-full object-cover" muted loop playsinline poster="https://placehold.co/800x450/ccc/333?text=Folding+Demo"></video>
+                    <div id="street-folding-slideshow" class="aspect-video bg-white relative overflow-hidden group cursor-pointer" data-images="img-webp/eXs-street_folding_1.webp|img-webp/eXs-street_folding_2.webp|https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg">
+                        <img id="street-folding-slideshow-image" src="img-webp/eXs-street_folding_1.webp" alt="Folding Demo" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
                         <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
                             <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY FOLDING</div>
                         </div>
                     </div>
-                    <div class="aspect-video bg-gray-200 relative overflow-hidden group cursor-pointer">
-                        <video class="w-full h-full object-cover" muted loop playsinline poster="https://placehold.co/800x450/ccc/333?text=Riding+Scene"></video>
+                    <div id="street-ride-slideshow" class="aspect-video bg-black relative overflow-hidden group cursor-pointer" data-images="img-webp/eXs-street_ride_1.webp|img-webp/eXs-street_ride_2.webp|img-webp/eXs-street_ride_3.webp|img-webp/eXs-street_ride_4.webp|img-webp/eXs-street_ride_5.webp|img-webp/eXs-street_ride_6.webp|img-webp/eXs-street_ride_7.webp">
+                        <img id="street-ride-slideshow-image" src="img-webp/eXs-street_ride_1.webp" alt="Riding Scene" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
                         <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
                             <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY RIDING</div>
                         </div>
@@ -531,17 +595,20 @@
                     <h3 class="font-en text-xl font-bold tracking-widest">GALLERY</h3>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="https://placehold.co/600x900/222/fff?text=Scene+1" alt="Gallery 1" class="w-full h-full object-cover">
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img-webp/eXs-street_gallery1.webp" alt="Gallery 1" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
+                    </div>
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img-webp/eXs-street_gallery2.webp" alt="Gallery 2" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
+                    </div>
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img-webp/eXs-street_gallery3.webp" alt="Gallery 3" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
                     </div>
                     <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="https://placehold.co/600x900/333/fff?text=Scene+2" alt="Gallery 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="https://placehold.co/600x900/444/fff?text=Scene+3" alt="Gallery 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
-                        <img src="https://placehold.co/600x900/555/fff?text=Detail+1" alt="Gallery 4" class="w-full h-full object-cover">
+                        <img src="img-webp/eXs-street_gallery4.webp" alt="Gallery 4" class="w-full h-full object-cover" loading="lazy" decoding="async">
                     </div>
                 </div>
             </section>
@@ -554,6 +621,103 @@
     <script src="JS/components.js"></script>
     <script src="JS/script.js"></script>
     
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const parallaxVisual = document.getElementById('street-product-parallax-visual');
+            const parallaxImage = document.getElementById('street-product-parallax-image');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const initSlideshow = (containerId, imageId, options = {}) => {
+                const slideshow = document.getElementById(containerId);
+                const imageEl = document.getElementById(imageId);
+                if (!slideshow || !imageEl) return;
+                const {
+                    intervalMs = 1200,
+                    fade = false
+                } = options;
+
+                const images = (slideshow.dataset.images || '')
+                    .split('|')
+                    .map((src) => src.trim())
+                    .filter(Boolean);
+                if (images.length < 2) return;
+
+                const preloadedImages = images.map((src) => {
+                    const img = new Image();
+                    img.src = src;
+                    return img;
+                });
+                const loaded = preloadedImages.map((img) => img.complete);
+                preloadedImages.forEach((img, idx) => {
+                    if (loaded[idx]) return;
+                    img.addEventListener('load', () => {
+                        loaded[idx] = true;
+                    }, { once: true });
+                });
+
+                let index = 0;
+                if (fade) {
+                    imageEl.classList.add('absolute', 'inset-0');
+                    imageEl.style.opacity = '1';
+                    imageEl.style.zIndex = '1';
+
+                    const overlayImage = imageEl.cloneNode();
+                    overlayImage.removeAttribute('id');
+                    overlayImage.setAttribute('aria-hidden', 'true');
+                    overlayImage.style.opacity = '0';
+                    overlayImage.style.zIndex = '2';
+                    slideshow.insertBefore(overlayImage, imageEl.nextSibling);
+
+                    let activeImage = imageEl;
+                    let nextImage = overlayImage;
+
+                    setInterval(() => {
+                        index = (index + 1) % images.length;
+                        nextImage.src = images[index];
+                        nextImage.style.opacity = '1';
+                        activeImage.style.opacity = '0';
+
+                        const previous = activeImage;
+                        activeImage = nextImage;
+                        nextImage = previous;
+                    }, intervalMs);
+                    return;
+                }
+
+                setInterval(() => {
+                    const nextIndex = (index + 1) % images.length;
+                    if (!loaded[nextIndex]) return;
+                    index = nextIndex;
+                    imageEl.src = images[index];
+                }, intervalMs);
+            };
+
+            initSlideshow('street-folding-slideshow', 'street-folding-slideshow-image', { intervalMs: 2600, fade: true });
+            initSlideshow('street-ride-slideshow', 'street-ride-slideshow-image', { intervalMs: 650, fade: false });
+
+            if (!prefersReducedMotion && parallaxVisual && parallaxImage) {
+                const maxParallax = 180;
+                let ticking = false;
+                const applyParallax = () => {
+                    const rect = parallaxVisual.getBoundingClientRect();
+                    const viewportCenter = window.innerHeight * 0.5;
+                    const offset = (viewportCenter - (rect.top + rect.height / 2)) * 0.22;
+                    const parallaxY = Math.max(-maxParallax, Math.min(maxParallax, offset));
+                    parallaxImage.style.transform = `translate3d(0, ${parallaxY}px, 0)`;
+                    ticking = false;
+                };
+                const onScroll = () => {
+                    if (ticking) return;
+                    ticking = true;
+                    window.requestAnimationFrame(applyParallax);
+                };
+                applyParallax();
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', onScroll);
+            }
+        });
+    </script>
+    
     <script type="module">
         import { initApiClient, verifyLogin, addItemToCart } from './JS/api-client.js';
 
@@ -565,25 +729,31 @@
                 basePrice: 149800,
                 shippingEstimate: '1週間',
                 images: [
-                    { label: 'Black', colorHex: '#1a1a1a', src: 'https://placehold.co/1200x900/111/fff?text=Matte+Black', thumb: 'https://placehold.co/200x200/111/fff?text=Black', productId: '29044337', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044337/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044337.html' },
-                    { label: 'Gray', colorHex: '#888888', src: 'https://placehold.co/1200x900/888/fff?text=Matte+Gray', thumb: 'https://placehold.co/200x200/888/fff?text=Gray', productId: '29044344', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044344/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044344.html' },
-                    { label: 'Beige', colorHex: '#d8d2c0', src: 'https://placehold.co/1200x900/dcc/333?text=Matte+Beige', thumb: 'https://placehold.co/200x200/dcc/333?text=Beige', productId: '29044351', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044351/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044351.html' },
-                    { label: 'Front', colorHex: '#eeeeee', src: 'https://placehold.co/1200x900/eee/333?text=Front+View', thumb: 'https://placehold.co/200x200/eee/333?text=Front' },
-                    { label: 'Rear', colorHex: '#dddddd', src: 'https://placehold.co/1200x900/ddd/333?text=Rear+View', thumb: 'https://placehold.co/200x200/ddd/333?text=Rear' },
-                    { label: 'Folded', colorHex: '#cccccc', src: 'https://placehold.co/1200x900/ccc/333?text=Folded', thumb: 'https://placehold.co/200x200/ccc/333?text=Folded' }
+                    { label: 'Black', colorHex: '#1a1a1a', src: 'img-webp/eXs street_item_matteblack.webp', thumb: 'img-webp/eXs street_item_matteblack.webp', productId: '29044337', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044337/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044337.html' },
+                    { label: 'Gray', colorHex: '#888888', src: 'img-webp/eXs street_item_mattegray.webp', thumb: 'img-webp/eXs street_item_mattegray.webp', productId: '29044344', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044344/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044344.html' },
+                    { label: 'Beige', colorHex: '#d8d2c0', src: 'img-webp/eXs street_item_mattebeige.webp', thumb: 'img-webp/eXs street_item_mattebeige.webp', productId: '29044351', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044351/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044351.html' },
+                    { label: 'Front', colorHex: '#eeeeee', src: 'img-webp/eXs-street_item_front.webp', thumb: 'img-webp/eXs-street_item_front.webp' },
+                    { label: 'Rear', colorHex: '#dddddd', src: 'img-webp/eXs-street_item_rear.webp', thumb: 'img-webp/eXs-street_item_rear.webp' }
                 ],
                 options: [
                     { label: 'リアキャリア', price: 5478 },
                     { label: '前後フェンダーセット', price: 7678 }
                 ],
                 specs: [
-                    { label: '全長', value: '1630 mm' },
-                    { label: '全幅', value: '590 mm' },
+                    { label: '全長', value: '1650 mm' },
+                    { label: '全幅', value: '575 mm' },
                     { label: '重量', value: '27.1 kg' },
                     { label: 'タイヤサイズ', value: '20 × 4.0 インチ' },
-                    { label: 'バッテリー容量', value: '10.4 Ah' },
+                    { label: 'バッテリー容量', value: '10 Ah' },
                     { label: '充電時間', value: '約 6時間' },
                     { label: '走行可能距離', value: '60 - 80 km' },
+                    { label: 'タイヤバルブ', value: '米式（アメリカン）' },
+                    { label: '走行モード', value: '3モード' },
+                    { label: 'モーター定格出力', value: '250W' },
+                    { label: '最大荷重', value: '100kg' },
+                    { label: 'ブレーキ', value: '前後ディスクブレーキ' },
+                    { label: '防水レベル', value: '本体IPX4 / 電装部品IPX5' },
+                    { label: '保証期間', value: '1年間' },
                     { label: '変速機', value: 'Shimano 7段変速' }
                 ]
             };
@@ -641,7 +811,7 @@
                         data-index="${index}"
                         class="thumbnail-btn bg-gray-50 aspect-square border p-1 transition hover:opacity-75 ${selectedIndex === index ? 'border-black' : 'border-transparent hover:border-gray-300'}"
                     >
-                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-cover">
+                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-cover" loading="lazy" decoding="async">
                     </button>
                 `).join('');
                 container.querySelectorAll('.thumbnail-btn').forEach((button) => {
@@ -820,6 +990,57 @@
                 if (container) container.classList.remove('opacity-0');
             }
 
+            function initStreetFrameSlider() {
+                const slider = document.querySelector('[data-street-frame-slider]');
+                if (!slider) return;
+
+                const imageEl = slider.querySelector('[data-street-frame-image]');
+                if (!imageEl) return;
+
+                const images = (imageEl.dataset.images || '')
+                    .split('|')
+                    .map((src) => src.trim())
+                    .filter(Boolean);
+                if (images.length < 2) return;
+
+                let currentIndex = 0;
+                let timerId = null;
+                let switching = false;
+
+                const setSlide = (nextIndex) => {
+                    if (switching) return;
+                    switching = true;
+                    imageEl.classList.add('is-fading');
+
+                    window.setTimeout(() => {
+                        currentIndex = (nextIndex + images.length) % images.length;
+                        imageEl.src = images[currentIndex];
+                        imageEl.classList.remove('is-soft-in');
+                        void imageEl.offsetWidth;
+                        imageEl.classList.add('is-soft-in');
+                        imageEl.classList.remove('is-fading');
+                        switching = false;
+                    }, 260);
+                };
+
+                const start = () => {
+                    if (timerId) return;
+                    timerId = setInterval(() => setSlide(currentIndex + 1), 3400);
+                };
+
+                const stop = () => {
+                    if (!timerId) return;
+                    clearInterval(timerId);
+                    timerId = null;
+                };
+
+                slider.addEventListener('mouseenter', stop);
+                slider.addEventListener('mouseleave', start);
+                imageEl.addEventListener('animationend', () => imageEl.classList.remove('is-soft-in'));
+
+                start();
+            }
+
             document.addEventListener('DOMContentLoaded', async () => {
                 initApiClient((window.EXS_API_CONFIG && window.EXS_API_CONFIG.apiBaseUrl) || undefined);
                 try {
@@ -830,6 +1051,7 @@
                 const data = await fetchApiData();
                 renderProduct(data);
                 bindCartButton();
+                initStreetFrameSlider();
                 showContent();
             });
         })();

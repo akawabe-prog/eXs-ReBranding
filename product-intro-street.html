@@ -14,11 +14,11 @@
     <meta property="og:url" content="https://exs.customjapan.net/product-intro-street.html">
     <meta property="og:title" content="eXs Street Concept | ファットバイクeBikeの思想 | eXs">
     <meta property="og:description" content="eXs Streetのコンセプトページ。ファットバイク設計のeBikeとして、街乗りと快適性を両立する魅力を紹介します。">
-    <meta property="og:image" content="img/eXsStreetImage.jpg">
+    <meta property="og:image" content="img-webp/eXsStreetImage.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="eXs Street Concept | ファットバイクeBikeの思想 | eXs">
     <meta name="twitter:description" content="eXs Streetのコンセプトページ。ファットバイク設計のeBikeとして、街乗りと快適性を両立する魅力を紹介します。">
-    <meta name="twitter:image" content="img/eXsStreetImage.jpg">
+    <meta name="twitter:image" content="img-webp/eXsStreetImage.webp">
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,11 +56,11 @@
     <header id="common-header" class="fixed w-full top-0 z-50 bg-brand-black/90 backdrop-blur-sm text-white shadow-sm transition-all duration-300"></header>
 
     <section class="relative h-screen w-full overflow-hidden bg-black">
-        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-            <source src="video/eXs.mp4" type="video/mp4">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+            <source src="video/eXs-optimized.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-4">
-            <img src="img/exs-street-logo-white.svg" alt="eXs Street ロゴ" class="h-32 md:h-44 w-auto mb-6 fade-up">
+            <img src="img/exs-street-logo-white.svg" alt="eXs Street ロゴ" class="h-32 md:h-44 w-auto mb-6 fade-up" loading="lazy" decoding="async">
             <h1 class="sr-only">eXs Street</h1>
             <p class="font-en text-sm md:text-lg tracking-[0.3em] fade-up delay-200">THE URBAN ADVENTURE</p>
         </div>
@@ -86,7 +86,7 @@
 
    <section class="relative flex flex-col md:flex-row md:h-[80vh] items-center bg-gray-100 overflow-hidden">
         <div class="w-full h-[50vh] md:w-1/2 md:h-full relative">
-            <img src="img/eXs-steet_fattire_closeup.jpg" alt="Fat Tire" class="w-full h-full object-cover">
+            <img src="img-webp/eXs-street_fattire_closeup.webp" alt="Fat Tire" class="w-full h-full object-cover" loading="lazy" decoding="async">
         </div>
         
         <div class="w-full md:w-1/2 relative z-10 px-6 py-16 md:py-0 flex items-center justify-center md:justify-start">
@@ -102,9 +102,9 @@
 
     <section class="relative flex flex-col md:flex-row-reverse md:h-[80vh] items-center bg-white overflow-hidden">
         <div class="w-full h-[50vh] md:w-1/2 md:h-full relative" id="street-color-showcase">
-            <img src="img/eXs-steet_black_image.jpg" alt="Matte Black" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700" data-index="0">
-            <img src="img/eXs-steet_mattegray_image.jpg" alt="Matte Gray" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" data-index="1">
-            <img src="img/eXs-steet_mattebeige_image.jpg" alt="Matte Beige" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" data-index="2">
+            <img src="img-webp/eXs-street_black_image.webp" alt="Matte Black" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700" data-index="0" loading="lazy" decoding="async">
+            <img src="img-webp/eXs-street_mattegray_image.webp" alt="Matte Gray" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" data-index="1" loading="lazy" decoding="async">
+            <img src="img-webp/eXs-street_mattebeige_image.webp" alt="Matte Beige" class="street-color-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" data-index="2" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
         </div>
         
@@ -136,14 +136,14 @@
     </section>
 
     <section class="bg-black overflow-hidden">
-        <div id="street-intro-parallax-visual" class="relative w-screen left-1/2 right-1/2 -translate-x-1/2">
-            <img id="street-intro-parallax-image" src="img/eXsイメージ.png" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1100px] object-cover will-change-transform">
+        <div id="street-intro-parallax-visual" class="relative w-screen left-1/2 -translate-x-1/2">
+            <img id="street-intro-parallax-image" src="img-webp/eXs-street_image_city&offload.webp" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1100px] object-cover will-change-transform" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
         </div>
     </section>
 
-    <section class="py-28 px-6 bg-[#0b0b0b] text-white">
-        <div class="container mx-auto max-w-[1440px]">
+    <section class="relative w-screen left-1/2 -translate-x-1/2 py-20 px-4 md:px-8 lg:px-10 bg-[#0b0b0b] text-white">
+        <div class="w-full">
             <div class="flex items-center gap-4 mb-14 fade-up">
                 <span class="h-px w-10 bg-white/40"></span>
                 <h3 class="font-en text-2xl md:text-3xl font-bold tracking-widest">PRODUCT FEATURE</h3>
@@ -152,7 +152,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <article class="fade-up group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
                     <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
-                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_battely.jpg" alt="Battery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_battely.jpg" alt="Battery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                     </div>
                     <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">48V 10Ahの高性能バッテリー</h4>
                     <p class="text-sm text-gray-300/90 leading-[1.9]">フレームにすっきりと内蔵された48V・10Ahバッテリーは、スタイルを損なわずに最長約80kmの走行性能を発揮します。</p>
@@ -160,7 +160,7 @@
 
                 <article class="fade-up group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
                     <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
-                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_display.jpg" alt="Display" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_display.jpg" alt="Display" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                     </div>
                     <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">コンパクトな液晶ディスプレイ</h4>
                     <p class="text-sm text-gray-300/90 leading-[1.9]">フレームの世界観を壊さず、静かに機能美を引き立てるカラー液晶。アシストレベル・速度・バッテリー残量をひと目で把握できます。</p>
@@ -168,15 +168,15 @@
 
                 <article class="fade-up group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
                     <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
-                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg" alt="Compact Folding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg" alt="Compact Folding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                     </div>
                     <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">車にも積み込める収納性</h4>
-                    <p class="text-sm text-gray-300/90 leading-[1.9]">スリーステップで折りたたみ可能。アトリエや車のトランクにも収まり、ファットタイヤモデルながら高い収納性を備えています。</p>
+                    <p class="text-sm text-gray-300/90 leading-[1.9]">スリーステップで折りたたみ可能。自宅や車のトランクにも収まり、ファットタイヤモデルながら高い収納性を備えています。</p>
                 </article>
 
                 <article class="fade-up group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
                     <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
-                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_air.jpg?_t=1765150905" alt="Air Pump Saddle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_air.jpg?_t=1765150905" alt="Air Pump Saddle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                     </div>
                     <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">空気入れ内蔵のサドルポスト</h4>
                     <p class="text-sm text-gray-300/90 leading-[1.9]">サドルを抜けばすぐ空気を入れられる便利機構を搭載。出先やオフロードでも安心の実用性を備えています。</p>
@@ -209,15 +209,11 @@
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 fade-up">
-                    <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-xl hidden md:block">
-                        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-                            <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4">
-                        </video>
+                    <div id="intro-street-folding-slideshow" class="aspect-video bg-white rounded-lg overflow-hidden shadow-xl hidden md:block relative" data-images="img-webp/eXs-street_folding_1.webp|img-webp/eXs-street_folding_2.webp|https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg">
+                        <img id="intro-street-folding-image" src="img-webp/eXs-street_folding_1.webp" alt="Folding Animation" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
                     </div>
-                    <div class="max-w-[320px] mx-auto aspect-[9/16] bg-black rounded-lg overflow-hidden shadow-xl md:hidden">
-                        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-                            <source src="video/eXs.mp4" type="video/mp4">
-                        </video>
+                    <div id="intro-street-folding-slideshow-mobile" class="w-full max-w-[520px] mx-auto aspect-video bg-white rounded-lg overflow-hidden shadow-xl md:hidden relative" data-images="img-webp/eXs-street_folding_1.webp|img-webp/eXs-street_folding_2.webp|https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg">
+                        <img id="intro-street-folding-image-mobile" src="img-webp/eXs-street_folding_1.webp" alt="Folding Animation" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -276,7 +272,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <article class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_38px_rgba(0,0,0,0.12)] transition duration-300 fade-up">
                     <figure class="aspect-[16/9] overflow-hidden">
-                        <img src="img/customer.jpg" alt="Maintenance" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img-webp/customer.webp" alt="Maintenance" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" decoding="async">
                     </figure>
                     <div class="p-7">
                         <p class="font-en text-[11px] tracking-widest text-gray-400 mb-3">AFTER SUPPORT</p>
@@ -292,7 +288,7 @@
 
                 <article class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_38px_rgba(0,0,0,0.12)] transition duration-300 fade-up">
                     <figure class="aspect-[16/9] overflow-hidden">
-                        <img src="img/parter_image.jpg" alt="Brand Partner" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <img src="img-webp/parter_image.webp" alt="Brand Partner" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" decoding="async">
                     </figure>
                     <div class="p-7">
                         <p class="font-en text-[11px] tracking-widest text-gray-400 mb-3">BRAND PARTNER</p>
@@ -300,7 +296,7 @@
                         <p class="text-sm text-gray-600 leading-loose mb-6">
                             eXs Street / eXs 1 TKG を取り扱う正規販売店をご紹介。試乗や在庫確認、導入相談はお近くの取扱店へお問い合わせください。
                         </p>
-                        <a href="partner-list.html" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">
+                        <a href="partner-list.html?model=street" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">
                             取扱店一覧を見る →
                         </a>
                     </div>
@@ -335,6 +331,53 @@
             const parallaxVisual = document.getElementById('street-intro-parallax-visual');
             const parallaxImage = document.getElementById('street-intro-parallax-image');
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const initCrossfadeSlideshow = (containerId, imageId, intervalMs = 2600) => {
+                const slideshow = document.getElementById(containerId);
+                const imageEl = document.getElementById(imageId);
+                if (!slideshow || !imageEl) return;
+
+                const images = (slideshow.dataset.images || '')
+                    .split('|')
+                    .map((src) => src.trim())
+                    .filter(Boolean);
+                if (images.length < 2) return;
+
+                images.forEach((src) => {
+                    const img = new Image();
+                    img.src = src;
+                });
+
+                imageEl.classList.add('absolute', 'inset-0');
+                imageEl.style.opacity = '1';
+                imageEl.style.zIndex = '1';
+
+                const overlayImage = imageEl.cloneNode();
+                overlayImage.removeAttribute('id');
+                overlayImage.setAttribute('aria-hidden', 'true');
+                overlayImage.style.opacity = '0';
+                overlayImage.style.zIndex = '2';
+                slideshow.insertBefore(overlayImage, imageEl.nextSibling);
+
+                let index = 0;
+                let activeImage = imageEl;
+                let nextImage = overlayImage;
+
+                window.setInterval(() => {
+                    index = (index + 1) % images.length;
+                    nextImage.src = images[index];
+                    nextImage.style.opacity = '1';
+                    activeImage.style.opacity = '0';
+
+                    const previous = activeImage;
+                    activeImage = nextImage;
+                    nextImage = previous;
+                }, intervalMs);
+            };
+
+            initCrossfadeSlideshow('intro-street-folding-slideshow', 'intro-street-folding-image', 2600);
+            initCrossfadeSlideshow('intro-street-folding-slideshow-mobile', 'intro-street-folding-image-mobile', 2600);
+
             if (slides.length === 0 || dots.length === 0) return;
 
             let currentIndex = 0;

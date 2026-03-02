@@ -13,16 +13,16 @@ const PATHS = {
     accessories: 'accessories.html',
     news: 'news-list.html',
     developer: 'developer.html',
-    partner: 'partner-list.html',
+    partner: 'partner.html',
     column: 'colum-list.html',
     support: 'support.html',
     contact: 'contact.html',
     privacy: 'privacy.html',
     company: 'company.html',
     faq: 'FAQ.html',
-    instagram: 'contact.html', // TODO: 公式Instagram URLへ差し替え
-    x: 'contact.html', // TODO: 公式X URLへ差し替え
-    youtube: 'contact.html' // TODO: 公式YouTube URLへ差し替え
+    instagram: 'https://www.instagram.com/exs.mobi/',
+    facebook: 'https://www.facebook.com/exs.mobi',
+    youtube: 'https://www.youtube.com/@CustomJapan39'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -140,7 +140,7 @@ function renderFooter() {
             <p>&copy; 2026 eXs / Custom Japan Co., Ltd.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="${PATHS.instagram}" class="hover:text-white transition"><i class="fa-brands fa-instagram text-lg"></i></a>
-                <a href="${PATHS.x}" class="hover:text-white transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                <a href="${PATHS.facebook}" class="hover:text-white transition"><i class="fa-brands fa-facebook-f text-lg"></i></a>
                 <a href="${PATHS.youtube}" class="hover:text-white transition"><i class="fa-brands fa-youtube text-lg"></i></a>
             </div>
         </div>

@@ -1,186 +1,126 @@
-# eXs API連携ハンドオフ資料（現行実装ベース）
+# eXs ハンドオフ資料（要点版）
 
-最終更新: 2026-02-26  
-対象環境: `https://exs.customjapan.net`（本番想定）  
+最終更新: 2026-03-02（latest）  
+対象環境: `https://exs.customjapan.net`  
 公開構成: `exs-api/` 配下をアップロード
 
-## 1. 対象ページ
-- `product-street.html`（購入ページ/API連携版）
-- `product-tkg.html`（購入ページ/API連携版）
-- `accessories.html`（アクセサリー一覧/API連携版）
+## 0. 直近反映（2026-03-02）
+- 画像ファイル名の誤記修正
+  - `eXs steet` / `eXs-steet` -> `eXs street` / `eXs-street`
+  - HTML/JSの参照先も全更新済み
+- 不要画像・不要動画の削除と圧縮最適化を実施
+  - 未参照画像を削除（root/exs-api 両方）
+  - 未参照動画 `video/eXs.mp4` と `video/raw/*` を削除（exs-api側含む）
+- `partner-list` の初期フィルター対応
+  - `?model=street` / `?model=tkg` で初期表示を切替
+- `index` NEWSカードクリックは `news-list.html` 遷移に統一
 
-参考:
-- 閲覧用ページは別ファイル  
-  `product-street(閲覧用).html` / `product-tkg(閲覧用).html`
+## 1. Productページ（API連携）
+対象:
+- `product-street.html`
+- `product-tkg.html`
 
-## 2. 関連ファイル
-- 共通APIクライアント: `JS/api-client.js`
-- API基盤: `JS/services/base-api-requester.js`
-- 認証: `JS/services/auth-api-requester.js`
-- カート: `JS/services/cart-api-requester.js`
-- 商品API補助: `JS/services/product-api-requester.js`
-- アクセサリー画面ロジック: `JS/accessories.js`
-- 商品ページロジック:  
-  `product-street.html` 内 `type="module"` スクリプト  
-  `product-tkg.html` 内 `type="module"` スクリプト
+関連JS:
+- `JS/api-client.js`
+- `JS/services/base-api-requester.js`
+- `JS/services/auth-api-requester.js`
+- `JS/services/cart-api-requester.js`
+- `JS/services/product-api-requester.js`
 
-## 3. 環境設定キー（フロント）
-フロントは `window.EXS_API_CONFIG` があれば利用します。
-
+API設定（任意）:
 ```js
 window.EXS_API_CONFIG = {
   apiBaseUrl: "https://api-e.customjapan.net/api/v1",
   streetProductUrl: "https://.../street-product.json",
-  tkgProductUrl: "https://.../tkg-product.json",
-  accessoriesUrl: "https://.../accessories.json"
+  tkgProductUrl: "https://.../tkg-product.json"
 };
 ```
 
-優先順位:
+動作優先順位:
 1. URLクエリ `?api=...`
 2. `window.EXS_API_CONFIG.<page-specific-url>`
-3. 未設定時はページ内フォールバックデータ
+3. ページ内フォールバックデータ
 
-## 4. 認証・共通API仕様
+Street実装メモ:
+- 購入ボタン表記: `GO TO CART`
+- 保証文: お届けから12ヶ月（1年間）
+- 主要仕様表示: 20×4、10Ah、IPX4/IPX5 など
+- `options[]` UIは利用中
 
-### 4-1. APIベースURL
-- 既定値: `https://api-e.customjapan.net/api/v1`
-- 初期化関数: `initApiClient(apiBaseUrl?)`
+TKG実装メモ:
+- 購入ボタン表記: `GO TO CART`
+- `OPTIONS` UIは削除済み（セット種別選択のみ）
+- 価格表示:
+  - 単品: `54,999円`
+  - サドルセット: `64,799円`
+  - ハンドルバッグセット: `56,979円`
+- 保証文: お届けから6ヶ月
 
-### 4-2. 事前トークン取得
-- Endpoint: `POST /auth/login/before`
-- 取得ヘッダー:
-  - `X-Guid`
-  - `Authorization`
-- フロント動作:
-  - Cookie保存（`xGuId`, `authorization`）
-  - 以降のAPIリクエストヘッダーに付与
+---
 
-### 4-3. ログイン検証
-- Endpoint: `POST /auth/login/verify`
-- 実行タイミング: 各対象ページ `DOMContentLoaded`
-- Timeout: `15000ms`
-- 再試行条件:
-  - `errors[].cd` が `COM3002` or `COM3005`
-- 再試行フロー:
-1. 認証Cookieをクリア
-2. 再初期化
-3. `verify` 再実行
+## 2. Accessories（API連携）
+対象:
+- `accessories.html`
 
-## 5. カートAPI仕様
+関連JS:
+- `JS/accessories.js`
+- `JS/api-client.js`
+- `JS/services/product-api-requester.js`
 
-### 5-1. カート追加（全ページ共通）
-- Endpoint: `PUT /cart/details`
-- Body:
-```json
-{
-  "id": "29044337",
-  "quantity": 1,
-  "site": "exs"
-}
-```
+API取得:
+- `?api=` または `EXS_API_CONFIG.accessoriesUrl` があれば `fetch`
+- JSON解釈候補: `json.data` -> `json.products` -> `json.items` -> `json`
+- URL未指定時: `GET /products/accessories`
 
-### 5-2. カート取得/削除（共通ユーティリティ）
-- 取得: `POST /cart`
-- 明細削除: `POST /cart/details/delete`
-- 数量変更: `PUT /cart/details/quantity`
+フィルター:
+- `all / helmet / lock / bag / maintenance`
 
-## 6. 画面別仕様
+現行実装メモ:
+- フォールバック（モック）に21商品を定義済み
+  - ヘルメット3
+  - Street用パーツ5
+  - TKG用パーツ6
+  - ロック/ポンプ類7
+- カードボタン文言は `カートへ進む`
+- API追加失敗時のフォールバック:
+  - 商品URLがあれば直接遷移
+  - カートURLが設定済みならカートへ遷移
 
-### 6-1. `product-street.html`
-- 商品データ取得:
-  - `?api=` or `EXS_API_CONFIG.streetProductUrl` から `fetch`
-  - JSON解釈順: `json.product` → `json.data` → `json`
-- カート投入ID:
-  - 選択中画像の `productId`（未設定時は `id/itemId/sku` で補完）
-- 主な期待データ:
-  - `name`, `category`, `description`, `basePrice|price`, `shippingEstimate`
-  - `images[]`:
-    - `src`, `thumb?`, `label?`, `colorHex?`
-    - `productId|id|itemId|sku`
-    - `rakutenUrl?`, `yahooUrl?`
-  - `options[]`: `label`, `price`
-  - `specs[]`: `label`, `value`
-- 備考:
-  - API失敗時はページ内 `fallbackData` で描画継続
+---
 
-### 6-2. `product-tkg.html`
-- 商品データ取得:
-  - `?api=` or `EXS_API_CONFIG.tkgProductUrl` から `fetch`
-  - JSON解釈順: `json.product` → `json.data` → `json`
-- カート投入ID:
-  - 選択中 `productTypes[]` の `id`  
-  - 補完キー: `productId|itemId|sku`
-- 主な期待データ:
-  - `name`, `category`, `description`, `shippingEstimate`
-  - `images[]`: `src`, `thumb?`, `label?`
-  - `productTypes[]`:
-    - `id|productId|itemId|sku`
-    - `label|name`
-    - `price`
-    - `rakutenUrl?`, `yahooUrl?`, `badge?`
-  - `options[]`: `label`, `price`
-  - `specs[]`: `label`, `value`
-- 備考:
-  - Stripe風UIはモーダル演出のみ（外部Stripe API未接続）
-  - API失敗時は `fallbackData` で描画
+## 3. 問い合わせ・フォーム（仮PHP実装）
+対象:
+- `contact.html` -> `contact.php`
+- `partner-entry.html` -> `partner-entry.php`
+- 完了: `thanks.html`
+- 失敗: `form-error.html`
+- 上記は `exs-api/` 配下にも同一構成あり
 
-### 6-3. `accessories.html`
-- データ取得:
-  - `?api=` or `EXS_API_CONFIG.accessoriesUrl` があれば `fetch`
-  - JSON解釈候補: `json.data` → `json.products` → `json.items` → `json`
-  - URL指定が無ければ `ProductApiRequester.fetchAccessories()`  
-    (`GET /products/accessories`)
-- フィルタ:
-  - `category` 値で `all/helmet/lock/bag/maintenance`
-- カート追加:
-  - 各カードの `id` を `addItemToCart(id, 1)` で投入
-- 主な期待データ:
-  - `id`, `name`, `category`, `description`
-  - `categoryLabel?`, `compatibility?`, `image?`
-- 備考:
-  - API失敗時はモック6件で表示継続
+送信仕様:
+- 送信方式: `POST`
+- 宛先: `info@customjapan.jp`
+- 送信後遷移:
+  - 成功: `thanks.html?form=contact|partner`
+  - 失敗: `form-error.html?form=contact|partner`
 
-## 7. 想定レスポンス（推奨）
-成功:
-```json
-{
-  "result": "success",
-  "data": {}
-}
-```
+現状注意:
+- 仮実装のため、CSRF/reCAPTCHA未導入
+- 本番ではSMTP送信化・スパム対策追加を推奨
 
-エラー:
-```json
-{
-  "result": "error",
-  "errors": [
-    {
-      "cd": "COM3002",
-      "abstract": "セッションが無効です"
-    }
-  ],
-  "infos": []
-}
-```
+---
 
-フロントが表示に使用する主キー:
-- `result`
-- `errors[].abstract`
-- `errors[].cd`
+## 4. SEO（現状要点）
+実施済み:
+- 主要ページに `title / meta description / canonical / OGP / Twitter` を設定
+- `thanks.html` と `form-error.html` は `noindex,follow`
+- `sitemap.xml` 更新済み（`exs-api/sitemap.xml` も同期）
 
-## 8. システム連携時の確認事項
-1. `PUT /cart/details` の `id` キー名は固定で問題ないか
-2. `site: "exs"` 固定値の扱い
-3. CORS許可オリジン（`https://exs.customjapan.net`）
-4. `auth/login/before` の `X-Guid` / `Authorization` ヘッダー返却仕様
-5. 認証期限切れ時の標準エラーコード（`COM3002/COM3005`以外の有無）
-
-## 9. 受け入れ確認チェックリスト
-- [ ] `verifyLogin()` 成功後、`xGuId` / `authorization` Cookieが設定される
-- [ ] 3ページともAPIデータで描画可能
-- [ ] API停止時にフォールバックデータ描画される
-- [ ] `PUT /cart/details` が `200` かつ `result != error` を返す
-- [ ] エラー時に `errors[].abstract` がUIへ表示される
-- [ ] CORS/プリフライトで失敗しない
-
+確認対象ファイル:
+- `sitemap.xml`
+- `exs-api/sitemap.xml`
+- `partner-entry.html`
+- `thanks.html`
+- `form-error.html`
+- `exs-api/partner-entry.html`
+- `exs-api/thanks.html`
+- `exs-api/form-error.html`
