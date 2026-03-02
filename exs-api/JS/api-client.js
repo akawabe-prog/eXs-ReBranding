@@ -19,12 +19,14 @@ export const fetchCart = async () => {
 };
 
 export const addItemToCart = async (id, quantity) => {
-    const addedItem = {
-        id,
-        quantity,
-        site: 'exs'
+    const addedItems = {
+        items: [{
+            id,
+            quantity,
+            site: 'exs'
+        }]
     };
-    const res = await CartApiRequester.addItemsToCart(addedItem);
+    const res = await CartApiRequester.addItemsToCart(addedItems);
     return res;
 };
 

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PDRLTW4');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>開発ストーリー | eXs</title>
+    <meta name="description" content="eXs開発ストーリー。電動アシスト自転車、ファットバイク、eBike、電動キックボード開発の思想と技術背景を深掘りします。">
+    <meta name="keywords" content="電動アシスト自転車,ファットバイク,eBike,電動キックボード,開発ストーリー,eXs">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://exs.customjapan.net/developer.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="eXs">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://exs.customjapan.net/developer.html">
+    <meta property="og:title" content="開発ストーリー | eXs">
+    <meta property="og:description" content="eXs開発ストーリー。電動アシスト自転車、ファットバイク、eBike、電動キックボード開発の思想と技術背景を深掘りします。">
+    <meta property="og:image" content="img-webp/developer_kitaura.webp">
+    <meta property="article:published_time" content="2026-02-26">
+    <meta property="article:modified_time" content="2026-02-26">
+    <meta property="article:section" content="Interview">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="開発ストーリー | eXs">
+    <meta name="twitter:description" content="eXs開発ストーリー。電動アシスト自転車、ファットバイク、eBike、電動キックボード開発の思想と技術背景を深掘りします。">
+    <meta name="twitter:image" content="img-webp/developer_kitaura.webp">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "開発ストーリー",
+            "description": "eXs開発ストーリー。電動アシスト自転車、ファットバイク、eBike、電動キックボード開発の思想と技術背景を深掘りします。",
+            "datePublished": "2026-02-26",
+            "dateModified": "2026-02-26",
+            "inLanguage": "ja-JP",
+            "mainEntityOfPage": "https://exs.customjapan.net/developer.html",
+            "author": {
+                "@type": "Person",
+                "name": "北浦 真由美"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "eXs"
+            },
+            "image": [
+                "https://exs.customjapan.net/img-webp/developer_kitaura.webp"
+            ]
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#111111',
+                            gray: '#F5F5F5',
+                            darkgray: '#333333',
+                            accent: '#FFFFFF'
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.15em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        .interview-block {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .question {
+            font-weight: 700;
+            line-height: 1.8;
+            color: #111111;
+        }
+
+        .answer {
+            color: #4b5563;
+            line-height: 2;
+            margin-top: 1rem;
+        }
+
+        .pull-quote {
+            border-left: 4px solid #111111;
+            padding-left: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: #111111;
+            margin: 2.5rem 0;
+        }
+
+        .story-image {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #f3f4f6;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .chapter-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .video-placeholder {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 1rem;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 45%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.07), transparent 50%),
+                linear-gradient(135deg, #111111 0%, #1f2937 45%, #111111 100%);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .video-placeholder::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(255,255,255,0.04) 0px,
+                rgba(255,255,255,0.04) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+            pointer-events: none;
+        }
+
+        .video-ui {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        .video-badge {
+            align-self: flex-start;
+            background: rgba(17, 17, 17, 0.65);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            font-size: 0.65rem;
+            letter-spacing: .18em;
+            padding: .35rem .6rem;
+            border-radius: 9999px;
+        }
+
+        .video-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .8rem;
+            color: #fff;
+        }
+
+        .video-play {
+            width: 3.6rem;
+            height: 3.6rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255,255,255,0.45);
+            background: rgba(0,0,0,0.45);
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+        }
+
+        .video-bottom {
+            color: #e5e7eb;
+            font-size: 0.72rem;
+        }
+
+        .video-progress {
+            width: 100%;
+            height: .24rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-bottom: .55rem;
+        }
+
+        .video-progress span {
+            display: block;
+            width: 34%;
+            height: 100%;
+            background: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .chapter-grid {
+                grid-template-columns: 1.2fr 1fr;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-black antialiased bg-white pt-20">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRLTW4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="common-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-black text-white"></header>
+
+    <main>
+        <section class="relative bg-brand-black text-white px-6 py-24 md:py-32 overflow-hidden">
+            <div class="absolute inset-0">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="img-webp/developer_kitaura.webp" aria-label="eXsブランドムービー背景映像">
+                    <source src="video/eXs-optimized.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="absolute inset-0 bg-black/55"></div>
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,white_0%,transparent_65%)]"></div>
+            <div class="relative container mx-auto max-w-5xl text-center fade-up">
+                <p class="font-en text-xs tracking-widest mb-5">DEVELOPMENT STORY</p>
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">設計思想は、<br class="md:hidden">移動の体験を変えられるか。</h1>
+                <p class="text-sm md:text-base text-gray-200 max-w-3xl mx-auto leading-loose">
+                    eXsの開発責任者が、電動アシスト自転車・ファットバイクeBike・電動キックボードの設計で重視している判断基準、
+                    現場で直面した課題、そして次のプロダクト像までを語る開発ストーリー。
+                </p>
+            </div>
+        </section>
+
+        <article class="container mx-auto max-w-5xl px-6 py-16 md:py-24">
+            <div class="flex flex-wrap items-center gap-4 text-xs text-gray-500 mb-12 fade-up">
+                <span class="font-en tracking-widest">DEVELOPMENT STORY</span>
+                <span>2026.02.26</span>
+                <span class="bg-brand-gray text-brand-black px-3 py-1 rounded-full">#メーカー開発責任者</span>
+                <span class="bg-brand-gray text-brand-black px-3 py-1 rounded-full">#電動アシスト自転車</span>
+                <span class="bg-brand-gray text-brand-black px-3 py-1 rounded-full">#電動キックボード</span>
+            </div>
+
+            <section class="fade-up mb-16">
+                <div class="story-image mb-8">
+                    <div class="video-placeholder" role="img" aria-label="eXs Street 紹介動画プレースホルダー">
+                        <div class="video-ui">
+                            <span class="video-badge font-en">EXS MOVIE</span>
+                            <div class="video-center">
+                                <span class="video-play"><i class="fa-solid fa-play"></i></span>
+                            </div>
+                            <div class="video-bottom font-en">
+                                <div class="video-progress"><span></span></div>
+                                <div class="flex items-center justify-between">
+                                    <span>00:34 / 02:16</span>
+                                    <span>PLACEHOLDER</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold leading-tight">「買う理由」が「使い続ける理由」に変わる設計。</h2>
+                <p class="answer">
+                    私たちが開発で見ているのは、購入時のインパクトだけではありません。購入後の通勤、買い物、週末移動まで、
+                    実際に使うシーンでストレスが減るかを最初に評価します。メーカーとして、性能の前に体験品質を保証する。
+                    それがeXsの設計思想です。
+                </p>
+                <p class="pull-quote">「高性能」より先に、「毎日使える安心感」を作る。それが開発の順番です。</p>
+            </section>
+
+            <div class="mb-8 border-b border-gray-200 fade-up" role="tablist" aria-label="モデル別インタビュー">
+                <button type="button" class="tab-btn active border-b-2 border-brand-black text-brand-black px-4 py-3 text-sm font-en font-bold tracking-widest transition" data-target="street" aria-selected="true">eXs STREET</button>
+                <button type="button" class="tab-btn border-b-2 border-transparent text-gray-400 px-4 py-3 text-sm font-en font-bold tracking-widest transition" data-target="tkg" aria-selected="false">eXs 1 TKG</button>
+            </div>
+
+            <div id="street" class="tab-content block">
+                <section class="interview-block fade-up">
+                    <div class="chapter-grid">
+                        <div class="story-image">
+                            <img src="img-webp/eXs-street_image_city&offload.webp" alt="街とオフロードの走行シーン" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <p class="font-en text-xs tracking-widest text-gray-400 mb-3">Chapter 01</p>
+                            <h3 class="question">日常で“怖くない”ことを、スペックより優先しています</h3>
+                            <p class="answer">
+                                路面の継ぎ目、雨上がり、減速から停止まで。購入後に不安が出るポイントを想定し、
+                                車体バランスとブレーキ特性を先に固めます。カタログでは見えにくい部分ですが、
+                                ここが長く乗れるかどうかの分岐点です。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="interview-block fade-up">
+                    <div class="chapter-grid">
+                        <div>
+                            <p class="font-en text-xs tracking-widest text-gray-400 mb-3">Chapter 02</p>
+                            <h3 class="question">ファットバイクeBikeは、見た目ではなく“安定の体感”のため</h3>
+                            <p class="answer">
+                                ファットタイヤは段差や荒れた舗装で挙動が穏やかになり、ハンドルの取られ感を抑えます。
+                                電動アシストも急な押し出しを避け、漕ぎ出しから自然につながる制御に調整。
+                                初めてでも扱いやすく、結果的に使用頻度が上がる設計です。
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="story-image"><img src="img-webp/fattire.webp" alt="ファットタイヤのディテール" loading="lazy" decoding="async"></div>
+                            <div class="story-image"><img src="img-webp/matte-color.webp" alt="マットカラーの仕上げ" loading="lazy" decoding="async"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="tkg" class="tab-content hidden">
+                <section class="interview-block fade-up">
+                    <div class="story-image mb-8">
+                        <img src="img-webp/expo_eXs.webp" alt="運用現場で使われるeXsモビリティ" loading="lazy" decoding="async">
+                    </div>
+                    <p class="font-en text-xs tracking-widest text-gray-400 mb-3">Chapter 03</p>
+                    <h3 class="question">電動キックボードで最重要なのは「止まりやすさ」と「説明責任」</h3>
+                    <p class="answer">
+                        eXs 1 TKGでは、加速感よりも制動の再現性と低速安定性を優先しています。さらに法規・手続き情報は、
+                        商品ページ、FAQ、サポートで同じ内容を確認できるよう統一。メーカーの責任は販売完了ではなく、
+                        安全運用まで伴走することだと考えています。
+                    </p>
+                </section>
+
+                <section class="interview-block fade-up">
+                    <div class="chapter-grid">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="story-image"><img src="img-webp/display.webp" alt="表示ディスプレイの視認性" loading="lazy" decoding="async"></div>
+                            <div class="story-image"><img src="img-webp/diskbrake.webp" alt="制動を支えるディスクブレーキ" loading="lazy" decoding="async"></div>
+                        </div>
+                        <div>
+                            <p class="font-en text-xs tracking-widest text-gray-400 mb-3">Chapter 04</p>
+                            <h3 class="question">eXs 1 TKGは、短距離移動を安全に積み重ねるための設計</h3>
+                            <p class="answer">
+                                取り回しやすい車体バランスと視認性の高い表示設計で、日常の移動をより安定して行えるようにしています。
+                                停止時の扱いやすさや再発進のしやすさも重視し、毎日の利用でストレスが蓄積しにくい仕様に整えました。
+                            </p>
+                            <p class="answer">
+                                保管スペースや持ち運びのしやすさまで含めて、都市部の生活動線に合わせて最適化すること。
+                                それがeXs 1 TKGのChapter 04で伝えたい開発意図です。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="interview-block fade-up">
+                <div class="bg-brand-gray rounded-2xl p-6 md:p-8">
+                    <p class="font-en text-xs tracking-widest text-gray-500 mb-3">MANUFACTURER COMMENT</p>
+                    <p class="text-base md:text-lg leading-loose text-brand-black">
+                        「購入時の期待値と、購入後の実体験を一致させることを最重要KPIにしています。
+                        見た目・性能・価格だけでなく、使い続ける安心まで含めてプロダクトとして完成させます。」
+                    </p>
+                </div>
+            </section>
+
+            <section class="interview-block fade-up">
+                <div class="bg-brand-gray rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:items-center">
+                    <img src="img-webp/developer_kitaura.webp" alt="eXs開発責任者 北浦真由美" class="w-28 h-28 rounded-full object-cover" loading="lazy" decoding="async">
+                    <div>
+                        <p class="font-en text-xs tracking-widest text-gray-500 mb-2">PROFILE</p>
+                        <h3 class="text-xl font-bold mb-2">北浦 真由美 / Product Development</h3>
+                        <p class="text-sm text-gray-600 leading-loose">
+                            eXsの次世代モビリティ開発を統括。電動アシスト自転車・ファットバイクeBike・電動キックボード領域で、
+                            商品企画、品質管理、市場導入を一貫して担当。メーカー視点で「購入後の満足が続く設計」を追求している。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-16 text-center fade-up">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+                    <a href="product-street.html" class="inline-block bg-brand-black text-white px-8 py-4 text-sm font-bold tracking-widest hover:opacity-90 transition">eXs Streetを見る</a>
+                    <a href="product-tkg.html" class="inline-block border border-brand-black px-8 py-4 text-sm font-bold tracking-widest hover:bg-brand-black hover:text-white transition">eXs 1 TKGを見る</a>
+                </div>
+                <a href="colum-list.html" class="inline-block border-b border-black pb-1 text-sm font-bold hover:text-gray-500 transition">BACK TO COLUMN</a>
+            </section>
+        </article>
+    </main>
+
+    <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
+
+    <script src="JS/components.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>

@@ -240,17 +240,23 @@
     <header id="common-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-black text-white"></header>
 
     <main>
-        <section class="relative bg-brand-black text-white px-6 py-24 md:py-32 overflow-hidden">
-            <div class="absolute inset-0">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="img-webp/developer_kitaura.webp" aria-label="eXsブランドムービー背景映像">
+        <section class="relative min-h-[100svh] md:min-h-[72vh] bg-brand-black text-white px-6 py-24 md:py-28 overflow-hidden flex items-center">
+            <div class="absolute inset-0 md:hidden">
+                <video class="w-full h-full object-cover object-center" autoplay muted loop playsinline preload="metadata" poster="img-webp/developer_kitaura.webp" aria-label="eXsブランドムービー背景映像">
                     <source src="video/eXs-optimized.mp4" type="video/mp4">
                 </video>
+            </div>
+            <div class="absolute inset-0 hidden md:block">
+                <img src="img-webp/eXs-street_product_beige.webp" alt="eXs Street Product Beige" class="w-full h-full object-cover" loading="eager" decoding="async">
             </div>
             <div class="absolute inset-0 bg-black/55"></div>
             <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,white_0%,transparent_65%)]"></div>
             <div class="relative container mx-auto max-w-5xl text-center fade-up">
                 <p class="font-en text-xs tracking-widest mb-5">DEVELOPMENT STORY</p>
-                <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">設計思想は、<br class="md:hidden">移動の体験を変えられるか。</h1>
+                <h1 class="font-bold leading-[1.14] tracking-tight mb-6 text-[clamp(2rem,6.2vw,3.4rem)]">
+                    <span class="block">設計思想は、</span>
+                    <span class="block">移動の体験を変えられるか。</span>
+                </h1>
                 <p class="text-sm md:text-base text-gray-200 max-w-3xl mx-auto leading-loose">
                     eXsの開発責任者が、電動アシスト自転車・ファットバイクeBike・電動キックボードの設計で重視している判断基準、
                     現場で直面した課題、そして次のプロダクト像までを語る開発ストーリー。
@@ -269,20 +275,9 @@
 
             <section class="fade-up mb-16">
                 <div class="story-image mb-8">
-                    <div class="video-placeholder" role="img" aria-label="eXs Street 紹介動画プレースホルダー">
-                        <div class="video-ui">
-                            <span class="video-badge font-en">EXS MOVIE</span>
-                            <div class="video-center">
-                                <span class="video-play"><i class="fa-solid fa-play"></i></span>
-                            </div>
-                            <div class="video-bottom font-en">
-                                <div class="video-progress"><span></span></div>
-                                <div class="flex items-center justify-between">
-                                    <span>00:34 / 02:16</span>
-                                    <span>PLACEHOLDER</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <img src="img/exs-developer-interview_top.jpg" alt="eXs 開発ストーリー" class="w-full h-full object-cover object-[50%_62%]" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black/25 pointer-events-none"></div>
                     </div>
                 </div>
                 <h2 class="text-2xl md:text-3xl font-bold leading-tight">「買う理由」が「使い続ける理由」に変わる設計。</h2>
