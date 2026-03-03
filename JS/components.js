@@ -4,7 +4,7 @@
 
 // サイト内のリンク先定義
 const PATHS = {
-    home: './',
+    home: '/',
     about: 'about',
     ebike_intro: 'product/exs-street',
     ebike_buy: 'product/exs-street/purchase',
