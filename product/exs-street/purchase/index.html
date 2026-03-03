@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PDRLTW4');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../">
+<title>eXs Street | 電動アシスト自転車・ファットバイクeBike | eXs</title>
+    <meta name="description" content="eXs Street（API用ページ）。電動アシスト自転車の機能性とファットバイクの走破性を備えたeBikeの仕様・価格情報を掲載。">
+    <meta name="keywords" content="電動アシスト自転車,ファットバイク,eBike,電動キックボード,特定小型原付,eXs">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://exs.customjapan.net/product/exs-street/purchase">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="eXs">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://exs.customjapan.net/product/exs-street/purchase">
+    <meta property="og:title" content="eXs Street | 電動アシスト自転車・ファットバイクeBike | eXs">
+    <meta property="og:description" content="eXs Street（API用ページ）。電動アシスト自転車の機能性とファットバイクの走破性を備えたeBikeの仕様・価格情報を掲載。">
+    <meta property="og:image" content="img-webp/eXsStreetImage.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="eXs Street | 電動アシスト自転車・ファットバイクeBike | eXs">
+    <meta name="twitter:description" content="eXs Street（API用ページ）。電動アシスト自転車の機能性とファットバイクの走破性を備えたeBikeの仕様・価格情報を掲載。">
+    <meta name="twitter:image" content="img-webp/eXsStreetImage.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { black: '#111111', gray: '#F5F5F5' }
+                    },
+                    letterSpacing: { widest: '.15em' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .street-frame-slider { position: relative; overflow: hidden; }
+        .street-frame-slider::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.16);
+            pointer-events: none;
+        }
+        .street-frame-image { display: block; width: 100%; height: auto; object-fit: cover; opacity: 1; transition: opacity 0.45s ease; }
+        .street-frame-image.is-fading { opacity: 0; }
+        .street-frame-image.is-soft-in { animation: streetSoftIn 0.8s ease; }
+        @keyframes streetSoftIn {
+            from { opacity: 0; filter: blur(5px); }
+            to { opacity: 1; filter: blur(0); }
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-black antialiased bg-white" id="product-page-street-api">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRLTW4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="common-header" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm text-brand-black shadow-sm transition-all duration-300"></header>
+
+    <main class="pt-32 pb-20 px-6 min-h-screen relative">
+        <div id="loading-overlay" class="absolute inset-0 bg-white z-40 flex items-center justify-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-black"></div>
+        </div>
+
+        <div class="container mx-auto max-w-7xl opacity-0 transition-opacity duration-500" id="product-container">
+            
+            <nav class="text-xs text-gray-400 mb-10 font-en tracking-wider">
+                <a href="/" class="hover:text-black">HOME</a>
+                <span class="mx-2">/</span>
+                <a href="product/exs-street" class="hover:text-black">eXs Street (Intro)</a>
+                <span class="mx-2">/</span>
+                <span id="breadcrumb-name" class="text-black">eXs Street (Purchase)</span>
+            </nav>
+
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-20">
+                
+                <div class="w-full lg:w-3/5">
+                    <div class="bg-gray-100 aspect-[4/3] mb-4 overflow-hidden relative group cursor-zoom-in">
+                        <img src="img-webp/eXs street_item_matteblack.webp" alt="Main Product Image" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" id="main-image" loading="lazy" decoding="async">
+                    </div>
+                    
+                    <div id="thumbnail-container" class="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4"></div>
+                </div>
+
+                <div class="w-full lg:w-2/5 flex flex-col">
+                    <img src="img/exs-street-logo-black.svg" alt="eXs Street ロゴ" class="h-9 md:h-10 w-auto mb-3" loading="lazy" decoding="async">
+                    <h1 id="product-name" class="sr-only">eXs Street</h1>
+                    <p id="product-category" class="font-en text-sm text-gray-500 tracking-widest mb-6">ELECTRIC ASSIST BICYCLE</p>
+                    
+                    <div class="text-3xl font-en font-bold mb-8">
+                        <span id="base-price" data-price="149800">149,800円</span>
+                        <span class="text-sm font-normal text-gray-500 ml-2">(TAX IN)</span>
+                    </div>
+
+                    <p id="product-description" class="text-sm text-gray-700 leading-loose mb-10 text-justify">
+                        20×4インチのファットタイヤで、街乗りもオフロードも。日常の移動を冒険に変える、パワフルなアシスト性能と洗練されたデザイン。
+                    </p>
+
+                    <div class="mb-10">
+                        <span class="block text-xs font-en font-bold tracking-widest mb-4">COLOR</span>
+                        <div id="color-container" class="flex space-x-4"></div>
+                    </div>
+
+                    <div class="mt-auto">
+                        <div class="text-3xl font-en font-bold mb-4">
+                            <span class="text-sm font-normal text-gray-500 mr-2">TOTAL</span>
+                            <span id="total-price">149,800円</span>
+                        </div>
+                        <button id="add-to-cart-btn" type="button" class="w-full bg-brand-black text-white font-en font-bold py-5 tracking-widest text-lg hover:bg-gray-800 transition mb-2">
+                            GO TO CART
+                        </button>
+                        <p id="cart-message" class="text-xs text-center mb-4 hidden"></p>
+                        <div class="grid gap-3 mb-6">
+                            <a id="rakuten-link-btn" href="https://item.rakuten.co.jp/partsdirect/29044337/" target="_blank" class="block w-full text-center bg-[#bf0000] text-white font-en font-bold py-4 tracking-widest text-sm hover:opacity-90 transition">
+                                楽天市場で購入手続きへ
+                            </a>
+                            <a id="yahoo-link-btn" href="https://store.shopping.yahoo.co.jp/partsdirect2/29044337.html" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#ff0033] text-white font-en font-bold py-4 tracking-widest text-sm hover:opacity-90 transition">
+                                Yahoo!ショッピングで購入する
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-400 text-center">
+                            ※ 現在、注文から発送まで約<span id="shipping-estimate" class="font-bold text-black mx-1">1週間</span>いただいております。<br>
+                            ※ 送料無料キャンペーン実施中 ※沖縄・離島は別途送料 ¥11,000がかかります<br>
+                            <span id="shipping-fee-fallback" class="hidden">※ 全国一律:¥5,500(税込) / 沖縄・離島:¥11,000(税込)</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-32 max-w-4xl mx-auto border-t border-gray-200">
+                <details class="group border-b border-gray-200" open>
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>SPECIFICATIONS</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <div id="specs-container" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4"></div>
+                    </div>
+                </details>
+
+                <details class="group border-b border-gray-200">
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>WARRANTY & SUPPORT</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <h4 class="font-bold text-black mb-2">保証期間について</h4>
+                        <p class="mb-4">eXs Streetはお届けから12ヶ月間（1年間）、フレーム・モーター等の主要部品の不具合に部品・工賃とも無償対応します。<br>※タイヤ・ブレーキ等の消耗品、使用上の不注意による故障は対象外です。</p>
+                        <h4 class="font-bold text-black mb-2">アフターサポート</h4>
+                        <p class="mb-4">お近くで修理対応が難しい場合は、お預かり修理にて専門スタッフが対応します。メール・電話での専用窓口に加え、交換パーツ供給も実施しています。</p>
+                        <a href="support" class="inline-block text-xs font-bold border-b border-black pb-1 hover:opacity-60 transition">SUPPORTの詳細はこちら</a>
+                    </div>
+                </details>
+
+                <details class="group border-b border-gray-200">
+                    <summary class="flex justify-between items-center font-en font-bold text-lg cursor-pointer list-none py-8">
+                        <span>FAQ</span><span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                    </summary>
+                    <div class="text-gray-600 text-sm mt-0 pb-8 leading-relaxed">
+                        <details class="group border-b border-gray-200 mb-6">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">法規・ルール</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">運転に免許・ナンバープレートは必要ですか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>いいえ、必要ありません。eXs Streetは道路交通法の基準を満たした「電動アシスト自転車」ですので、通常の自転車と同様に免許・ナンバープレート不要でお乗りいただけます。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">防犯登録は必要ですか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>はい、法律により義務付けられています。製品に同梱されている「販売証明書」と身分証明書をお持ちの上、お近くの「自転車防犯登録所」の看板がある自転車店等にて登録手続きを行ってください。<br>※車体番号は左右クランクの内側（2箇所）に記載されています。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">型式認定は取得していますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>現在、型式認定の申請準備中です。ただし、アシスト比率（ペダルを漕いだときのモーター出力の割合）については、専門機関による試験を実施しており、日本の法令（道路交通法・道路運送車両法）に適合していることを確認済みです。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">アクセル（スロットル）は付いていますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>いいえ、付いていません。電動アシスト自転車の基準に適合させるため、アクセルは搭載しておらず、後付けもできません。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">車道・歩道はどこを走ればいいですか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>通常の自転車と同様、原則として「車道の左側」を走行してください。「自転車通行可」の標識がある歩道のみ走行可能です。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">自転車保険に加入できますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>はい、一般的な自転車保険の対象となります。詳細はご契約予定の保険会社へご確認ください。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+
+                        <details class="group border-b border-gray-200 mb-6">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">購買・保証</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">配送方法と送料は？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>佐川急便にてお届けいたします。送料は全国一律：税別5,000円（沖縄・離島は税別10,000円）です。納期は地域により1〜6日程度となります。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">返品・キャンセルはできますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>商品到着後7日以内にご連絡いただければ、キャンセルポリシーに基づき返品可能です。ただし、一度でも走行した車両、開封済みの商品（未開封のみ可）、到着後8日以上経過した商品は返品・交換の対象外となります。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">保証内容を教えてください</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p><strong>初期不良：</strong>到着後14日以内<br><strong>製品保証：</strong>お届けから12ヶ月間（フレーム、モーター、バッテリー等の主要部品）<br>※タイヤ、ブレーキパッドなどの消耗品や、転倒・誤使用による故障は対象外です。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">修理はどこでできますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>eXs取扱店（さがサイクル、センバガレージ、E-WALK Mobility等）または、お近くの自転車店・自転車メンテナンス専門店へご相談ください。最寄りの店舗で対応が難しい場合は、出張整備サービスのご利用もご検討ください。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+
+                        <details class="group border-b border-gray-200 mb-6">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">組み立て・メンテナンス</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">組み立ては必要ですか？（初心者でも可能？）</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>9分組（ほぼ完成した状態）でお届けするため、簡単な組み立てが必要です。付属の工具を使用し、初心者の方でも組み立て可能です。手順を解説した動画もご用意しております。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">適正空気圧と空気入れについて</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>適正空気圧は<strong>30psi（2.0bar / 200kPa）</strong>です。バルブは<strong>米式（アメリカンバルブ）</strong>を採用していますので、米式対応のゲージ付き空気入れをご使用ください。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">空気が入りにくい・タイヤトラブルについて</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>ファットタイヤは大容量のため、手動ポンプでは多くの回数が必要です。空気が入らない場合は、ポンプの接続を確認してください。また、空気圧不足のまま走行すると「バルブ根元の裂け」や「タイヤのひび割れ」の原因となります。月に1〜2回の空気圧チェックを推奨します。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+
+                        <details class="group border-b border-gray-200 mb-6">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">操作・仕様</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">アシストが弱い気がする／自力走行は可能？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>法令遵守と安全のため、アシスト出力は滑らかに設定されています。またファットタイヤの特性上、通常の自転車より走行抵抗を感じる場合があります。電源オフでの自力走行も可能ですが、車重があるため少し重く感じられます。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">防水性能はありますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>車体はIPX4、電装部品はIPX5相当の生活防水ですが、完全防水ではありません。雨天時の走行や水たまり、高圧洗浄機の使用は故障の原因となりますのでお控えください。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">適応身長・体重制限・チャイルドシートについて</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>適応身長の指定はありません。耐荷重は100kgです。構造上および安全上の理由から、チャイルドシートの取り付けやお子様の同乗はできません。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">ライトの点灯方法・その他機能</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>ライトは手動です。アシスト操作パネルの「+」ボタンを長押しで点灯/消灯します。<br>また、フロントフォークの「ABS+」ノブでサスペンションの硬さを、「Preload」ノブで沈み込み具合を調整可能です。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">変速ギアの操作について</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>外装変速機のため、必ず<strong>ペダルを漕ぎながら</strong>変速してください。停車中に変速操作を行うと故障の原因になります。チェーン外れ等は自転車店での調整をおすすめします。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+
+                        <details class="group border-b border-gray-200 mb-6">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">バッテリー・充電</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">バッテリーの寿命と走行距離は？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>寿命は約500回の充電サイクルで、新品時の約60%まで容量が減少します。1回の充電（約6時間）で最大60km〜80kmの走行が可能ですが、モードや環境により変動します。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">充電方法について</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>バッテリーを取り外して室内で充電することも、車体に装着したまま直接充電することも可能です。必ず付属の専用充電器を使用し、家庭用コンセントで行ってください。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">バッテリーが取り外せないときは？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>フレーム底面（前方側）にある固定用ボルトが強く締まりすぎている可能性があります。付属の六角レンチ（2.5mm）で少し緩めるとスムーズに取り出せます。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+
+                        <details class="group border-b border-gray-200 mb-2">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none py-4">
+                                <span class="border-l-4 border-brand-black pl-4 py-1">その他</span>
+                                <span class="transition group-open:rotate-180 text-xl font-light">+</span>
+                            </summary>
+                            <div class="space-y-4 pb-6">
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">実店舗での取り扱いや試乗は？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>一部の提携店舗（さがサイクル、センバガレージ、E-WALK Mobility等）にて実車の確認が可能です。試乗の可否は店舗により異なりますので、事前に直接お問い合わせください。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">ダンボール箱は捨ててもいいですか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p><strong>捨てずに保管してください。</strong>修理等でメーカーへ返送する際に専用の箱が必要になります。手元にない場合は有料での手配となります。</p>
+                                    </div>
+                                </details>
+                                <details class="group bg-white border border-gray-200 rounded-lg open:border-brand-black transition-colors duration-300">
+                                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                        <span class="font-bold pr-8">スペアキーは作れますか？</span>
+                                        <span class="transition-transform duration-300 group-open:rotate-45 text-2xl font-light leading-none">+</span>
+                                    </summary>
+                                    <div class="px-6 pb-6 text-sm text-gray-600 leading-loose">
+                                        <p>はい、ご注文いただけます。バッテリー鍵穴付近の鍵番号が分かる写真を添えてお問い合わせください。</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </details>
+                    </div>
+                </details>
+            </div>
+
+            <section class="mt-32 mb-20 fade-up">
+                <div class="relative w-screen left-1/2 -translate-x-1/2 h-[58vh] md:h-[72vh] bg-black overflow-hidden">
+                    <video class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline>
+                        <source src="video/eXs-optimized.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
+                        <span class="font-en text-xs md:text-sm tracking-[0.25em] mb-4">IMAGE MOVIE</span>
+                        <h2 class="font-en text-3xl md:text-5xl font-bold tracking-tight">THE STREET RIDE</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-32">
+                <div class="flex flex-col md:flex-row items-center gap-12 mb-24 fade-up">
+                    <div class="w-full md:w-1/2">
+                        <img src="img-webp/eXs-street_item_front.webp" alt="4x20 Fat Tire" class="w-full h-auto object-cover transition duration-700" loading="lazy" decoding="async">
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10">
+                        <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">01. ALL TERRAIN TIRES</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">20×4インチのファットタイヤで<br>街乗りもオフロードも。</h3>
+                        <p class="text-sm text-gray-600 leading-loose text-justify">
+                            存在感のある極太タイヤは、単なるデザインではありません。路面の凹凸を吸収し、段差の多い市街地から砂利道などのオフロードまで、あらゆるシーンで安定した走行を実現します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24 fade-up">
+                    <div class="w-full md:w-1/2">
+                        <div class="street-frame-slider" data-street-frame-slider>
+                            <img
+                                src="img-webp/eXs-street_product_black.webp"
+                                alt="Matte Color Product"
+                                class="street-frame-image"
+                                data-street-frame-image
+                                data-images="img-webp/eXs-street_product_black.webp|img-webp/eXs-street_product_gray.webp|img-webp/eXs-street_product_beige.webp"
+                             loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pr-10">
+                        <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">02. SOPHISTICATED DESIGN</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">都市に溶け込む、<br>洗練されたマットカラー。</h3>
+                        <p class="text-sm text-gray-600 leading-loose text-justify">
+                            光の反射を抑えたマット塗装を採用。「マットブラック」「マットグレー」「マットベージュ」の3色は、どんなファッションや都市の風景にも馴染みます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-12 fade-up">
+                    <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
+                        <img src="img-webp/eXs-street_display_square.webp" alt="LCD Display" class="w-full h-auto object-cover" loading="lazy" decoding="async">
+                        <img src="img-webp/eXs-street_diskbrake_square.webp" alt="Disc Brake" class="w-full h-auto object-cover" loading="lazy" decoding="async">
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10">
+                        <span class="text-xs font-en font-bold tracking-widest text-gray-400 mb-4 block">03. HIGH PERFORMANCE</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">走りを支える<br>最新のコンポーネント。</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <span class="text-lg mr-4 opacity-30 font-en">A</span>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-2">コンパクトLCDディスプレイ</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">速度、バッテリー残量、走行距離を一目で確認。</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-lg mr-4 opacity-30 font-en">B</span>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-2">FRONT FORK (フロントフォーク)</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">路面からの衝撃を和らげ、タフな走りを支えるフロントフォーク。</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-lg mr-4 opacity-30 font-en">C</span>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-2">Shimano 7段変速</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">アシストオフ時でも快適に走行できる信頼のシマノ製ギア。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative w-screen left-1/2 -translate-x-1/2 bg-black overflow-hidden mb-0">
+                <div id="street-product-parallax-visual" class="relative w-full fade-up">
+                    <img id="street-product-parallax-image" src="img-webp/eXsStreetImage.webp" alt="eXs Street Appeal" class="w-full h-[58vh] md:h-[85vh] lg:h-[1000px] object-cover will-change-transform" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
+                </div>
+            </section>
+
+            <section class="relative w-screen left-1/2 -translate-x-1/2 py-20 px-4 md:px-8 lg:px-10 bg-[#0b0b0b] text-white mb-24">
+                <div class="w-full fade-up">
+                    <div class="flex items-center gap-4 mb-14">
+                        <span class="h-px w-10 bg-white/40"></span>
+                        <h3 class="font-en text-2xl md:text-3xl font-bold tracking-widest">PRODUCT FEATURE</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <article class="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                            <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                                <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_battely.jpg" alt="Battery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            </div>
+                            <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">48V 10Ahの高性能バッテリー</h4>
+                            <p class="text-sm text-gray-300/90 leading-[1.9]">フレームにすっきりと内蔵された48V・10Ahバッテリーは、スタイルを損なわずに最長約80kmの走行性能を発揮します。</p>
+                        </article>
+
+                        <article class="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                            <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                                <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_display.jpg" alt="Display" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            </div>
+                            <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">コンパクトな液晶ディスプレイ</h4>
+                            <p class="text-sm text-gray-300/90 leading-[1.9]">フレームの世界観を壊さず、静かに機能美を引き立てるカラー液晶。アシストレベル・速度・バッテリー残量をひと目で把握できます。</p>
+                        </article>
+
+                        <article class="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                            <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                                <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg" alt="Compact Folding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            </div>
+                            <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">車にも積み込める収納性</h4>
+                            <p class="text-sm text-gray-300/90 leading-[1.9]">スリーステップで折りたたみ可能。自宅や車のトランクにも収まり、ファットタイヤモデルながら高い収納性を備えています。</p>
+                        </article>
+
+                        <article class="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.24)] hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.38)] hover:border-white/25 transition-all duration-300">
+                            <div class="aspect-[16/9] md:aspect-[4/3] overflow-hidden mb-5 bg-gray-900 rounded-xl border border-white/10">
+                                <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_air.jpg?_t=1765150905" alt="Air Pump Saddle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            </div>
+                            <h4 class="font-bold text-lg mb-3 text-white whitespace-nowrap">空気入れ内蔵のサドルポスト</h4>
+                            <p class="text-sm text-gray-300/90 leading-[1.9]">サドルを抜けばすぐ空気を入れられる便利機構を搭載。出先やオフロードでも安心の実用性を備えています。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-32 bg-gray-50 p-8 md:p-16 text-center fade-up">
+                <span class="font-en text-xs font-bold tracking-widest text-gray-400 block mb-4">SPEC MOVIE</span>
+                <h3 class="font-en text-xl md:text-2xl font-bold tracking-tighter mb-8">FOLDING & DETAILS</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div id="street-folding-slideshow" class="aspect-video bg-white relative overflow-hidden group cursor-pointer" data-images="img-webp/eXs-street_folding_1.webp|img-webp/eXs-street_folding_2.webp|https://cms.customjapan.jp/wp-content/themes/kickboard/assets/image/business/street_appeal_compact.jpg">
+                        <img id="street-folding-slideshow-image" src="img-webp/eXs-street_folding_1.webp" alt="Folding Demo" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
+                            <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY FOLDING</div>
+                        </div>
+                    </div>
+                    <div id="street-ride-slideshow" class="aspect-video bg-black relative overflow-hidden group cursor-pointer" data-images="img-webp/eXs-street_ride_1.webp|img-webp/eXs-street_ride_2.webp|img-webp/eXs-street_ride_3.webp|img-webp/eXs-street_ride_4.webp|img-webp/eXs-street_ride_5.webp|img-webp/eXs-street_ride_6.webp|img-webp/eXs-street_ride_7.webp">
+                        <img id="street-ride-slideshow-image" src="img-webp/eXs-street_ride_1.webp" alt="Riding Scene" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition">
+                            <div class="bg-white/90 text-black px-6 py-2 text-xs font-en font-bold tracking-widest">PLAY RIDING</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-10 fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="font-en text-xl font-bold tracking-widest">GALLERY</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img-webp/eXs-street_gallery1.webp" alt="Gallery 1" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
+                    </div>
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img-webp/eXs-street_gallery2.webp" alt="Gallery 2" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
+                    </div>
+                    <div class="relative aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img-webp/eXs-street_gallery3.webp" alt="Gallery 3" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-black/15 pointer-events-none"></div>
+                    </div>
+                    <div class="aspect-[2/3] bg-gray-100 overflow-hidden hover:opacity-90 transition">
+                        <img src="img-webp/eXs-street_gallery4.webp" alt="Gallery 4" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 border-t border-gray-200 fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="product/exs-street" class="block border border-gray-300 px-6 py-6 hover:border-black hover:bg-gray-50 transition">
+                        <p class="font-en text-[10px] tracking-[0.2em] text-gray-400 mb-2">PRODUCT DETAIL</p>
+                        <p class="text-base font-bold">eXs Street の商品詳細を見る</p>
+                    </a>
+                    <a href="product/exs-1-tkg/purchase" class="block border border-gray-300 px-6 py-6 hover:border-black hover:bg-gray-50 transition">
+                        <p class="font-en text-[10px] tracking-[0.2em] text-gray-400 mb-2">NEXT PRODUCT</p>
+                        <p class="text-base font-bold">eXs 1 TKG へ</p>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
+
+    <script src="JS/components.js"></script>
+    <script src="JS/script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const parallaxVisual = document.getElementById('street-product-parallax-visual');
+            const parallaxImage = document.getElementById('street-product-parallax-image');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const initSlideshow = (containerId, imageId, options = {}) => {
+                const slideshow = document.getElementById(containerId);
+                const imageEl = document.getElementById(imageId);
+                if (!slideshow || !imageEl) return;
+                const {
+                    intervalMs = 1200,
+                    fade = false
+                } = options;
+
+                const images = (slideshow.dataset.images || '')
+                    .split('|')
+                    .map((src) => src.trim())
+                    .filter(Boolean);
+                if (images.length < 2) return;
+
+                const preloadedImages = images.map((src) => {
+                    const img = new Image();
+                    img.src = src;
+                    return img;
+                });
+                const loaded = preloadedImages.map((img) => img.complete);
+                preloadedImages.forEach((img, idx) => {
+                    if (loaded[idx]) return;
+                    img.addEventListener('load', () => {
+                        loaded[idx] = true;
+                    }, { once: true });
+                });
+
+                let index = 0;
+                if (fade) {
+                    imageEl.classList.add('absolute', 'inset-0');
+                    imageEl.style.opacity = '1';
+                    imageEl.style.zIndex = '1';
+
+                    const overlayImage = imageEl.cloneNode();
+                    overlayImage.removeAttribute('id');
+                    overlayImage.setAttribute('aria-hidden', 'true');
+                    overlayImage.style.opacity = '0';
+                    overlayImage.style.zIndex = '2';
+                    slideshow.insertBefore(overlayImage, imageEl.nextSibling);
+
+                    let activeImage = imageEl;
+                    let nextImage = overlayImage;
+
+                    setInterval(() => {
+                        index = (index + 1) % images.length;
+                        nextImage.src = images[index];
+                        nextImage.style.opacity = '1';
+                        activeImage.style.opacity = '0';
+
+                        const previous = activeImage;
+                        activeImage = nextImage;
+                        nextImage = previous;
+                    }, intervalMs);
+                    return;
+                }
+
+                setInterval(() => {
+                    const nextIndex = (index + 1) % images.length;
+                    if (!loaded[nextIndex]) return;
+                    index = nextIndex;
+                    imageEl.src = images[index];
+                }, intervalMs);
+            };
+
+            initSlideshow('street-folding-slideshow', 'street-folding-slideshow-image', { intervalMs: 2600, fade: true });
+            initSlideshow('street-ride-slideshow', 'street-ride-slideshow-image', { intervalMs: 650, fade: false });
+
+            if (!prefersReducedMotion && parallaxVisual && parallaxImage) {
+                const desktopQuery = window.matchMedia('(min-width: 1024px)');
+                let ticking = false;
+                const applyParallax = () => {
+                    const rect = parallaxVisual.getBoundingClientRect();
+                    const viewportCenter = window.innerHeight * 0.5;
+                    const isDesktop = desktopQuery.matches;
+                    const maxParallax = isDesktop ? 340 : 140;
+                    const multiplier = isDesktop ? 0.42 : 0.18;
+                    const offset = (viewportCenter - (rect.top + rect.height / 2)) * multiplier;
+                    const parallaxY = Math.max(-maxParallax, Math.min(maxParallax, offset));
+                    parallaxImage.style.transform = `translate3d(0, ${parallaxY}px, 0)`;
+                    ticking = false;
+                };
+                const onScroll = () => {
+                    if (ticking) return;
+                    ticking = true;
+                    window.requestAnimationFrame(applyParallax);
+                };
+                applyParallax();
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', onScroll);
+                desktopQuery.addEventListener('change', onScroll);
+            }
+        });
+    </script>
+    
+    <script type="module">
+        import { initApiClient, verifyLogin, addItemToCart } from './JS/api-client.js';
+
+        (() => {
+            const fallbackData = {
+                name: 'eXs Street',
+                category: 'ELECTRIC ASSIST BICYCLE',
+                description: '20×4インチのファットタイヤで、街乗りもオフロードも。日常の移動を冒険に変える、パワフルなアシスト性能と洗練されたデザイン。',
+                basePrice: 149800,
+                shippingEstimate: '1週間',
+                images: [
+                    { label: 'Black', colorHex: '#1a1a1a', src: 'img-webp/eXs street_item_matteblack.webp', thumb: 'img-webp/eXs street_item_matteblack.webp', productId: '29044337', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044337/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044337.html' },
+                    { label: 'Gray', colorHex: '#888888', src: 'img-webp/eXs street_item_mattegray.webp', thumb: 'img-webp/eXs street_item_mattegray.webp', productId: '29044344', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044344/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044344.html' },
+                    { label: 'Beige', colorHex: '#d8d2c0', src: 'img-webp/eXs street_item_mattebeige.webp', thumb: 'img-webp/eXs street_item_mattebeige.webp', productId: '29044351', rakutenUrl: 'https://item.rakuten.co.jp/partsdirect/29044351/', yahooUrl: 'https://store.shopping.yahoo.co.jp/partsdirect2/29044351.html' },
+                    { label: 'Front', colorHex: '#eeeeee', src: 'img-webp/eXs-street_item_front.webp', thumb: 'img-webp/eXs-street_item_front.webp' },
+                    { label: 'Rear', colorHex: '#dddddd', src: 'img-webp/eXs-street_item_rear.webp', thumb: 'img-webp/eXs-street_item_rear.webp' },
+                    { label: 'Detail', colorHex: '#cccccc', src: 'img-webp/eXsStreetImage.webp', thumb: 'img-webp/eXsStreetImage.webp' }
+                ],
+                options: [
+                    { label: 'リアキャリア', price: 5478 },
+                    { label: '前後フェンダーセット', price: 7678 }
+                ],
+                specs: [
+                    { label: '全長', value: '1650 mm' },
+                    { label: '全幅', value: '575 mm' },
+                    { label: '重量', value: '27.1 kg' },
+                    { label: 'タイヤサイズ', value: '20 × 4.0 インチ' },
+                    { label: 'バッテリー容量', value: '10 Ah' },
+                    { label: '充電時間', value: '約 6時間' },
+                    { label: '走行可能距離', value: '60 - 80 km' },
+                    { label: 'タイヤバルブ', value: '米式（アメリカン）' },
+                    { label: '走行モード', value: '3モード' },
+                    { label: 'モーター定格出力', value: '250W' },
+                    { label: '最大荷重', value: '100kg' },
+                    { label: 'ブレーキ', value: '前後ディスクブレーキ' },
+                    { label: '防水レベル', value: '本体IPX4 / 電装部品IPX5' },
+                    { label: '保証期間', value: '1年間' },
+                    { label: '変速機', value: 'Shimano 7段変速' }
+                ]
+            };
+
+            const state = {
+                data: fallbackData,
+                selectedImageIndex: 0,
+                selectedProductId: fallbackData.images[0].productId || null
+            };
+
+            const $ = (id) => document.getElementById(id);
+            const formatYen = (value) => `${Number(value || 0).toLocaleString('ja-JP')}円`;
+            const setCartMessage = (message, type = 'info') => {
+                const messageEl = $('cart-message');
+                if (!messageEl) return;
+                messageEl.classList.remove('hidden', 'text-red-500', 'text-green-600', 'text-gray-500');
+                if (type === 'error') messageEl.classList.add('text-red-500');
+                else if (type === 'success') messageEl.classList.add('text-green-600');
+                else messageEl.classList.add('text-gray-500');
+                messageEl.textContent = message;
+            };
+
+            function updateImage(src) {
+                const mainImage = $('main-image');
+                if (!mainImage) return;
+                mainImage.style.opacity = '0.5';
+                window.setTimeout(() => {
+                    mainImage.src = src;
+                    mainImage.style.opacity = '1';
+                }, 120);
+            }
+            window.updateImage = updateImage;
+
+            function setShopLinks(image) {
+                const rakutenBtn = $('rakuten-link-btn');
+                const yahooBtn = $('yahoo-link-btn');
+                if (image.rakutenUrl && rakutenBtn) {
+                    rakutenBtn.href = image.rakutenUrl;
+                    rakutenBtn.target = '_blank';
+                    rakutenBtn.rel = 'noopener noreferrer';
+                }
+                if (image.yahooUrl && yahooBtn) {
+                    yahooBtn.href = image.yahooUrl;
+                    yahooBtn.target = '_blank';
+                    yahooBtn.rel = 'noopener noreferrer';
+                }
+            }
+
+            function renderThumbnails(images, selectedIndex) {
+                const container = $('thumbnail-container');
+                if (!container) return;
+                container.innerHTML = images.map((image, index) => `
+                    <button
+                        type="button"
+                        data-index="${index}"
+                        class="thumbnail-btn bg-gray-50 aspect-square border p-1 transition hover:opacity-75 ${selectedIndex === index ? 'border-black' : 'border-transparent hover:border-gray-300'}"
+                    >
+                        <img src="${image.thumb || image.src}" alt="${image.label || 'thumbnail'}" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                    </button>
+                `).join('');
+                container.querySelectorAll('.thumbnail-btn').forEach((button) => {
+                    button.addEventListener('click', () => {
+                        const index = Number(button.getAttribute('data-index'));
+                        state.selectedImageIndex = index;
+                        updateImage(images[index].src);
+                        setShopLinks(images[index]);
+                        if (images[index].productId) state.selectedProductId = images[index].productId;
+                        renderThumbnails(images, state.selectedImageIndex);
+                    });
+                });
+            }
+
+            function renderColors(images, selectedIndex) {
+                const container = $('color-container');
+                if (!container) return;
+                container.innerHTML = images.slice(0, 3).map((image, index) => `
+                    <label class="cursor-pointer group">
+                        <input type="radio" name="color" class="peer sr-only" value="${index}" ${selectedIndex === index ? 'checked' : ''}>
+                        <div class="w-10 h-10 rounded-full border-2 border-transparent peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-black transition" style="background:${image.colorHex || '#999999'}"></div>
+                        <span class="block text-[10px] text-center mt-2 text-gray-500 peer-checked:text-black font-en">${image.label || `Color ${index + 1}`}</span>
+                    </label>
+                `).join('');
+                container.querySelectorAll('input[name="color"]').forEach((radio) => {
+                    radio.addEventListener('change', () => {
+                        const index = Number(radio.value);
+                        state.selectedImageIndex = index;
+                        updateImage(images[index].src);
+                        setShopLinks(images[index]);
+                        if (images[index].productId) state.selectedProductId = images[index].productId;
+                        renderThumbnails(images, state.selectedImageIndex);
+                    });
+                });
+            }
+
+            function renderOptions(options) {
+                const container = $('option-container');
+                if (!container) return;
+                container.innerHTML = options.map((option) => `
+                    <label class="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:bg-gray-50 transition">
+                        <div class="flex items-center">
+                            <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black accent-black option-checkbox" data-price="${option.price}">
+                            <span class="ml-3 text-sm font-medium">${option.label}</span>
+                        </div>
+                        <span class="text-sm font-en text-gray-500">+ ${formatYen(option.price)}</span>
+                    </label>
+                `).join('');
+            }
+
+            function renderSpecs(specs) {
+                const container = $('specs-container');
+                if (!container) return;
+                container.innerHTML = specs.map((spec) => `
+                    <div class="flex justify-between border-b border-gray-100 py-2">
+                        <span>${spec.label}</span><span>${spec.value}</span>
+                    </div>
+                `).join('');
+            }
+
+            function updateTotalPrice() {
+                const basePrice = Number(($('base-price') && $('base-price').dataset.price) || 0);
+                const optionTotal = Array.from(document.querySelectorAll('.option-checkbox'))
+                    .filter((checkbox) => checkbox.checked)
+                    .reduce((sum, checkbox) => sum + Number(checkbox.dataset.price || 0), 0);
+                $('total-price').textContent = formatYen(basePrice + optionTotal);
+            }
+
+            function bindOptionEvents() {
+                document.querySelectorAll('.option-checkbox').forEach((checkbox) => {
+                    checkbox.addEventListener('change', updateTotalPrice);
+                });
+                updateTotalPrice();
+            }
+
+            function normalizeData(raw) {
+                const data = raw || {};
+                return {
+                    name: data.name || fallbackData.name,
+                    category: data.category || fallbackData.category,
+                    description: data.description || fallbackData.description,
+                    basePrice: Number(data.basePrice || data.price || fallbackData.basePrice),
+                    shippingEstimate: data.shippingEstimate || fallbackData.shippingEstimate,
+                    images: Array.isArray(data.images) && data.images.length > 0
+                        ? data.images.map((image) => ({
+                            ...image,
+                            productId: image.productId || image.id || image.itemId || image.sku || null
+                        }))
+                        : fallbackData.images,
+                    options: Array.isArray(data.options) && data.options.length > 0 ? data.options : fallbackData.options,
+                    specs: Array.isArray(data.specs) && data.specs.length > 0 ? data.specs : fallbackData.specs
+                };
+            }
+
+            async function fetchApiData() {
+                const queryApiUrl = new URLSearchParams(window.location.search).get('api');
+                const configuredApiUrl = window.EXS_API_CONFIG && window.EXS_API_CONFIG.streetProductUrl;
+                const apiUrl = queryApiUrl || configuredApiUrl;
+                if (!apiUrl) return fallbackData;
+                try {
+                    const response = await fetch(apiUrl, { headers: { Accept: 'application/json' } });
+                    if (!response.ok) throw new Error(`API request failed: ${response.status}`);
+                    const json = await response.json();
+                    const raw = json.product || json.data || json;
+                    return normalizeData(raw);
+                } catch (error) {
+                    console.warn('[product-street(API)] API fetch failed. fallback data is used.', error);
+                    return fallbackData;
+                }
+            }
+
+            function renderProduct(data) {
+                state.data = data;
+                state.selectedImageIndex = 0;
+                state.selectedProductId = data.images[0].productId || null;
+                document.title = `${data.name} | Product | eXs (エクス)`;
+                $('breadcrumb-name').textContent = `${data.name} (Purchase)`;
+                $('product-name').textContent = data.name;
+                $('product-category').textContent = data.category;
+                $('product-description').textContent = data.description;
+                $('base-price').dataset.price = String(data.basePrice);
+                $('base-price').textContent = formatYen(data.basePrice);
+                $('shipping-estimate').textContent = data.shippingEstimate;
+                $('main-image').src = data.images[0].src;
+                $('main-image').alt = data.name;
+                setShopLinks(data.images[0]);
+
+                renderThumbnails(data.images, state.selectedImageIndex);
+                renderColors(data.images, state.selectedImageIndex);
+                renderOptions(data.options);
+                renderSpecs(data.specs);
+                bindOptionEvents();
+            }
+
+            async function addCurrentItemToCart() {
+                const addToCartBtn = $('add-to-cart-btn');
+                const productId = state.selectedProductId;
+                if (!productId) {
+                    setCartMessage('商品IDが取得できないため、カート追加できません。', 'error');
+                    return;
+                }
+                if (addToCartBtn) {
+                    addToCartBtn.disabled = true;
+                    addToCartBtn.classList.add('opacity-60', 'cursor-not-allowed');
+                }
+                setCartMessage('カートに追加中です...', 'info');
+                try {
+                    const result = await addItemToCart(productId, 1);
+                    if (result && result.result === 'error') {
+                        const errorMessage = (result.errors && result.errors[0] && result.errors[0].abstract) || 'カート追加に失敗しました。';
+                        setCartMessage(errorMessage, 'error');
+                    } else {
+                        setCartMessage('カートに追加しました。', 'success');
+                    }
+                } catch (error) {
+                    console.error('[product-street(API)] add to cart failed', error);
+                    setCartMessage('通信エラーのため、カート追加に失敗しました。', 'error');
+                } finally {
+                    if (addToCartBtn) {
+                        addToCartBtn.disabled = false;
+                        addToCartBtn.classList.remove('opacity-60', 'cursor-not-allowed');
+                    }
+                }
+            }
+
+            function bindCartButton() {
+                const addToCartBtn = $('add-to-cart-btn');
+                if (!addToCartBtn) return;
+                addToCartBtn.addEventListener('click', addCurrentItemToCart);
+            }
+
+            function showContent() {
+                const overlay = $('loading-overlay');
+                const container = $('product-container');
+                if (overlay) overlay.classList.add('hidden');
+                if (container) container.classList.remove('opacity-0');
+            }
+
+            function initStreetFrameSlider() {
+                const slider = document.querySelector('[data-street-frame-slider]');
+                if (!slider) return;
+
+                const imageEl = slider.querySelector('[data-street-frame-image]');
+                if (!imageEl) return;
+
+                const images = (imageEl.dataset.images || '')
+                    .split('|')
+                    .map((src) => src.trim())
+                    .filter(Boolean);
+                if (images.length < 2) return;
+
+                let currentIndex = 0;
+                let timerId = null;
+                let switching = false;
+
+                const setSlide = (nextIndex) => {
+                    if (switching) return;
+                    switching = true;
+                    imageEl.classList.add('is-fading');
+
+                    window.setTimeout(() => {
+                        currentIndex = (nextIndex + images.length) % images.length;
+                        imageEl.src = images[currentIndex];
+                        imageEl.classList.remove('is-soft-in');
+                        void imageEl.offsetWidth;
+                        imageEl.classList.add('is-soft-in');
+                        imageEl.classList.remove('is-fading');
+                        switching = false;
+                    }, 260);
+                };
+
+                const start = () => {
+                    if (timerId) return;
+                    timerId = setInterval(() => setSlide(currentIndex + 1), 3400);
+                };
+
+                const stop = () => {
+                    if (!timerId) return;
+                    clearInterval(timerId);
+                    timerId = null;
+                };
+
+                slider.addEventListener('mouseenter', stop);
+                slider.addEventListener('mouseleave', start);
+                imageEl.addEventListener('animationend', () => imageEl.classList.remove('is-soft-in'));
+
+                start();
+            }
+
+            document.addEventListener('DOMContentLoaded', async () => {
+                initApiClient((window.EXS_API_CONFIG && window.EXS_API_CONFIG.apiBaseUrl) || undefined);
+                try {
+                    await verifyLogin();
+                } catch (error) {
+                    console.warn('[product-street(API)] verifyLogin failed', error);
+                }
+                const data = await fetchApiData();
+                renderProduct(data);
+                bindCartButton();
+                initStreetFrameSlider();
+                showContent();
+            });
+        })();
+    </script>
+</body>
+</html>

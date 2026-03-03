@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PDRLTW4');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../">
+<title>Partner Entry Form | eXs</title>
+    <meta name="description" content="eXs ビジネスパートナー募集のエントリーフォームです。">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://exs.customjapan.net/partner-entry">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="eXs">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://exs.customjapan.net/partner-entry">
+    <meta property="og:title" content="Partner Entry Form | eXs">
+    <meta property="og:description" content="eXs ビジネスパートナー募集のエントリーフォームです。">
+    <meta property="og:image" content="img-webp/eXsStreetImage.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Partner Entry Form | eXs">
+    <meta name="twitter:description" content="eXs ビジネスパートナー募集のエントリーフォームです。">
+    <meta name="twitter:image" content="img-webp/eXsStreetImage.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { black: '#111111', gray: '#F5F5F5' }
+                    },
+                    letterSpacing: { widest: '.15em' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="font-sans text-brand-black antialiased bg-white">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRLTW4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="common-header" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm text-brand-black shadow-sm transition-all duration-300"></header>
+
+    <main class="pt-32 pb-24 px-6 bg-gray-50 min-h-screen">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-10 fade-up">
+                <a href="partner#entry" class="inline-flex items-center text-xs text-gray-500 hover:text-black transition">
+                    <span class="mr-2">←</span> PARTNER PAGE
+                </a>
+                <h1 class="font-en text-4xl md:text-5xl font-bold tracking-widest mt-4">ENTRY FORM</h1>
+                <p class="text-sm text-gray-500 mt-4">eXs ビジネスパートナー登録・導入相談フォーム</p>
+            </div>
+
+            <div class="bg-white border border-gray-200 shadow-sm p-6 md:p-10 fade-up">
+                <form id="partner-entry-form" action="mailto:info@customjapan.jp" method="POST" enctype="text/plain" class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="partner-company" class="block text-xs font-bold tracking-widest mb-2">COMPANY / STORE <span class="text-red-500">*</span></label>
+                            <input id="partner-company" name="company" type="text" required placeholder="株式会社〇〇 / 〇〇サイクル" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+                        </div>
+                        <div>
+                            <label for="partner-name" class="block text-xs font-bold tracking-widest mb-2">CONTACT NAME <span class="text-red-500">*</span></label>
+                            <input id="partner-name" name="name" type="text" required placeholder="山田 太郎" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="partner-email" class="block text-xs font-bold tracking-widest mb-2">EMAIL <span class="text-red-500">*</span></label>
+                            <input id="partner-email" name="email" type="email" required placeholder="example@shop.co.jp" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+                        </div>
+                        <div>
+                            <label for="partner-tel" class="block text-xs font-bold tracking-widest mb-2">PHONE <span class="text-red-500">*</span></label>
+                            <input id="partner-tel" name="tel" type="tel" required placeholder="06-1234-5678" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="partner-pref" class="block text-xs font-bold tracking-widest mb-2">PREFECTURE <span class="text-red-500">*</span></label>
+                            <input id="partner-pref" name="prefecture" type="text" required placeholder="大阪府" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+                        </div>
+                        <div>
+                            <label for="partner-category" class="block text-xs font-bold tracking-widest mb-2">BUSINESS TYPE <span class="text-red-500">*</span></label>
+                            <select id="partner-category" name="category" required class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black bg-white">
+                                <option value="" selected disabled>選択してください</option>
+                                <option value="bike-shop">バイクショップ</option>
+                                <option value="cycle-shop">サイクルショップ</option>
+                                <option value="retail">小売店（雑貨・アパレル等）</option>
+                                <option value="hospitality">宿泊・観光施設</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="block text-xs font-bold tracking-widest mb-3">INTERESTED MODEL <span class="text-red-500">*</span></p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                            <label class="border border-gray-300 px-4 py-3 cursor-pointer"><input type="checkbox" name="model[]" value="eXs Street" class="mr-2">eXs Street</label>
+                            <label class="border border-gray-300 px-4 py-3 cursor-pointer"><input type="checkbox" name="model[]" value="eXs 1 TKG" class="mr-2">eXs 1 TKG</label>
+                            <label class="border border-gray-300 px-4 py-3 cursor-pointer"><input type="checkbox" name="model[]" value="Both" class="mr-2">両方検討</label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="partner-volume" class="block text-xs font-bold tracking-widest mb-2">EXPECTED VOLUME</label>
+                            <select id="partner-volume" name="volume" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black bg-white">
+                                <option value="" selected>未定</option>
+                                <option value="1-3">月1〜3台</option>
+                                <option value="4-10">月4〜10台</option>
+                                <option value="11-20">月11〜20台</option>
+                                <option value="20+">月20台以上</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="partner-url" class="block text-xs font-bold tracking-widest mb-2">WEBSITE / SNS</label>
+                            <input id="partner-url" name="url" type="url" placeholder="https://example.com" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="partner-message" class="block text-xs font-bold tracking-widest mb-2">MESSAGE / QUESTION</label>
+                        <textarea id="partner-message" name="message" rows="5" placeholder="導入希望時期、ご質問などをご入力ください。" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black"></textarea>
+                    </div>
+
+                    <label class="flex items-start text-xs text-gray-600 leading-relaxed">
+                        <input id="partner-privacy" name="privacy" value="1" type="checkbox" required class="mt-0.5 mr-3">
+                        <span><a href="policy" class="underline">プライバシーポリシー</a>に同意のうえ送信します。</span>
+                    </label>
+
+                    <div class="pt-2">
+                        <button type="submit" class="w-full md:w-auto bg-brand-black text-white px-10 py-4 font-en font-bold tracking-widest hover:bg-gray-800 transition">SUBMIT ENTRY</button>
+                        <p class="text-[11px] text-gray-500 mt-3">※ 送信するとメールアプリが起動します。審査の結果、ご希望に添えない場合がございます。</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
+
+    <script src="JS/components.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
