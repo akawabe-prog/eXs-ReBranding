@@ -4,20 +4,20 @@
 
 // サイト内のリンク先定義
 const PATHS = {
-    home: 'index',
+    home: '/',
     about: 'about',
     ebike_intro: 'product/exs-street',
     ebike_buy: 'product/exs-street/purchase',
     kickboard_intro: 'product/exs-1-tkg',
     kickboard_buy: 'product/exs-1-tkg/purchase',
     accessories: 'accessories',
-    news: 'news-list',
+    news: 'news',
     developer: 'developer',
     partner: 'partner',
     column: 'colum',
     support: 'support',
     contact: 'contact',
-    privacy: 'privacy',
+    privacy: 'policy',
     company: 'company',
     faq: 'faq',
     instagram: 'https://www.instagram.com/exs.mobi/',

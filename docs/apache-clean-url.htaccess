@@ -5,10 +5,63 @@
 
 RewriteEngine On
 
-# Skip rewrite for existing files/directories
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
+# Canonical top pages
+RewriteRule ^index/?$ / [R=301,L,NC]
+RewriteRule ^index\.html/?$ / [R=301,L,NC]
+RewriteRule ^exs-api/index/?$ /exs-api/ [R=301,L,NC]
+RewriteRule ^exs-api/index\.html/?$ /exs-api/ [R=301,L,NC]
+
+# Canonical redirects for direct .html access (root)
+RewriteRule ^about\.html/?$ /about [R=301,L,NC]
+RewriteRule ^accessories\.html/?$ /accessories [R=301,L,NC]
+RewriteRule ^support\.html/?$ /support [R=301,L,NC]
+RewriteRule ^news-list\.html/?$ /news [R=301,L,NC]
+RewriteRule ^developer\.html/?$ /developer [R=301,L,NC]
+RewriteRule ^partner\.html/?$ /partner [R=301,L,NC]
+RewriteRule ^partner-list\.html/?$ /partner-list [R=301,L,NC]
+RewriteRule ^partner-entry\.html/?$ /partner-entry [R=301,L,NC]
+RewriteRule ^faq\.html/?$ /faq [R=301,L,NC]
+RewriteRule ^contact\.html/?$ /contact [R=301,L,NC]
+RewriteRule ^company\.html/?$ /company [R=301,L,NC]
+RewriteRule ^privacy\.html/?$ /policy [R=301,L,NC]
+RewriteRule ^form-error\.html/?$ /form-error [R=301,L,NC]
+RewriteRule ^thanks\.html/?$ /thanks [R=301,L,NC]
+RewriteRule ^product-intro-street\.html/?$ /product/exs-street [R=301,L,NC]
+RewriteRule ^product-intro-tkg\.html/?$ /product/exs-1-tkg [R=301,L,NC]
+RewriteRule ^product-street\.html/?$ /product/exs-street/purchase [R=301,L,NC]
+RewriteRule ^product-tkg\.html/?$ /product/exs-1-tkg/purchase [R=301,L,NC]
+RewriteRule ^colum-list\.html/?$ /colum [R=301,L,NC]
+RewriteRule ^colum-detail-50cc\.html/?$ /colum/50cc [R=301,L,NC]
+RewriteRule ^colum-detail-tkg\.html/?$ /colum/tkg [R=301,L,NC]
+RewriteRule ^colum-detail-mopet\.html/?$ /colum/mopet [R=301,L,NC]
+RewriteRule ^colum-detail-cyclemodeosaka2026\.html/?$ /colum/cyclemodeosaka2026 [R=301,L,NC]
+RewriteRule ^colum-detail\.html/?$ /colum/detail [R=301,L,NC]
+
+# Canonical redirects for direct .html access (/exs-api)
+RewriteRule ^exs-api/about\.html/?$ /exs-api/about [R=301,L,NC]
+RewriteRule ^exs-api/accessories\.html/?$ /exs-api/accessories [R=301,L,NC]
+RewriteRule ^exs-api/support\.html/?$ /exs-api/support [R=301,L,NC]
+RewriteRule ^exs-api/news-list\.html/?$ /exs-api/news [R=301,L,NC]
+RewriteRule ^exs-api/developer\.html/?$ /exs-api/developer [R=301,L,NC]
+RewriteRule ^exs-api/partner\.html/?$ /exs-api/partner [R=301,L,NC]
+RewriteRule ^exs-api/partner-list\.html/?$ /exs-api/partner-list [R=301,L,NC]
+RewriteRule ^exs-api/partner-entry\.html/?$ /exs-api/partner-entry [R=301,L,NC]
+RewriteRule ^exs-api/faq\.html/?$ /exs-api/faq [R=301,L,NC]
+RewriteRule ^exs-api/contact\.html/?$ /exs-api/contact [R=301,L,NC]
+RewriteRule ^exs-api/company\.html/?$ /exs-api/company [R=301,L,NC]
+RewriteRule ^exs-api/privacy\.html/?$ /exs-api/policy [R=301,L,NC]
+RewriteRule ^exs-api/form-error\.html/?$ /exs-api/form-error [R=301,L,NC]
+RewriteRule ^exs-api/thanks\.html/?$ /exs-api/thanks [R=301,L,NC]
+RewriteRule ^exs-api/product-intro-street\.html/?$ /exs-api/product/exs-street [R=301,L,NC]
+RewriteRule ^exs-api/product-intro-tkg\.html/?$ /exs-api/product/exs-1-tkg [R=301,L,NC]
+RewriteRule ^exs-api/product-street\.html/?$ /exs-api/product/exs-street/purchase [R=301,L,NC]
+RewriteRule ^exs-api/product-tkg\.html/?$ /exs-api/product/exs-1-tkg/purchase [R=301,L,NC]
+RewriteRule ^exs-api/colum-list\.html/?$ /exs-api/colum [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail-50cc\.html/?$ /exs-api/colum/50cc [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail-tkg\.html/?$ /exs-api/colum/tkg [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail-mopet\.html/?$ /exs-api/colum/mopet [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail-cyclemodeosaka2026\.html/?$ /exs-api/colum/cyclemodeosaka2026 [R=301,L,NC]
+RewriteRule ^exs-api/colum-detail\.html/?$ /exs-api/colum/detail [R=301,L,NC]
 
 # 301 redirects: old product/column URLs -> new clean URLs
 RewriteRule ^product-intro-street/?$ product/exs-street [R=301,L,NC]
@@ -21,6 +74,8 @@ RewriteRule ^colum-detail-tkg/?$ colum/tkg [R=301,L,NC]
 RewriteRule ^colum-detail-mopet/?$ colum/mopet [R=301,L,NC]
 RewriteRule ^colum-detail-cyclemodeosaka2026/?$ colum/cyclemodeosaka2026 [R=301,L,NC]
 RewriteRule ^colum-detail/?$ colum/detail [R=301,L,NC]
+RewriteRule ^news-list/?$ news [R=301,L,NC]
+RewriteRule ^privacy/?$ policy [R=301,L,NC]
 
 # 301 redirects: old exs-api product/column URLs -> new clean URLs
 RewriteRule ^exs-api/product-intro-street/?$ exs-api/product/exs-street [R=301,L,NC]
@@ -33,6 +88,13 @@ RewriteRule ^exs-api/colum-detail-tkg/?$ exs-api/colum/tkg [R=301,L,NC]
 RewriteRule ^exs-api/colum-detail-mopet/?$ exs-api/colum/mopet [R=301,L,NC]
 RewriteRule ^exs-api/colum-detail-cyclemodeosaka2026/?$ exs-api/colum/cyclemodeosaka2026 [R=301,L,NC]
 RewriteRule ^exs-api/colum-detail/?$ exs-api/colum/detail [R=301,L,NC]
+RewriteRule ^exs-api/news-list/?$ exs-api/news [R=301,L,NC]
+RewriteRule ^exs-api/privacy/?$ exs-api/policy [R=301,L,NC]
+
+# Skip rewrite for existing files/directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
 # -----------------------------
 # Root site clean URLs
@@ -54,6 +116,8 @@ RewriteRule ^colum/detail/?$ colum-detail.html [L,NC,QSA]
 
 # Alias for FAQ (actual file: faq.html)
 RewriteRule ^faq/?$ faq.html [L,NC,QSA]
+RewriteRule ^news/?$ news-list.html [L,NC,QSA]
+RewriteRule ^policy/?$ privacy.html [L,NC,QSA]
 
 # Generic clean URL fallback: /about -> /about.html
 RewriteRule ^([A-Za-z0-9_-]+)/?$ $1.html [L,NC,QSA]
@@ -78,6 +142,8 @@ RewriteRule ^exs-api/colum/detail/?$ exs-api/colum-detail.html [L,NC,QSA]
 
 # Alias for FAQ (actual file: faq.html)
 RewriteRule ^exs-api/faq/?$ exs-api/faq.html [L,NC,QSA]
+RewriteRule ^exs-api/news/?$ exs-api/news-list.html [L,NC,QSA]
+RewriteRule ^exs-api/policy/?$ exs-api/privacy.html [L,NC,QSA]
 
 # Generic clean URL fallback: /exs-api/about -> /exs-api/about.html
 RewriteRule ^exs-api/([A-Za-z0-9_-]+)/?$ exs-api/$1.html [L,NC,QSA]
