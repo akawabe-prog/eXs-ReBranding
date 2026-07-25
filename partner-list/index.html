@@ -10,29 +10,29 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <base href="../">
-<title>Partner List | eXs 取扱店一覧</title>
+    <base href="/">
+    <title>Partner List | eXs 取扱店一覧</title>
     <meta name="description" content="eXs Street / eXs 1 TKG の正規取扱店一覧。試乗・購入・メンテナンスの相談ができる店舗を掲載。">
     <meta name="keywords" content="eXs Street,eXs 1 TKG,取扱店,販売店,電動アシスト自転車,電動キックボード">
     <meta name="robots" content="index,follow,max-image-preview:large">
-    <link rel="canonical" href="https://exs.customjapan.net/partner-list">
+    <link rel="canonical" href="https://exs.mobi/partner-list">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="eXs">
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:url" content="https://exs.customjapan.net/partner-list">
+    <meta property="og:url" content="https://exs.mobi/partner-list">
     <meta property="og:title" content="Partner List | eXs 取扱店一覧">
     <meta property="og:description" content="eXs Street / eXs 1 TKG の正規取扱店一覧。試乗・購入・メンテナンスの相談ができる店舗を掲載。">
-    <meta property="og:image" content="img-webp/eXsStreetImage.webp">
+    <meta property="og:image" content="/assets/images/img-webp/eXsStreetImage.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Partner List | eXs 取扱店一覧">
     <meta name="twitter:description" content="eXs Street / eXs 1 TKG の正規取扱店一覧。試乗・購入・メンテナンスの相談ができる店舗を掲載。">
-    <meta name="twitter:image" content="img-webp/eXsStreetImage.webp">
+    <meta name="twitter:image" content="/assets/images/img-webp/eXsStreetImage.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -60,9 +60,13 @@
     <style>
         .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
-        .model-filter-btn.active { background: #111; color: #fff; border-color: #111; }
-        .model-filter-btn.active:hover { background: #111; color: #fff; border-color: #111; }
+        .model-filter-btn.active, .region-filter-btn.active { background: #111; color: #fff; border-color: #111; }
+        .model-filter-btn.active:hover, .region-filter-btn.active:hover { background: #111; color: #fff; border-color: #111; }
     </style>
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/img/apple-touch-icon.png">
 </head>
 <body class="font-sans text-brand-black antialiased bg-white pt-20">
 
@@ -85,10 +89,19 @@
 
         <section class="py-14 md:py-20 px-6 bg-white">
             <div class="container mx-auto max-w-6xl">
-                <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-12 fade-up" id="model-filter" role="tablist" aria-label="モデルで絞り込み">
+                <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-4 fade-up" id="model-filter" role="tablist" aria-label="モデルで絞り込み">
                     <button type="button" class="model-filter-btn active px-5 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-model="all" aria-selected="true">ALL</button>
                     <button type="button" class="model-filter-btn px-5 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-model="street" aria-selected="false">eXs Street</button>
                     <button type="button" class="model-filter-btn px-5 py-2.5 text-xs font-en font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-model="tkg" aria-selected="false">eXs 1 TKG</button>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-12 fade-up" id="region-filter" role="tablist" aria-label="エリアで絞り込み">
+                    <button type="button" class="region-filter-btn active px-5 py-2.5 text-xs font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-region="all" aria-selected="true">全国</button>
+                    <button type="button" class="region-filter-btn px-5 py-2.5 text-xs font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-region="kanto" aria-selected="false">関東</button>
+                    <button type="button" class="region-filter-btn px-5 py-2.5 text-xs font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-region="chubu" aria-selected="false">中部・甲信越</button>
+                    <button type="button" class="region-filter-btn px-5 py-2.5 text-xs font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-region="kansai" aria-selected="false">関西</button>
+                    <button type="button" class="region-filter-btn px-5 py-2.5 text-xs font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-region="chugoku-shikoku" aria-selected="false">中国・四国</button>
+                    <button type="button" class="region-filter-btn px-5 py-2.5 text-xs font-bold tracking-widest border border-gray-200 rounded-full text-gray-600 hover:border-black hover:text-black transition" data-region="kyushu" aria-selected="false">九州・沖縄</button>
                 </div>
 
                 <div class="fade-up mb-10">
@@ -96,14 +109,14 @@
                         <p class="text-sm md:text-base font-medium text-gray-700 leading-relaxed">
                             eXs Streetのブランドパートナー募集を開始しました。<br class="hidden md:block">募集要項の詳細はこちらからご確認ください。
                         </p>
-                        <a href="partner" class="inline-flex items-center justify-center whitespace-nowrap px-5 py-3 bg-brand-black text-white text-xs font-en font-bold tracking-widest hover:opacity-90 transition">
+                        <a href="/partner" class="inline-flex items-center justify-center whitespace-nowrap px-5 py-3 bg-brand-black text-white text-xs font-en font-bold tracking-widest hover:opacity-90 transition">
                             詳しくはこちら
                         </a>
                     </div>
                 </div>
 
                 <div id="partner-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street,tkg">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street,tkg" data-region="kansai">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
                             <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/lp_exs_street/images/lp/lp_c03_shop-list01.jpg" alt="さがサイクル住道店の外観" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
@@ -122,7 +135,7 @@
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street" data-region="kansai">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
                             <img src="https://cms.customjapan.jp/wp-content/themes/kickboard/lp_exs_street/images/lp/lp_c03_shop-list02.jpg" alt="センバガレージの外観" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
@@ -140,229 +153,65 @@
                         </div>
                     </article>
 
-                    <!-- 関西エリア：大阪府 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street" data-region="kanto">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="三木サイクルショップ" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="/assets/images/img-webp/partner-ewalk-utsunomiya.webp" alt="E-WALK Mobility 宇都宮店の外観" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
                             </div>
-                            <h2 class="text-xl font-bold mb-4">三木サイクルショップ</h2>
+                            <h2 class="text-xl font-bold mb-4">E-WALK Mobility 宇都宮店</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府大阪市港区弁天4-5-21</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0665710810" class="hover:underline">06-6571-0810</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.instagram.com/exs.mobi/" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>栃木県宇都宮市大通り1丁目1-12</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:05036468457" class="hover:underline">050-3646-8457</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://e-walk.stores.jp/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>11:00〜18:00（水木休）</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street" data-region="kansai">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="YUN AUTO LINE" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="/assets/images/img-webp/partner-wildcat.webp" alt="ワイルドキャッツ" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
                             </div>
-                            <h2 class="text-xl font-bold mb-4">YUN AUTO LINE</h2>
+                            <h2 class="text-xl font-bold mb-4">ワイルドキャッツ</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府松原市天美我堂5-5-13</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0723340331" class="hover:underline">072-334-0331</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.yunautoline.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府枚方市津田駅前1-2-5</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:09083676706" class="hover:underline">090-8367-6706</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://www.bike-ch.com/wildcats/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>8:30〜19:30（不定休）</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street,tkg" data-region="kanto">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="スーパー・モトリンク" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="/assets/images/img-webp/partner-motorist.webp" alt="モータリスト合同会社" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
-                            <h2 class="text-xl font-bold mb-4">スーパー・モトリンク</h2>
+                            <h2 class="text-xl font-bold mb-4">モータリスト合同会社</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府吹田市江坂町2丁目21-25</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0663387722" class="hover:underline">06-6338-7722</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://motolink-net.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>〒144-0055 東京都大田区仲六郷2丁目41-8</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0337312388" class="hover:underline">03-3731-2388</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://motorists.jp/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜18:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">定休日</dt><dd>毎週水曜・木曜・祝祭日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg" data-region="kanto">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="二輪処エスペラント摂津店" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">二輪処エスペラント摂津店</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府摂津市鳥飼本町5丁目13-11</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0726535334" class="hover:underline">072-653-5334</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://nirindocoro.jp/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="二輪処エスペラント 港区店" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">二輪処エスペラント 港区店</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府大阪市港区三先2-12-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0665755250" class="hover:underline">06-6575-5250</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://nirindocoro.jp/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <!-- 関西エリア：兵庫県 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="イシイモーターサイクル アクタ西宮店" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">イシイモーターサイクル アクタ西宮店</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県西宮市北口町1-2 アクタ西宮東館1F</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0798633131" class="hover:underline">0798-63-3131</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.ishii-motorcycle.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜20:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="イシイモーターサイクル 杭瀬店" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">イシイモーターサイクル 杭瀬店</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県尼崎市梶ヶ島19-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0664813064" class="hover:underline">06-6481-3064</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://ishiimotorcycle.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="中古ジャイロ・ジャイロキャノピー専門店 バイクショップ BSB" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">中古ジャイロ・ジャイロキャノピー専門店 バイクショップ BSB</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県尼崎市西立花町4-15-8</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0664158819" class="hover:underline">06-6415-8819</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8701780/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="Bike Shop TMF" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">Bike Shop TMF</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県神戸市長田区五番町2-2-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0785788161" class="hover:underline">078-578-8161</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8702522/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="BIKE SHOP A.M.G & V.A.F.T FACTORY" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">BIKE SHOP A.M.G & V.A.F.T FACTORY</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県加古川市加古川町寺家町163-6</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0794250608" class="hover:underline">079-425-0608</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.instagram.com/exs.mobi/" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <!-- 関西エリア：京都府 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="バイク屋 TOPS" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">バイク屋 TOPS</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>京都府京都市右京区梅津南上町62-2</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0758625888" class="hover:underline">075-862-5888</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://tops-5.jimdosite.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="ナエムラモータース" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">ナエムラモータース</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>京都府京都市下京区朱雀宝蔵町34</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0756812264" class="hover:underline">075-681-2264</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://24u.jp/0756812264/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <!-- 関東エリア：東京都 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="上村モータース" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="/assets/images/img-webp/partner-kamimura-motors.webp" alt="上村モータース" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -370,53 +219,17 @@
                             </div>
                             <h2 class="text-xl font-bold mb-4">上村モータース</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都足立区保木間2-26-4</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0338842521" class="hover:underline">03-3884-2521</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://www.maroon.dti.ne.jp/kami-m/index.htm" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:30〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都江戸川区平井5丁目12-5</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0336120568" class="hover:underline">03-3612-0568</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://www.maroon.dti.ne.jp/kami-m/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>平日: 7:00-19:00<br>祝日: 9:00-18:00<br>休日: 日曜日、年末、年始、GW、お盆</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg" data-region="kanto">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="マルホランド" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">マルホランド</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都世田谷区玉川台1-10-5</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0337076821" class="hover:underline">03-3707-6821</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://hondago-bikerental.jp/store/detail/362" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="ホンダウイングテントウムシ" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">ホンダウイングテントウムシ</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都足立区東伊興3-18-20</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0338563064" class="hover:underline">03-3856-3064</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.24u.jp/0338563064/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="三鷹ホンダ 萩野モータース" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="/assets/images/img-webp/partner-mitaka-honda-hagino.webp" alt="三鷹ホンダ 萩野モータース" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -424,202 +237,21 @@
                             </div>
                             <h2 class="text-xl font-bold mb-4">三鷹ホンダ 萩野モータース</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都三鷹市新川2-11-2</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0422433482" class="hover:underline">0422-43-3482</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8502715/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都三鷹市井口4-4-18</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0422311658" class="hover:underline">0422-31-1658</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8502715/?utm_campaign=GMB&utm_source=website_link&utm_medium=web&utm_content=after" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00（日曜日: 11:00-18:00）<br>定休日: 水曜日・第2、3木曜日・祝日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street,tkg" data-region="kanto">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="ミタマヤホンダ" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="/assets/images/img-webp/partner-ewalk-koshigaya.webp" alt="E-WALK Mobility 越谷本店" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">ミタマヤホンダ</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都目黒区東山1-18-2</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0337124521" class="hover:underline">03-3712-4521</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.instagram.com/exs.mobi/" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="モーターショップヒロ" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">モーターショップヒロ</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都板橋区中板橋14-11</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0339613965" class="hover:underline">03-3961-3965</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://motorshophiro.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="ガレージ イーゼットビー" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">ガレージ イーゼットビー</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都北区東田端1-12-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0338002443" class="hover:underline">03-3800-2443</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.ezb-luca.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <!-- 関東エリア：千葉県 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="WIND SUPPLY" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">WIND SUPPLY</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県習志野市大曲町13-17</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0474711555" class="hover:underline">047-471-1555</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8501920/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="バイクショップ ジークライムスター小深店" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">バイクショップ ジークライムスター小深店</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県千葉市稲毛区小深町161-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0433046277" class="hover:underline">043-304-6277</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.g-crime-star.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="モトサイクル・ベル" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">モトサイクル・ベル</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県流山市東深井405</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0471310026" class="hover:underline">04-7131-0026</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.24u.jp/0471310026/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="宇田川オート" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">宇田川オート</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県市川市東菅野1-2-12</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0473343759" class="hover:underline">047-334-3759</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://www.udagawa-auto.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="スポーツショップ栄光" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">スポーツショップ栄光</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県柏市高柳1424</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0471910391" class="hover:underline">04-7191-0391</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://eikou.babyblue.jp/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:30</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="サイクルボックスコマツ" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">サイクルボックスコマツ</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県我孫子市我孫子1-12-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0471823837" class="hover:underline">04-7182-3837</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://www.eurus.dti.ne.jp/~box/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:30</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="藤川オートセンター" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">藤川オートセンター</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県香取郡神崎町立野1424</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0478723303" class="hover:underline">0478-72-3303</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8500071/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>08:30〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <!-- 関東エリア：埼玉県 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="E-WALK Mobility 越谷本店" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">E-WALK Mobility 越谷本店</h2>
@@ -632,365 +264,734 @@
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street" data-region="chubu">
                         <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="オートショップ白鳥輪業" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="/assets/images/img-webp/partner-ito-shokai.webp" alt="伊藤商会の外観" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </figure>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">伊藤商会</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>新潟県糸魚川市大町1-1-26</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://itoo02.wixsite.com/itoo" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>8:00〜19:00（火曜定休／冬期11月〜2月は18:00まで）</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street,tkg" data-region="chubu">
+                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
+                            <img src="/assets/images/img-webp/partner-st-auto.webp" alt="エスティーオートのロゴ" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </figure>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">エスティーオート</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>長野県飯田市鼎東鼎120-2</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0265540558" class="hover:underline">0265-54-0558</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.stauto-nagano.net/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜18:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">定休日</dt><dd>火曜日・土曜日・第2/第3土曜日・年末年始（12/29〜1/5）・お盆・ツーリング時</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="street,tkg" data-region="chugoku-shikoku">
+                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
+                            <img src="/assets/images/img-webp/partner-24garage.webp" alt="24Garageの店舗内観" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </figure>
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">24Garage</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>広島県福山市駅家町近田152</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0849760024" class="hover:underline">084-976-0024</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://moto.webike.net/shop-navi/shop/19144/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00<br>定休日: 日曜日・祝日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 画像なし店舗(テキストカード)は別グリッドで次の行から -->
+                <div id="partner-grid-text" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">三木サイクルショップ</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>高槻市緑が丘1-4-2</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0726852457" class="hover:underline">072-685-2457</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.instagram.com/benten810" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜20:00<br>定休日: 水曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="street" data-region="chugoku-shikoku">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">サイクルハウスあんどう 自転車店</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>鳥取県米子市両三柳3350-6</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:09057039302" class="hover:underline">090-5703-9302</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.andojitensha.jp/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜18:30（不定休）</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">YUN AUTO LINE</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府富田林市西板持町6-4-22</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0721553660" class="hover:underline">0721-55-3660</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.yunautoline.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="street,tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">スーパー・モトリンク</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府寝屋川市川勝町3-3</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0728200785" class="hover:underline">072-820-0785</a><br><a href="tel:09044922700" class="hover:underline">090-4492-2700</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://motolink-net.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00-20:00</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">二輪処エスペラント摂津店</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府摂津市東別府3丁目7-12 E号</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0661954855" class="hover:underline">06-6195-4855</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://www.nirindokoro.com/shop/esperant/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00<br>第1水曜は13:00〜19:00<br>定休日: 火曜日・第2、第3水曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">イシイモーターサイクル アクタ西宮店</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県西宮市北口町1-1 ACTA西宮西館 1F</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0798695060" class="hover:underline">0798-69-5060</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.ishii-motorcycle.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜20:00<br>定休日: 月曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">イシイモーターサイクル 杭瀬店</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県尼崎市杭瀬北新町2丁目1-8</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0664811791" class="hover:underline">06-6481-1791</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://ishiimotorcycle.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00〜19:00<br>定休日: 月曜日・第3日曜日（イベント日臨時休業）</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">中古ジャイロ・ジャイロキャノピー専門店 バイクショップ BSB</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県神戸市垂水区朝谷町3-1</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0787546446" class="hover:underline">078-754-6446</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8701780/?utm_campaign=GMB&utm_source=website_link&utm_medium=web&utm_content=after" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-18:00<br>定休日: 火曜日・不定休</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">Bike Shop TMF</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>大阪府堺市西区平岡町36-1 冨尾石油泉北鳳SS内</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0722735551" class="hover:underline">072-273-5551</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8702522/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-18:00<br>定休日: 不定休</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">BIKE SHOP A.M.G & V.A.F.T FACTORY</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>兵庫県尼崎市上ノ島町2丁目37-8</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0664273388" class="hover:underline">06-6427-3388</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.instagram.com/vaprahead/?hl=ja" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">バイク屋 TOPS</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>京都府京田辺市三山木垣ノ内59-4</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0774663838" class="hover:underline">0774-66-3838</a><br><a href="tel:09098779559" class="hover:underline">090-9877-9559</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://tops-5.jimdosite.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>12:00-19:00<br>定休日: 月曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">ナエムラモータース</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>京都府京都市南区東九条西山王町3</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0756812264" class="hover:underline">075-681-2264</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 日曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">マルホランド</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都調布市布田1丁目17-1</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0424894300" class="hover:underline">042-489-4300</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 水曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">ホンダウイングテントウムシ</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都足立区入谷2-24-10</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0338563064" class="hover:underline">03-3856-3064</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>11:00-21:00<br>定休日: 水曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">ミタマヤホンダ</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都日野市日野376-1</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0425811061" class="hover:underline">042-581-1061</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 水曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">モーターショップヒロ</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都足立区足立4-40-2</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0338492439" class="hover:underline">03-3849-2439</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://motorshophiro.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 日曜日・月曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">ガレージ イーゼットビー</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都町田市上小山田町3042-13</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0428600032" class="hover:underline">042-860-0032</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.ezb-luca.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-18:30<br>定休日: 月曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">WIND SUPPLY</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県市原市糸久318-1</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0436378550" class="hover:underline">0436-37-8550</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8501920/?utm_campaign=GMB&utm_source=website_link&utm_medium=web&utm_content=motorbike_sales" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:30-19:00<br>定休日: 水曜日・イベント日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">バイクショップ ジークライムスター小深店</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県千葉市稲毛区小深町116-2</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0434223497" class="hover:underline">043-422-3497</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.g-crime-star.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:30-19:00<br>定休日: 火曜日・春ツーリング・秋ツーリング時・ゴールデンウィーク・年末年始</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">モトサイクル・ベル</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県柏市花野井902-7</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0471310026" class="hover:underline">04-7131-0026</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-20:00<br>定休日: 水曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">宇田川オート</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県柏市光ケ丘2-3-5</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0471723768" class="hover:underline">04-7172-3768</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://www.udagawa-auto.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 火曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">スポーツショップ栄光</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県成田市並木町1-10</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0476231824" class="hover:underline">0476-23-1824</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://eikou.babyblue.jp/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00-18:30<br>定休日: 火曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">サイクルボックスコマツ</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県松戸市六高台7-10</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0473880799" class="hover:underline">047-388-0799</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="http://www.eurus.dti.ne.jp/~box/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>11:00-20:00<br>定休日: 水曜日・イベント日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">藤川オートセンター</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>千葉県松戸市小金きよしケ丘4-10-12</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0473449095" class="hover:underline">047-344-9095</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://fujikawa-auto.net/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:30-18:00<br>定休日: 火曜日・水曜日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">オートショップ白鳥輪業</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県三郷市鷹野4-298</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0489550639" class="hover:underline">048-955-0639</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県春日部市大枝667-2</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0487350109" class="hover:underline">048-735-0109</a></dd></div>
                                 <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.saitamabike.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:30</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-18:00<br>定休日: 火曜日・水曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="水村サイクルセンター" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">水村サイクルセンター</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県白岡市白岡1203-4</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0480920248" class="hover:underline">0480-92-0248</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://shiraokaci.machikatsu.co.jp/town/detail.html?did=1469" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県白岡市白岡1494</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0480920053" class="hover:underline">0480-92-0053</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00-17:00<br>定休日: 月曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="バイクショップ 赤トンボ" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">バイクショップ 赤トンボ</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県深谷市東方1712-4</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0485326006" class="hover:underline">048-532-6006</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8500359/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県さいたま市桜区西堀9-25-3</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0488531888" class="hover:underline">048-853-1888</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8500359/?utm_campaign=GMB&utm_source=website_link&utm_medium=web&utm_content=after" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 水曜日・第2,4火曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="ハラダサイクル" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">ハラダサイクル</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県桶川市寿1-15-20</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0487710814" class="hover:underline">048-771-0814</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8501223/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県越谷市恩間新田415</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0489750216" class="hover:underline">048-975-0216</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.harada-cycle.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 木曜日、第3水曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="MotoShop ON&OFF" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">MotoShop ON&OFF</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県加須市花崎4-9-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0480653857" class="hover:underline">0480-65-3857</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.facebook.com/exs.mobi" target="_blank" rel="noopener noreferrer" class="hover:underline">Facebook</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>東京都足立区西新井栄町3-18-5</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0338808198" class="hover:underline">03-3880-8198</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-20:00<br>定休日: 水曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="山田輪業合資会社" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">山田輪業合資会社</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県川口市前川3-12-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0482622708" class="hover:underline">048-262-2708</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.24u.jp/0482810807/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県川口市坂下町1-1-9</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0482810807" class="hover:underline">048-281-0807</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00-18:30<br>定休日: 火曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="沢田ホンダ販売" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">沢田ホンダ販売</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県所沢市山口132-1</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県所沢市金山町8-4</dd></div>
                                 <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0429224980" class="hover:underline">04-2922-4980</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.24u.jp/0429224980/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00<br>定休日: 日曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="小峰モータース" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">小峰モータース</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県熊谷市宮町1-143</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0485211497" class="hover:underline">048-521-1497</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.24u.jp/0485326006/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県熊谷市美土里町2-13</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0485326006" class="hover:underline">048-532-6006</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 木曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="有限会社ウイング小林" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">有限会社ウイング小林</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県上尾市浅間台3-29-2</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0487713310" class="hover:underline">048-771-3310</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県熊谷市河原町1-6</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0485212034" class="hover:underline">048-521-2034</a></dd></div>
                                 <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.bds-bikesensor.net/shop/client/53530" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00-18:30<br>定休日: 水曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="有限会社清水商会" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
-                            <h2 class="text-xl font-bold mb-4">有限会社清水商会</h2>
+                            <h2 class="text-xl font-bold mb-4">有限会社 清水商会</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県さいたま市緑区原山3-18-20</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0488822347" class="hover:underline">048-882-2347</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県上尾市小敷谷760</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0487251798" class="hover:underline">048-725-1798</a></dd></div>
                                 <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://shimizu1970.my.coocan.jp/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00〜19:00<br>定休日: 木曜日・第三水曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="株式会社モトスポットタキ" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
-                            <h2 class="text-xl font-bold mb-4">株式会社モトスポットタキ</h2>
+                            <h2 class="text-xl font-bold mb-4">株式会社 モトスポットタキ</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県春日部市中央6-1-16</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0487353141" class="hover:underline">048-735-3141</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県坂戸市中小坂431-10</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0492832348" class="hover:underline">049-283-2348</a></dd></div>
                                 <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://ms-taki.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-20:00<br>定休日: 水曜日・第3木曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="かねそう輪店" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">かねそう輪店</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県鴻巣市本町4-7-14</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0485410264" class="hover:underline">048-541-0264</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://cyclestart.jp/shop/7005" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県鴻巣市加美2-4-1</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0485411356" class="hover:underline">048-541-1356</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00-20:00<br>定休日: 月曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <!-- 関東エリア：茨城県 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="モトショップシメカケ" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">モトショップシメカケ</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県下妻市下妻乙1175</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0296442357" class="hover:underline">0296-44-2357</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8501184/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県古河市宮前町15-17</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0280224833" class="hover:underline">0280-22-4833</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-18:00<br>定休日: 月曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="みのわ商会" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">みのわ商会</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県神栖市神栖2-7-33</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0299920545" class="hover:underline">0299-92-0545</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8400007/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県水戸市渡里町3229-3</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0292240340" class="hover:underline">029-224-0340</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.bds-bikesensor.net/shop/client/64311" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>8:00-18:30<br>定休日: 不定休</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="有限会社 中央オートサイクル" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">有限会社 中央オートサイクル</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県日立市多賀町1-11-20</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0294330428" class="hover:underline">0294-33-0428</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://chuoh-auto.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:30〜19:00</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="K-FACTORY" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">K-FACTORY</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県ひたちなか市高野667-5</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0292850587" class="hover:underline">029-285-0587</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県ひたちなか市堀口612-17</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0292196681" class="hover:underline">029-219-6681</a></dd></div>
                                 <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.bds-bikesensor.net/shop/client/64541" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>10:00-19:00<br>定休日: 水曜日・木曜日・祝日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="コバヤシモーターサイクル" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">コバヤシモーターサイクル</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県水戸市桜川2-5-7</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0292243409" class="hover:underline">029-224-3409</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.kobayashi-mc.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県神栖市木崎2846-3</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0299928198" class="hover:underline">0299-92-8198</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.kobayashi-mc.com/index.html" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:30-19:00<br>定休日: 月曜日・第三日曜日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="有限会社 河内オートセンター" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
-                            <h2 class="text-xl font-bold mb-4">有限会社 河内オートセンター</h2>
+                            <h2 class="text-xl font-bold mb-4">有限会社ナカムラモータース</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>茨城県稲敷郡河内町源清田1117</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0297842339" class="hover:underline">0297-84-2339</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://map.yahoo.co.jp/v3/place/zCby9Q0XR-6" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-
-                    <!-- 関東エリア：群馬県 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="ナカムラモータース" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
-                            </div>
-                            <h2 class="text-xl font-bold mb-4">ナカムラモータース</h2>
-                            <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>群馬県太田市新田小金井町170-1</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0276570264" class="hover:underline">0276-57-0264</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>群馬県安中市原市1391-3</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0273858460" class="hover:underline">027-385-8460</a></dd></div>
                                 <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://nakamura-motors.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:30-19:00<br>定休日: 火曜日・イベント日</dd></div>
                             </dl>
                         </div>
                     </article>
 
-                    <!-- 甲信越エリア：新潟県 -->
-                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up" data-models="tkg">
-                        <figure class="aspect-[16/10] overflow-hidden bg-gray-100">
-                            <img src="https://placehold.co/800x500/e5e7eb/a3a3a3?text=No+Image" alt="株式会社ホンダウイング高橋" class="w-full h-full object-cover" loading="lazy" decoding="async">
-                        </figure>
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="chubu">
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
                             </div>
                             <h2 class="text-xl font-bold mb-4">株式会社ホンダウイング高橋</h2>
                             <dl class="space-y-3 text-sm text-gray-600">
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>新潟県上越市石橋1-2-24</dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0255432255" class="hover:underline">025-543-2255</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://www.goobike.com/shop/client_8502458/" target="_blank" rel="noopener noreferrer" class="hover:underline">GooBike</a></dd></div>
-                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>09:00〜19:00</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>新潟県魚沼市虫野113-3</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">TEL</dt><dd><a href="tel:0257920778" class="hover:underline">025-792-0778</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">公式</dt><dd><a href="https://wing-takahashi.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Webサイト</a></dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>9:00〜19:00<br>定休日: 月曜日・イベント日</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kansai">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">サイクルランドタケナカ 洛西店</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>京都府京都市西京区大枝塚原町3-150</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="street,tkg" data-region="kyushu">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">サイクルテックかぐや</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>福岡県飯塚市有井354-38 105号</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="street,tkg" data-region="kyushu">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs Street</span>
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">武富自転車商会</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>長崎県佐世保市上京町4-16</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
+                            </dl>
+                        </div>
+                    </article>
+
+                    <article class="partner-card border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-[0_8px_26px_rgba(0,0,0,0.06)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.1)] transition fade-up self-start" data-models="tkg" data-region="kanto">
+                        <div class="p-6">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] px-2.5 py-1 rounded-full border border-gray-200 font-en">eXs 1 TKG</span>
+                            </div>
+                            <h2 class="text-xl font-bold mb-4">サイクルロードイトー西大宮店</h2>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">住所</dt><dd>埼玉県さいたま市西区中釘1498-3</dd></div>
+                                <div class="grid grid-cols-[64px_1fr] gap-3"><dt class="text-gray-400 font-bold">営業時間</dt><dd>要問い合わせ</dd></div>
                             </dl>
                         </div>
                     </article>
@@ -1003,54 +1004,63 @@
 
     <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
 
-    <script src="JS/components.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('#model-filter .model-filter-btn');
-            const cards = document.querySelectorAll('#partner-grid .partner-card');
+            const modelButtons = document.querySelectorAll('#model-filter .model-filter-btn');
+            const regionButtons = document.querySelectorAll('#region-filter .region-filter-btn');
+            const cards = document.querySelectorAll('#partner-grid .partner-card, #partner-grid-text .partner-card');
             const empty = document.getElementById('partner-no-result');
-            const initialModel = new URLSearchParams(window.location.search).get('model');
+            const params = new URLSearchParams(window.location.search);
 
-            if (!buttons.length || !cards.length || !empty) return;
+            if (!modelButtons.length || !cards.length || !empty) return;
 
-            const applyFilter = (model) => {
+            const state = { model: 'all', region: 'all' };
+
+            const applyFilter = () => {
                 let visibleCount = 0;
                 cards.forEach((card) => {
                     const models = (card.dataset.models || '').split(',').map((v) => v.trim());
-                    const show = model === 'all' || models.includes(model);
+                    const modelOk = state.model === 'all' || models.includes(state.model);
+                    const regionOk = state.region === 'all' || card.dataset.region === state.region;
+                    const show = modelOk && regionOk;
                     card.classList.toggle('hidden', !show);
                     if (show) visibleCount += 1;
                 });
                 empty.classList.toggle('hidden', visibleCount > 0);
             };
 
-            buttons.forEach((btn) => {
+            const activate = (buttons, activeBtn) => {
+                buttons.forEach((b) => {
+                    b.classList.toggle('active', b === activeBtn);
+                    b.setAttribute('aria-selected', b === activeBtn ? 'true' : 'false');
+                });
+            };
+
+            modelButtons.forEach((btn) => {
                 btn.addEventListener('click', () => {
-                    const model = btn.dataset.model || 'all';
-                    buttons.forEach((b) => {
-                        b.classList.remove('active');
-                        b.setAttribute('aria-selected', 'false');
-                    });
-                    btn.classList.add('active');
-                    btn.setAttribute('aria-selected', 'true');
-                    applyFilter(model);
+                    state.model = btn.dataset.model || 'all';
+                    activate(modelButtons, btn);
+                    applyFilter();
+                });
+            });
+            regionButtons.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    state.region = btn.dataset.region || 'all';
+                    activate(regionButtons, btn);
+                    applyFilter();
                 });
             });
 
             const allowedModels = new Set(['all', 'street', 'tkg']);
-            const defaultModel = allowedModels.has(initialModel) ? initialModel : 'all';
-            const defaultButton = Array.from(buttons).find((btn) => (btn.dataset.model || 'all') === defaultModel);
+            const allowedRegions = new Set(['all', ...Array.from(regionButtons).map((b) => b.dataset.region)]);
+            if (allowedModels.has(params.get('model'))) state.model = params.get('model');
+            if (allowedRegions.has(params.get('region'))) state.region = params.get('region');
 
-            buttons.forEach((b) => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            if (defaultButton) {
-                defaultButton.classList.add('active');
-                defaultButton.setAttribute('aria-selected', 'true');
-            }
-            applyFilter(defaultModel);
+            activate(modelButtons, Array.from(modelButtons).find((b) => (b.dataset.model || 'all') === state.model));
+            activate(regionButtons, Array.from(regionButtons).find((b) => (b.dataset.region || 'all') === state.region));
+            applyFilter();
         });
     </script>
 </body>

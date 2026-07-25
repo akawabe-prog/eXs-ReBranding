@@ -10,9 +10,8 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <base href="../">
-<title>ACCESSORIES | eBike・電動キックボード対応 | eXs</title>
+    <base href="/">
+    <title>ACCESSORIES | eBike・電動キックボード対応 | eXs</title>
     <meta name="description" content="電動アシスト自転車・ファットバイク・eBike・電動キックボード向け純正アクセサリーを掲載。ヘルメット、ロック、バッグを紹介。">
     <meta name="keywords" content="電動アシスト自転車,ファットバイク,eBike,電動キックボード,特定小型原付,eXs">
     <meta name="robots" content="index,follow,max-image-preview:large">
@@ -23,11 +22,11 @@
     <meta property="og:url" content="https://exs.customjapan.net/accessories">
     <meta property="og:title" content="ACCESSORIES | eBike・電動キックボード対応 | eXs">
     <meta property="og:description" content="電動アシスト自転車・ファットバイク・eBike・電動キックボード向け純正アクセサリーを掲載。ヘルメット、ロック、バッグを紹介。">
-    <meta property="og:image" content="img-webp/eXsStreetImage.webp">
+    <meta property="og:image" content="/assets/images/img-webp/eXsStreetImage.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ACCESSORIES | eBike・電動キックボード対応 | eXs">
     <meta name="twitter:description" content="電動アシスト自転車・ファットバイク・eBike・電動キックボード向け純正アクセサリーを掲載。ヘルメット、ロック、バッグを紹介。">
-    <meta name="twitter:image" content="img-webp/eXsStreetImage.webp">
+    <meta name="twitter:image" content="/assets/images/img-webp/eXsStreetImage.webp">
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +58,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <style>
         /* User Provided CSS */
@@ -111,6 +110,32 @@
             white-space: nowrap;
             padding-bottom: 5px;
             justify-content: center;
+        }
+
+        .filter__inner {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .filter__group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .filter__label {
+            font-size: 0.72rem;
+            color: var(--color-gray-mid);
+            letter-spacing: 0.14em;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        .filter__meta {
+            font-size: 0.85rem;
+            color: var(--color-gray-mid);
+            text-align: center;
         }
 
         .filter__item {
@@ -202,6 +227,54 @@
             line-height: 1.6;
         }
 
+        .card__chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .card__chip {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            padding: 0 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .card__chip--model {
+            background: #111111;
+            color: #ffffff;
+        }
+
+        .card__chip--category {
+            background: #f1f1f1;
+            color: #333333;
+        }
+
+        .card__chip--universal {
+            background: #ece7dc;
+            color: #5a4632;
+        }
+
+        @media (max-width: 768px) {
+            .filter {
+                top: 64px;
+            }
+
+            .filter__label,
+            .filter__meta {
+                text-align: left;
+            }
+
+            .filter__list {
+                justify-content: flex-start;
+            }
+        }
+
         .btn--outline {
             width: 100%;
             padding: 12px;
@@ -220,6 +293,10 @@
             color: var(--color-white);
         }
     </style>
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/img/apple-touch-icon.png">
 </head>
 <body class="font-sans text-brand-black antialiased bg-white pt-20 flex flex-col min-h-screen">
 
@@ -240,12 +317,12 @@
 
         <div class="filter">
             <div class="container mx-auto px-6">
-                <div class="filter__list">
-                    <button class="filter__item active" data-filter="all">ALL</button>
-                    <button class="filter__item" data-filter="helmet">HELMET</button>
-                    <button class="filter__item" data-filter="lock">LOCK</button>
-                    <button class="filter__item" data-filter="bag">BAG</button>
-                    <button class="filter__item" data-filter="maintenance">MAINTENANCE</button>
+                <div class="filter__inner">
+                    <div class="filter__group">
+                        <p class="filter__label">MODEL FILTER</p>
+                        <div class="filter__list" id="accessories-product-filters"></div>
+                    </div>
+                    <p class="filter__meta" id="accessories-filter-meta">商品を読み込み中です。</p>
                 </div>
             </div>
         </div>
@@ -261,10 +338,10 @@
     <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
 
     <!-- 共通スクリプト -->
-    <script src="JS/components.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/script.js"></script>
 
     <!-- API連携用スクリプト -->
-    <script type="module" src="JS/accessories.js"></script>
+    <script type="module" src="/assets/js/accessories.js"></script>
 </body>
 </html>

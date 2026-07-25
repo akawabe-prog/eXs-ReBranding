@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PDRLTW4');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>CART | eXs</title>
+    <meta name="description" content="eXs のカートページ。選択中の商品確認、数量追加、削除ができます。">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="canonical" href="https://exs.mobi/cart">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="eXs">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://exs.mobi/cart">
+    <meta property="og:title" content="CART | eXs">
+    <meta property="og:description" content="eXs のカートページ。選択中の商品確認、数量追加、削除ができます。">
+    <meta property="og:image" content="/assets/images/img-webp/eXsStreetImage.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CART | eXs">
+    <meta name="twitter:description" content="eXs のカートページ。選択中の商品確認、数量追加、削除ができます。">
+    <meta name="twitter:image" content="/assets/images/img-webp/eXsStreetImage.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Montserrat"', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            black: '#111111',
+                            gray: '#f5f5f5'
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.15em'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/img/apple-touch-icon.png">
+</head>
+<body class="font-sans text-brand-black antialiased bg-white pt-20 min-h-screen flex flex-col">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRLTW4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="common-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-black text-white"></header>
+
+    <main class="flex-grow bg-brand-gray">
+        <section class="bg-brand-black text-white px-6 py-20 md:py-24">
+            <div class="container mx-auto max-w-6xl fade-up">
+                <p class="font-en text-xs tracking-widest text-gray-400 mb-4">SHOPPING CART</p>
+                <h1 class="font-en text-4xl md:text-5xl font-bold tracking-widest mb-4">CART</h1>
+                <p class="max-w-2xl text-sm md:text-base text-gray-300 leading-loose">
+                    カート内の商品を確認し、数量追加または削除できます。
+                </p>
+            </div>
+        </section>
+
+        <section class="px-6 py-12 md:py-16">
+            <div class="container mx-auto max-w-6xl">
+                <div id="cart-alert" class="hidden mb-6 rounded-2xl border px-4 py-3 text-sm"></div>
+
+                <div class="grid lg:grid-cols-[minmax(0,1.5fr)_360px] gap-8 items-start">
+                    <div class="fade-up">
+                        <div class="bg-white border border-gray-200 rounded-3xl overflow-hidden">
+                            <div class="px-6 py-5 border-b border-gray-200 flex items-center justify-between">
+                                <div>
+                                    <p class="font-en text-xs tracking-widest text-gray-400">CART DETAILS</p>
+                                    <h2 class="text-xl font-bold mt-1">選択中の商品</h2>
+                                </div>
+                                <button id="reload-cart-btn" type="button" class="inline-flex items-center gap-2 text-xs font-en tracking-widest border border-gray-300 px-4 py-2 hover:bg-gray-50 transition">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                    RELOAD
+                                </button>
+                            </div>
+                            <div id="cart-loading" class="px-6 py-16 text-center text-gray-500">
+                                <i class="fa-solid fa-spinner fa-spin text-2xl"></i>
+                            </div>
+                            <div id="cart-empty" class="hidden px-6 py-16 text-center">
+                                <p class="font-en text-2xl tracking-widest mb-4">YOUR CART IS EMPTY</p>
+                                <p class="text-sm text-gray-500 mb-8">商品を追加するとここに表示されます。</p>
+                                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                    <a href="https://exs.customjapan.net/product/exs-street/purchase" class="w-full sm:w-auto bg-brand-black text-white px-6 py-3 text-sm font-en tracking-widest hover:opacity-85 transition text-center">BUY eXs Street</a>
+                                    <a href="https://exs.customjapan.net/accessories" class="w-full sm:w-auto border border-brand-black px-6 py-3 text-sm font-en tracking-widest hover:bg-brand-black hover:text-white transition text-center">ACCESSORIES</a>
+                                </div>
+                            </div>
+                            <div id="cart-list" class="hidden divide-y divide-gray-200"></div>
+                        </div>
+                    </div>
+
+                    <aside class="fade-up">
+                        <div class="bg-white border border-gray-200 rounded-3xl p-6 sticky top-28">
+                            <p class="font-en text-xs tracking-widest text-gray-400 mb-3">ORDER SUMMARY</p>
+                            <div class="space-y-4 text-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-500">商品数</span>
+                                    <span id="summary-count" class="font-en text-lg">0</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-500">小計</span>
+                                    <span id="summary-subtotal" class="font-en text-lg">0円</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-en tracking-widest">TOTAL</span>
+                                    <span id="summary-total" class="font-en text-3xl font-bold">0円</span>
+                                </div>
+                                <p class="mt-4 text-xs text-gray-500 leading-relaxed">
+                                    送料・手数料は注文画面で確定します。
+                                </p>
+                            </div>
+                            <div class="mt-8 space-y-3">
+                                <button id="cart-checkout-btn" type="button" class="hidden w-full bg-brand-black text-white text-center py-3 text-sm font-en tracking-widest hover:opacity-85 transition">PROCEED TO PURCHASE</button>
+                                <p id="cart-checkout-note" class="hidden text-xs text-gray-500 leading-relaxed"></p>
+                                <a href="https://exs.customjapan.net/accessories" class="block w-full border border-brand-black text-center py-3 text-sm font-en tracking-widest hover:bg-brand-black hover:text-white transition">CONTINUE SHOPPING</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="container mx-auto max-w-6xl">
+                <div class="fade-up bg-white border border-gray-200 rounded-3xl overflow-hidden">
+                    <div class="px-6 py-5 border-b border-gray-200">
+                        <p class="font-en text-xs tracking-widest text-gray-400">RECOMMENDED ACCESSORIES</p>
+                        <h2 class="text-xl font-bold mt-1">オプション / アクセサリー</h2>
+                    </div>
+                    <div id="cart-accessories-loading" class="px-6 py-16 text-center text-gray-500">
+                        <i class="fa-solid fa-spinner fa-spin text-2xl"></i>
+                    </div>
+                    <div id="cart-accessories-empty" class="hidden px-6 py-16 text-center text-gray-500">
+                        アクセサリー情報を取得できませんでした。
+                    </div>
+                    <div id="cart-accessories-grid" class="hidden grid md:grid-cols-2 xl:grid-cols-3 gap-6 p-6"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script type="module" src="/assets/js/cart-page.js"></script>
+</body>
+</html>

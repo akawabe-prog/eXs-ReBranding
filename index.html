@@ -10,22 +10,23 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
     <title>eXs | 電動アシスト自転車・ファットバイク・eBike・電動キックボード</title>
-    <meta name="description" content="eXs（エクス）は、電動アシスト自転車・ファットバイク・eBike・電動キックボードを展開する次世代モビリティブランドです。">
+    <meta name="description" content="eXs（エクス）は、電動アシスト自転車やファットタイヤのスポーツタイプE-bike（eBike）、電動キックボードを展開する次世代モビリティブランド。街乗りからアウトドアまで対応。">
     <meta name="keywords" content="電動アシスト自転車,ファットバイク,eBike,電動キックボード,特定小型原付,eXs">
     <meta name="robots" content="index,follow,max-image-preview:large">
-    <link rel="canonical" href="https://exs.customjapan.net/">
+    <link rel="canonical" href="https://exs.mobi/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="eXs">
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:url" content="https://exs.customjapan.net/">
+    <meta property="og:url" content="https://exs.mobi/">
     <meta property="og:title" content="eXs | 電動アシスト自転車・ファットバイク・eBike・電動キックボード">
-    <meta property="og:description" content="eXs（エクス）は、電動アシスト自転車・ファットバイク・eBike・電動キックボードを展開する次世代モビリティブランドです。">
-    <meta property="og:image" content="img-webp/eXsStreetImage.webp">
+    <meta property="og:description" content="eXs（エクス）は、電動アシスト自転車やファットタイヤのスポーツタイプE-bike（eBike）、電動キックボードを展開する次世代モビリティブランド。街乗りからアウトドアまで対応。">
+    <meta property="og:image" content="/assets/images/img-webp/eXsStreetImage.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="eXs | 電動アシスト自転車・ファットバイク・eBike・電動キックボード">
-    <meta name="twitter:description" content="eXs（エクス）は、電動アシスト自転車・ファットバイク・eBike・電動キックボードを展開する次世代モビリティブランドです。">
-    <meta name="twitter:image" content="img-webp/eXsStreetImage.webp">
+    <meta name="twitter:description" content="eXs（エクス）は、電動アシスト自転車やファットタイヤのスポーツタイプE-bike（eBike）、電動キックボードを展開する次世代モビリティブランド。街乗りからアウトドアまで対応。">
+    <meta name="twitter:image" content="/assets/images/img-webp/eXsStreetImage.webp">
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,8 +60,32 @@
         }
     </script>
 
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <style>.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; } .fade-up.visible { opacity: 1; transform: translateY(0); }</style>
+    <style>
+    /* Instagram タグ付け投稿 — 9:16タイル＋サイト内モーダル */
+    .ig-row{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(190px,21vw,250px);gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+    .ig-row::-webkit-scrollbar{height:6px}
+    .ig-row::-webkit-scrollbar-thumb{background:#d4d4d4;border-radius:3px}
+    .ig-post{position:relative;display:block;width:100%;aspect-ratio:9/16;overflow:hidden;background:#111;border:0;padding:0;cursor:pointer;font:inherit;scroll-snap-align:start}
+    .ig-post img,.ig-post video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+    .ig-post:hover img,.ig-post:hover video{transform:scale(1.05)}
+    .ig-post .ig-user{position:absolute;left:0;right:0;top:0;padding:10px 12px;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-align:left}
+    .ig-post .ig-play{position:absolute;top:10px;right:10px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+    .ig-post .ig-cap{position:absolute;left:0;right:0;bottom:0;padding:32px 12px 12px;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent);color:#fff;font-size:11px;line-height:1.6;text-align:left;opacity:0;transition:opacity .25s;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .ig-post:hover .ig-cap{opacity:1}
+    .igm{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);padding:24px}
+    .igm.on{display:flex}
+    .igm-box{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:100%}
+    .igm-media{max-height:80vh;max-width:92vw;background:#000;display:block;object-fit:contain}
+    .igm-cap{color:#fff;font-size:12px;line-height:1.6;max-width:440px;text-align:center;max-height:4.8em;overflow:auto;white-space:pre-line}
+    .igm-link{color:#fff;opacity:.7;font-size:11px;text-decoration:underline;text-underline-offset:3px}
+    .igm-close{position:absolute;top:16px;right:16px;width:40px;height:40px;border:0;background:#fff;color:#111;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    </style>
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/img/apple-touch-icon.png">
 </head>
 <body class="font-sans text-brand-black antialiased bg-white">
 
@@ -70,32 +95,88 @@
     <!-- End Google Tag Manager (noscript) -->
     <header id="common-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-black text-white"></header>
 
-    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-        <div class="absolute inset-0 z-0">
-            <video 
-                class="w-full h-full object-cover opacity-60" 
-                autoplay 
-                muted 
-                loop 
-                playsinline
-                poster="https://placehold.co/1920x1080/111/333?text=Loading..."
-            >
-                <source src="video/index-hero-optimized.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
-            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+    <section id="hero-slider" class="relative h-screen overflow-hidden bg-black">
+        <!-- Slide 1: ブランドムービー -->
+        <div class="hero-slide absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-700" data-slide="0">
+            <div class="absolute inset-0 z-0">
+                <video
+                    id="hero-video"
+                    class="w-full h-full object-cover opacity-60"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source src="/assets/videos/index-hero-optimized.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-4 fade-up">
+                <img src="/assets/images/img/eXs_logo_white.svg" alt="eXs ロゴ" class="h-16 md:h-24 w-auto mx-auto mb-4 drop-shadow-lg" loading="lazy" decoding="async">
+                <p class="font-en text-sm md:text-lg tracking-[0.2em] mb-2 drop-shadow-md">REDEFINING THE STANDARDS OF MOBILITY</p>
+                <p class="text-xs md:text-sm text-gray-200 tracking-widest drop-shadow-md">移動の常識を再定義する</p>
+            </div>
         </div>
-        
-        <div class="relative z-10 text-center text-white px-4 fade-up">
-            <img src="img/exs-logo-white.svg" alt="eXs ロゴ" class="h-16 md:h-24 w-auto mx-auto mb-4 drop-shadow-lg" loading="lazy" decoding="async">
-            <p class="font-en text-sm md:text-lg tracking-[0.2em] mb-2 drop-shadow-md">REDEFINING THE STANDARDS OF MOBILITY</p>
-            <p class="text-xs md:text-sm text-gray-200 tracking-widest drop-shadow-md">移動の常識を再定義する</p>
+
+        <!-- Slide 2: eXs Street 型式認定取得 -->
+        <div class="hero-slide absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-700" data-slide="1">
+            <div class="absolute inset-0 z-0">
+                <img src="/assets/images/img-webp/eXs_top_imagebackground.webp" alt="eXs Street" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-black/55"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-6">
+                <p class="font-en text-xs md:text-sm tracking-[0.3em] mb-4 text-gray-300">NEWS</p>
+                <h2 class="text-2xl md:text-4xl font-bold leading-snug mb-4 drop-shadow-md">eXs Streetが型式認定を取得</h2>
+                <p class="text-xs md:text-sm text-gray-200 tracking-widest mb-8">安心して選べる電動アシスト自転車へ</p>
+                <a href="/colum/exs-street-type-approval" class="inline-block border border-white px-8 py-3 text-xs font-en font-bold tracking-widest hover:bg-white hover:text-black transition">READ MORE</a>
+            </div>
         </div>
-        
-       <div class="absolute bottom-10 left-0 w-full text-center z-20 animate-bounce">
-    <span class="text-white text-[10px] font-en tracking-widest">SCROLL</span>
-</div>
+
+        <!-- Slide 3: 保証期間1年 -->
+        <div class="hero-slide absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-700" data-slide="2">
+            <div class="absolute inset-0 z-0 grid grid-cols-2">
+                <img src="/assets/images/img-webp/eXsStreetImage.webp" alt="eXs Street" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                <img src="/assets/images/img-webp/exs-1-tkg-woman-6851.webp" alt="eXs 1 TKG" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            </div>
+            <div class="absolute inset-0 z-0 bg-black/55"></div>
+            <div class="relative z-10 text-center text-white px-6">
+                <p class="font-en text-xs md:text-sm tracking-[0.3em] mb-4 text-gray-300">WARRANTY</p>
+                <h2 class="text-2xl md:text-4xl font-bold leading-snug mb-4 drop-shadow-md">メーカー保証期間が1年になりました</h2>
+                <p class="text-xs md:text-sm text-gray-200 tracking-widest mb-8">eXs Street・eXs 1 TKG 対象</p>
+                <a href="/news" class="inline-block border border-white px-8 py-3 text-xs font-en font-bold tracking-widest hover:bg-white hover:text-black transition">READ MORE</a>
+            </div>
+        </div>
+
+        <!-- Slide 4: 日常のシーン -->
+        <div class="hero-slide absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-700" data-slide="3">
+            <div class="absolute inset-0 z-0">
+                <img src="/assets/images/img-webp/exs-1-tkg-woman-6859.webp" alt="eXs 1 TKGと公園を歩く女性" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-black/50"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-6">
+                <p class="font-en text-xs md:text-sm tracking-[0.3em] mb-4 text-gray-300">SCENE</p>
+                <h2 class="text-2xl md:text-4xl font-bold leading-snug mb-4 drop-shadow-md">日常に、ちょうどいい移動を。</h2>
+                <p class="text-xs md:text-sm text-gray-200 tracking-widest mb-8">通勤も、買い物も、休日も。</p>
+                <a href="#scene" class="inline-block border border-white px-8 py-3 text-xs font-en font-bold tracking-widest hover:bg-white hover:text-black transition">VIEW SCENE</a>
+            </div>
+        </div>
+
+        <!-- 前後の矢印 -->
+        <button type="button" id="hero-prev" aria-label="前のスライド" class="hidden md:flex absolute left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 items-center justify-center rounded-full border border-white/40 text-white hover:bg-white hover:text-black transition">&#8249;</button>
+        <button type="button" id="hero-next" aria-label="次のスライド" class="hidden md:flex absolute right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 items-center justify-center rounded-full border border-white/40 text-white hover:bg-white hover:text-black transition">&#8250;</button>
+
+        <!-- インジケーター -->
+        <div id="hero-dots" class="absolute bottom-6 left-0 w-full flex items-center justify-center gap-2.5 z-30">
+            <button type="button" data-go="0" aria-label="スライド1" class="w-2 h-2 rounded-full bg-white transition"></button>
+            <button type="button" data-go="1" aria-label="スライド2" class="w-2 h-2 rounded-full bg-white/40 transition"></button>
+            <button type="button" data-go="2" aria-label="スライド3" class="w-2 h-2 rounded-full bg-white/40 transition"></button>
+            <button type="button" data-go="3" aria-label="スライド4" class="w-2 h-2 rounded-full bg-white/40 transition"></button>
+        </div>
+
+        <div class="absolute bottom-12 left-0 w-full text-center z-20 animate-bounce pointer-events-none">
+            <span class="text-white text-[10px] font-en tracking-widest">SCROLL</span>
+        </div>
     </section>
 
     <section id="about" class="py-24 md:py-32 px-6 bg-brand-black text-white">
@@ -118,15 +199,17 @@
 
     <section id="street" class="py-20 md:py-0 bg-white">
         <div class="flex flex-col md:flex-row h-auto md:min-h-screen">
-            <div class="w-full md:w-1/2 bg-gray-100 relative aspect-[4/5] md:aspect-auto md:h-auto group overflow-hidden">
-                <img src="img-webp/eXsStreetImage.webp" alt="eXs Street" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+            <div data-xfade class="w-full md:w-1/2 bg-gray-100 relative aspect-[4/5] md:aspect-auto md:h-auto group overflow-hidden">
+                <img src="/assets/images/img-webp/eXsStreetImage.webp" alt="eXs Street" class="xf-img w-full h-full object-cover transition-opacity duration-1000 opacity-100" loading="lazy" decoding="async">
+                <img src="/assets/images/img-webp/exs-1-tkg-woman-7003.webp" alt="eXs Streetと女性の街歩き" class="xf-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" loading="lazy" decoding="async">
+                <img src="/assets/images/img-webp/exs-1-tkg-woman-7004.webp" alt="eXs Streetとカフェ前の女性" class="xf-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" loading="lazy" decoding="async">
                 <div class="absolute top-6 left-6">
-                    <span class="bg-black text-white text-xs px-3 py-1 font-en tracking-widest">NEW MODEL</span>
+                    <span class="bg-black text-white text-xs px-3 py-1 font-bold tracking-widest">型式認定車両</span>
                 </div>
             </div>
             <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20">
                 <div class="max-w-lg w-full fade-up">
-                    <img src="img/exs-street-logo-black.svg" alt="eXs Street ロゴ" class="h-10 md:h-12 w-auto mb-2" loading="lazy" decoding="async">
+                    <img src="/assets/images/img/exs-street-logo-black.svg" alt="eXs Street ロゴ" class="h-10 md:h-12 w-auto mb-2" loading="lazy" decoding="async">
                     <p class="text-gray-500 font-en tracking-widest mb-8">ELECTRIC ASSIST BICYCLE</p>
                     <div class="mb-10 text-justify leading-relaxed text-sm text-gray-700">
                         <p>20×4インチのファットタイヤで、街乗りもオフロードも。<br>
@@ -140,8 +223,8 @@
                         <div><span class="block text-xs text-gray-400 font-en">FEATURE</span><span class="text-sm">3STEP 折りたたみ</span></div>
                     </div>
                     <div class="flex flex-col gap-4">
-                        <a href="product/exs-street" class="block w-full bg-brand-black text-white text-center py-4 font-en tracking-widest hover:bg-gray-800 transition">VIEW DETAILS</a>
-                        <a href="product/exs-street/purchase" class="block w-full border border-brand-black text-brand-black text-center py-4 font-en tracking-widest hover:bg-gray-50 transition">BUY NOW</a>
+                        <a href="https://exs.customjapan.net/product/exs-street" class="block w-full bg-brand-black text-white text-center py-4 font-en tracking-widest hover:bg-gray-800 transition">VIEW DETAILS</a>
+                        <a href="https://exs.customjapan.net/product/exs-street/purchase" class="block w-full border border-brand-black text-brand-black text-center py-4 font-en tracking-widest hover:bg-gray-50 transition">BUY NOW</a>
                     </div>
                 </div>
             </div>
@@ -150,8 +233,10 @@
 
     <section id="tkg" class="py-20 md:py-0 bg-brand-gray">
         <div class="flex flex-col md:flex-row-reverse h-auto">
-            <div class="w-full md:w-1/2 bg-white relative aspect-[4/5] md:aspect-auto md:h-auto group overflow-hidden">
-                <img src="img-webp/eXs-1-TKG_image_top.webp" alt="eXs 1 TKG" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+            <div data-xfade class="w-full md:w-1/2 bg-white relative aspect-[4/5] md:aspect-auto md:h-auto group overflow-hidden">
+                <img src="/assets/images/img-webp/eXs-1-TKG_image_top.webp" alt="eXs 1 TKG" class="xf-img w-full h-full object-cover transition-opacity duration-1000 opacity-100" loading="lazy" decoding="async">
+                <img src="/assets/images/img-webp/exs-1-tkg-citywalk.webp" alt="eXs 1 TKGと街を歩く女性" class="xf-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" loading="lazy" decoding="async">
+                <img src="/assets/images/img-webp/exs-1-tkg-woman-6889.webp" alt="eXs 1 TKGのハンドル操作" class="xf-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" loading="lazy" decoding="async">
                 <div class="absolute top-6 right-6 text-right">
                     <span class="bg-red-600 text-white text-xs px-3 py-1 font-bold tracking-widest block mb-2">大阪万博採用モデル</span>
                     <span class="bg-brand-black text-white text-xs px-3 py-1 font-bold tracking-widest">免許不要</span>
@@ -166,16 +251,60 @@
                         コンパクトな折りたたみ設計で、都市の移動をスマートに。</p>
                     </div>
                     <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-10 border-t border-gray-300 pt-6">
-                        <div><span class="block text-xs text-gray-400 font-en">PRICE (TAX IN)</span><span class="text-xl font-bold font-en">54,999円</span></div>
+                        <div><span class="block text-xs text-gray-400 font-en">PRICE (TAX IN)</span><span class="text-xl font-bold font-en" data-api-price-item-id="27882603" data-fallback-price="59080">59,080円</span></div>
                         <div><span class="block text-xs text-gray-400 font-en">WEIGHT</span><span class="text-sm font-en">16.0kg</span></div>
                         <div><span class="block text-xs text-gray-400 font-en">RANGE</span><span class="text-sm font-en">20-25km</span></div>
                         <div><span class="block text-xs text-gray-400 font-en">TYPE</span><span class="text-sm">特定小型原付</span></div>
                     </div>
                     <div class="flex flex-col gap-4">
-                        <a href="product/exs-1-tkg" class="block w-full bg-brand-black text-white text-center py-4 font-en tracking-widest hover:bg-gray-800 transition">VIEW DETAILS</a>
-                        <a href="product/exs-1-tkg/purchase" class="block w-full border border-brand-black text-brand-black text-center py-4 font-en tracking-widest hover:bg-white transition">BUY NOW</a>
+                        <a href="https://exs.customjapan.net/product/exs-1-tkg" class="block w-full bg-brand-black text-white text-center py-4 font-en tracking-widest hover:bg-gray-800 transition">VIEW DETAILS</a>
+                        <a href="https://exs.customjapan.net/product/exs-1-tkg/purchase" class="block w-full border border-brand-black text-brand-black text-center py-4 font-en tracking-widest hover:bg-white transition">BUY NOW</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="scene" class="py-20 md:py-28 px-6 bg-brand-black text-white">
+        <div class="container mx-auto max-w-6xl fade-up">
+            <div class="text-center mb-12">
+                <p class="font-en text-xs text-gray-400 tracking-widest mb-3">SCENE</p>
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">日常に、ちょうどいい移動を。</h2>
+                <p class="text-sm text-gray-400 leading-relaxed">通勤、買い物、休日のリフレッシュまで。eXsは毎日のあらゆるシーンに寄り添います。</p>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+                <a href="https://exs.customjapan.net/product/exs-1-tkg" class="group relative block aspect-[4/5] overflow-hidden bg-gray-900">
+                    <img src="/assets/images/img-webp/exs-1-tkg-cityride.webp" alt="eXs 1 TKGでオフィス街を移動" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <p class="font-en text-[10px] tracking-widest text-gray-300 mb-1">COMMUTE</p>
+                        <p class="text-sm font-bold leading-snug">通勤も、スーツのままスマートに</p>
+                    </div>
+                </a>
+                <a href="https://exs.customjapan.net/product/exs-street" class="group relative block aspect-[4/5] overflow-hidden bg-gray-900">
+                    <img src="/assets/images/img-webp/exs-1-tkg-woman-7004.webp" alt="eXs Streetで街へ買い物に" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <p class="font-en text-[10px] tracking-widest text-gray-300 mb-1">CITY RIDE</p>
+                        <p class="text-sm font-bold leading-snug">買い物やカフェ巡りは、eXs Streetと</p>
+                    </div>
+                </a>
+                <a href="https://exs.customjapan.net/product/exs-1-tkg" class="group relative block aspect-[4/5] overflow-hidden bg-gray-900">
+                    <img src="/assets/images/img-webp/exs-1-tkg-woman-6858.webp" alt="eXs 1 TKGで休日の公園へ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <p class="font-en text-[10px] tracking-widest text-gray-300 mb-1">PARK</p>
+                        <p class="text-sm font-bold leading-snug">休日は、公園まで風を感じに</p>
+                    </div>
+                </a>
+                <a href="https://exs.customjapan.net/product/exs-1-tkg" class="group relative block aspect-[4/5] overflow-hidden bg-gray-900">
+                    <img src="/assets/images/img-webp/exs-1-tkg-woman-6973.webp" alt="eXs 1 TKGでカフェへ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <p class="font-en text-[10px] tracking-widest text-gray-300 mb-1">CAFE</p>
+                        <p class="text-sm font-bold leading-snug">お気に入りの場所へ、気ままに</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -190,7 +319,7 @@
                 <div class="bg-gray-50 p-8 text-center hover:shadow-lg transition duration-300">
                     <div class="h-12 w-12 mx-auto bg-brand-black text-white flex items-center justify-center rounded-full mb-6 font-en font-bold">01</div>
                     <h3 class="font-bold mb-4">モデル別製品保証</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed mb-2">eXs Streetは12ヶ月、eXs 1 TKGは6ヶ月、主要部品の不具合に部品・工賃とも無償対応します。</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">eXs Street・eXs 1 TKGはお届けから12ヶ月間、主要部品の不具合に部品・工賃とも無償対応します。</p>
                     <p class="text-xs text-gray-500 leading-relaxed">※保証対象: フレーム、モーター、コントローラー等の主要部品。タイヤやブレーキ等の消耗品、使用上の不注意による故障は対象外です。</p>
                 </div>
                 <div class="bg-gray-50 p-8 text-center hover:shadow-lg transition duration-300">
@@ -205,14 +334,14 @@
                 </div>
             </div>
             <div class="text-center mt-10">
-                <a href="support" class="inline-block bg-brand-black text-white px-8 py-3 text-xs tracking-widest hover:bg-gray-800 transition">SUPPORTの詳細はこちら</a>
+                <a href="/support" class="inline-block bg-brand-black text-white px-8 py-3 text-xs tracking-widest hover:bg-gray-800 transition">SUPPORTの詳細はこちら</a>
             </div>
         </div>
     </section>
 
     <section class="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black">
         <div id="index-parallax-visual" class="absolute inset-0 w-full h-full">
-            <img id="index-parallax-image" src="img-webp/eXs_top_imagebackground.webp" alt="eXs Brand Image" class="w-full h-[180%] object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 will-change-transform" loading="lazy" decoding="async">
+            <img id="index-parallax-image" src="/assets/images/img-webp/exs-1-tkg-woman-6925.webp" alt="eXs Brand Image" class="w-full h-[180%] object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 will-change-transform" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
     </section>
@@ -221,22 +350,35 @@
         <div class="container mx-auto max-w-4xl fade-up">
             <h2 class="font-en text-3xl font-bold mb-12 tracking-widest text-center">NEWS</h2>
             <div class="border-t border-gray-200">
-                <!-- TODO: ニュース詳細URLが確定したら差し替え -->
-                <a href="news" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
+                <a href="/news#news-press-20260721" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="mb-2 md:mb-0"><span class="text-xs font-en text-gray-400 mr-4">2026.07.21</span><span class="text-xs bg-black text-white px-2 py-0.5">PRESS</span></div>
+                        <h3 class="text-sm font-medium flex-grow md:ml-8 group-hover:text-gray-600 transition">eXs Streetが型式認定を取得しました。</h3>
+                        <span class="text-gray-400 hidden md:block">→</span>
+                    </div>
+                </a>
+                <a href="/news" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="mb-2 md:mb-0"><span class="text-xs font-en text-gray-400 mr-4">2026.06.11</span><span class="text-xs bg-gray-200 text-gray-600 px-2 py-0.5">INFO</span></div>
+                        <h3 class="text-sm font-medium flex-grow md:ml-8 group-hover:text-gray-600 transition">eXs 1 TKGのメーカー保証期間を1年間へ延長しました。</h3>
+                        <span class="text-gray-400 hidden md:block">→</span>
+                    </div>
+                </a>
+                <a href="/news" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
                     <div class="flex flex-col md:flex-row md:items-center justify-between">
                         <div class="mb-2 md:mb-0"><span class="text-xs font-en text-gray-400 mr-4">2026.03.02</span><span class="text-xs bg-gray-200 text-gray-600 px-2 py-0.5">INFO</span></div>
                         <h3 class="text-sm font-medium flex-grow md:ml-8 group-hover:text-gray-600 transition">eXs公式サイトをリニューアルオープンしました</h3>
                         <span class="text-gray-400 hidden md:block">→</span>
                     </div>
                 </a>
-                <a href="news" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
+                <a href="/news" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
                     <div class="flex flex-col md:flex-row md:items-center justify-between">
                         <div class="mb-2 md:mb-0"><span class="text-xs font-en text-gray-400 mr-4">2026.02.24</span><span class="text-xs bg-black text-white px-2 py-0.5">PRESS</span></div>
                         <h3 class="text-sm font-medium flex-grow md:ml-8 group-hover:text-gray-600 transition">サイクルモードライド大阪2026への初出展が決定しました。</h3>
                         <span class="text-gray-400 hidden md:block">→</span>
                     </div>
                 </a>
-                <a href="news" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
+                <a href="/news" class="block py-6 border-b border-gray-200 hover:bg-gray-50 transition group">
                     <div class="flex flex-col md:flex-row md:items-center justify-between">
                         <div class="mb-2 md:mb-0"><span class="text-xs font-en text-gray-400 mr-4">2025.03.14</span><span class="text-xs bg-black text-white px-2 py-0.5">PRESS</span></div>
                         <h3 class="text-sm font-medium flex-grow md:ml-8 group-hover:text-gray-600 transition">大阪・関西万博の公式サプライヤーとしてeXs 1 TKGを提供開始しました。</h3>
@@ -252,10 +394,20 @@
             <h2 class="font-en text-3xl font-bold mb-12 tracking-widest text-center">COLUMN</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- TODO: コラム詳細URLが確定したら差し替え -->
-                <a href="colum/cyclemodeosaka2026" class="group block">
+                <a href="/colum/exs-street-type-approval" class="group block">
                     <div class="overflow-hidden mb-5 bg-gray-200 aspect-[16/9]">
-                        <img src="img-webp/cyclemoderideosaka2026.webp" alt="サイクルモード大阪2026記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                        <img src="/assets/images/img-webp/eXsStreetImage.webp" alt="eXs Street 型式認定取得記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                    </div>
+                    <time class="text-xs text-gray-500 font-en mb-3 block tracking-wider">2026.07.21</time>
+                    <h3 class="text-lg font-bold mb-3 leading-snug group-hover:text-gray-600 transition">eXs Streetが型式認定を取得。安心して選べる電動アシスト自転車へ</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-2">
+                        日本交通管理技術協会による型式認定を取得。認定番号と、日常で安心して使うためのポイントを紹介します。
+                    </p>
+                </a>
+
+                <a href="/colum/cyclemodeosaka2026" class="group block">
+                    <div class="overflow-hidden mb-5 bg-gray-200 aspect-[16/9]">
+                        <img src="/assets/images/img-webp/cyclemoderideosaka2026.webp" alt="サイクルモード大阪2026記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                     </div>
                     <time class="text-xs text-gray-500 font-en mb-3 block tracking-wider">2026.03.02</time>
                     <h3 class="text-lg font-bold mb-3 leading-snug group-hover:text-gray-600 transition">西日本最大級の自転車フェス「サイクルモード大阪2026」にeXsが初出展！メーカー直伝の120%楽しむ方法</h3>
@@ -265,9 +417,9 @@
                 </a>
 
                 <!-- TODO: コラム詳細URLが確定したら差し替え -->
-                <a href="colum/50cc" class="group block">
+                <a href="/colum/50cc" class="group block">
                     <div class="overflow-hidden mb-5 bg-gray-200 aspect-[16/9]">
-                        <img src="img-webp/50cc.webp" alt="50cc原付記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                        <img src="/assets/images/img-webp/50cc.webp" alt="50cc原付記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                     </div>
                     <time class="text-xs text-gray-500 font-en mb-3 block tracking-wider">2025.11.01</time>
                     <h3 class="text-lg font-bold mb-3 leading-snug group-hover:text-gray-600 transition">50cc原付が消えた！？今後のモビリティ市場はどうなる</h3>
@@ -276,21 +428,29 @@
                     </p>
                 </a>
 
-                <!-- TODO: コラム詳細URLが確定したら差し替え -->
-                <a href="colum/tkg" class="group block">
-                    <div class="overflow-hidden mb-5 bg-gray-200 aspect-[16/9]">
-                        <img src="img-webp/electric_kickboard_colum.webp" alt="法改正記事サムネイル" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
-                    </div>
-                    <time class="text-xs text-gray-500 font-en mb-3 block tracking-wider">2023.8</time>
-                    <h3 class="text-lg font-bold mb-3 leading-snug group-hover:text-gray-600 transition">特定小型原動機付自転車の法改正のポイント</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-2">
-                        街中でキックボードに乗る人を見ることが増えてきました。特定小型原付の定義や、公道を走るために必要な条件を分かりやすく解説。
-                    </p>
-                </a>
             </div>
 
             <div class="mt-12 text-center">
-                <a href="colum" class="inline-block border-b border-black pb-1 text-sm font-bold tracking-wide hover:text-gray-500 transition">COLUMN LIST</a>
+                <a href="/colum" class="inline-flex items-center justify-center gap-2 border border-brand-black px-8 py-3 text-xs font-bold tracking-widest hover:bg-brand-black hover:text-white transition">コラムをもっと見る</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="instagram" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl fade-up">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                <div>
+                    <p class="font-en text-xs text-gray-400 tracking-widest mb-3">TAGGED POSTS</p>
+                    <h2 class="font-en text-3xl font-bold tracking-widest">INSTAGRAM</h2>
+                </div>
+                <a href="https://www.instagram.com/exs.mobi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 border border-brand-black px-6 py-3 text-xs font-bold tracking-widest hover:bg-brand-black hover:text-white transition w-fit">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                    @exs.mobi
+                </a>
+            </div>
+
+            <div id="igGrid" class="ig-row">
+                <p class="py-10 text-center text-sm text-gray-400 whitespace-nowrap">読み込み中…</p>
             </div>
         </div>
     </section>
@@ -299,8 +459,8 @@
         <div class="container mx-auto max-w-6xl fade-up">
             <div class="grid md:grid-cols-2 gap-8">
                 
-                <a href="partner-list" class="group relative h-[400px] overflow-hidden block">
-                    <img src="img-webp/parter_image.webp" alt="Brand Partner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                <a href="/partner-list" class="group relative h-[400px] overflow-hidden block">
+                    <img src="/assets/images/img-webp/parter_image.webp" alt="Brand Partner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                     
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     
@@ -312,8 +472,8 @@
                 </a>
 
                 <!-- TODO: 開発ストーリー記事URLが確定したら差し替え -->
-                <a href="developer" class="group relative h-[400px] overflow-hidden block">
-                    <img src="img-webp/developer_kitaura.webp" alt="Developer Interview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                <a href="/developer" class="group relative h-[400px] overflow-hidden block">
+                    <img src="/assets/images/img-webp/developer_kitaura.webp" alt="Developer Interview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
                     
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition"></div>
                     
@@ -334,8 +494,112 @@
 
     <footer id="common-footer" class="bg-brand-black text-white pt-20 pb-10 px-6"></footer>
 
-    <script src="JS/components.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script>
+        // 画像クロスフェード（data-xfade 内の .xf-img を4秒ごとに巡回）
+        document.querySelectorAll('[data-xfade]').forEach((box) => {
+            const imgs = [...box.querySelectorAll('.xf-img')];
+            if (imgs.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            let i = 0;
+            setInterval(() => {
+                if (document.hidden) return;
+                i = (i + 1) % imgs.length;
+                imgs.forEach((im, k) => {
+                    im.classList.toggle('opacity-100', k === i);
+                    im.classList.toggle('opacity-0', k !== i);
+                });
+            }, 4000);
+        });
+
+        // HEROスライダー（動画→型式認定→保証の3枚。6秒ごとに自動送り、ホバー中は停止）
+        (function () {
+            const slider = document.getElementById('hero-slider');
+            if (!slider) return;
+            const slides = [...slider.querySelectorAll('.hero-slide')];
+            const dots = [...slider.querySelectorAll('#hero-dots button')];
+            const video = document.getElementById('hero-video');
+            let i = 0, timer = null, hovered = false;
+
+            const show = (n) => {
+                i = (n + slides.length) % slides.length;
+                slides.forEach((s, k) => {
+                    s.classList.toggle('opacity-100', k === i);
+                    s.classList.toggle('opacity-0', k !== i);
+                    s.classList.toggle('pointer-events-none', k !== i);
+                });
+                dots.forEach((d, k) => {
+                    d.classList.toggle('bg-white', k === i);
+                    d.classList.toggle('bg-white/40', k !== i);
+                });
+                if (video) { if (i === 0) video.play().catch(() => {}); else video.pause(); }
+            };
+            const restart = () => { clearInterval(timer); timer = setInterval(() => { if (!hovered && !document.hidden) show(i + 1); }, 6000); };
+
+            document.getElementById('hero-prev').addEventListener('click', () => { show(i - 1); restart(); });
+            document.getElementById('hero-next').addEventListener('click', () => { show(i + 1); restart(); });
+            dots.forEach((d) => d.addEventListener('click', () => { show(+d.dataset.go); restart(); }));
+            slider.addEventListener('mouseenter', () => { hovered = true; });
+            slider.addEventListener('mouseleave', () => { hovered = false; });
+            // スワイプ対応（モバイル）
+            let sx = null;
+            slider.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; }, { passive: true });
+            slider.addEventListener('touchend', (e) => {
+                if (sx === null) return;
+                const dx = e.changedTouches[0].clientX - sx;
+                if (Math.abs(dx) > 50) { show(i + (dx < 0 ? 1 : -1)); restart(); }
+                sx = null;
+            }, { passive: true });
+            restart();
+        })();
+    </script>
+    <script>
+        // Instagram タグ付け投稿 — ローカル保存した実データを9:16タイルで表示し、
+        // 外部遷移せずサイト内モーダルで再生する（SP Connect方式）
+        (function () {
+            const grid = document.getElementById('igGrid');
+            if (!grid) return;
+            const esc = (s) => (s || '').replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c]));
+            const modal = (() => {
+                const m = document.createElement('div'); m.className = 'igm';
+                m.innerHTML = '<button class="igm-close" aria-label="閉じる">×</button><div class="igm-box"><div class="igm-stage"></div><div class="igm-cap"></div><a class="igm-link" target="_blank" rel="noopener noreferrer">Instagramで見る</a></div>';
+                document.body.appendChild(m);
+                const stage = m.querySelector('.igm-stage'), cap = m.querySelector('.igm-cap'), link = m.querySelector('.igm-link');
+                const close = () => { m.classList.remove('on'); stage.innerHTML = ''; document.documentElement.style.overflow = ''; };
+                m.querySelector('.igm-close').onclick = close;
+                m.addEventListener('click', (e) => { if (e.target === m) close(); });
+                document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && m.classList.contains('on')) close(); });
+                return (p) => {
+                    stage.innerHTML = p.video
+                        ? `<video class="igm-media" src="/${p.video}" ${p.img ? `poster="/${p.img}"` : ''} autoplay loop playsinline controls></video>`
+                        : `<img class="igm-media" src="/${p.img}" alt="">`;
+                    cap.textContent = p.caption || '';
+                    link.href = p.permalink;
+                    m.classList.add('on'); document.documentElement.style.overflow = 'hidden';
+                };
+            })();
+            fetch('/data/instagram.json', { cache: 'no-store' }).then((r) => r.json()).then((d) => {
+                const posts = (d.posts || []).filter((p) => p.img || p.video).slice(0, 8);
+                if (!posts.length) { document.getElementById('instagram').style.display = 'none'; return; }
+                grid.innerHTML = '';
+                posts.forEach((p) => {
+                    const b = document.createElement('button'); b.type = 'button'; b.className = 'ig-post';
+                    b.innerHTML = (p.video
+                        ? `<video src="/${p.video}" ${p.img ? `poster="/${p.img}"` : ''} muted loop playsinline preload="none"></video><span class="ig-play">▶</span>`
+                        : `<img loading="lazy" src="/${p.img}" alt="@${esc(p.username)} の投稿">`)
+                        + `<span class="ig-user">@${esc(p.username)}</span><span class="ig-cap">${esc(p.caption)}</span>`;
+                    b.onclick = () => modal(p);
+                    grid.appendChild(b);
+                });
+                // 視界に入った時だけ自動再生して負荷を抑える
+                if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    const io = new IntersectionObserver((es) => es.forEach((e) => { const v = e.target; if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); }), { threshold: 0.25 });
+                    grid.querySelectorAll('video').forEach((v) => io.observe(v));
+                }
+            }).catch(() => { document.getElementById('instagram').style.display = 'none'; });
+        })();
+    </script>
+    <script type="module" src="/assets/js/api-price-display.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const parallaxVisual = document.getElementById('index-parallax-visual');

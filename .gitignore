@@ -1,3 +1,7 @@
 *.zip
 
 *.zip
+.DS_Store
+contact_config.local.php
+contact_test_config.local.php
+_partner_debug.php

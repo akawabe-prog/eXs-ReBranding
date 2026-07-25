@@ -1,0 +1,95 @@
+# exs.mobi Apache (.htaccess) sample
+# Requirements:
+# - mod_rewrite enabled
+# - AllowOverride FileInfo (or All)
+
+RewriteEngine On
+
+# Canonical host (if exs.mobi and www.exs.mobi are on same vhost)
+RewriteCond %{HTTP_HOST} ^www\.exs\.mobi$ [NC]
+RewriteRule ^ https://exs.mobi%{REQUEST_URI} [R=301,L]
+
+# Block sensitive files from direct access
+RewriteRule ^contact_test_config\.local\.php$ - [F,L,NC]
+RewriteRule ^contact_config\.local\.php$ - [F,L,NC]
+RewriteRule ^partner_entry_config\.local\.php$ - [F,L,NC]
+RewriteRule ^(?:vendor|_PhP_Mailer_)/ - [F,L,NC]
+RewriteRule ^composer\.(?:json|lock)$ - [F,L,NC]
+
+# purchase page must go to exs.customjapan.net
+RewriteRule ^product/exs-street/purchase/?$ https://exs.customjapan.net/product/exs-street/purchase [R=301,L,NC]
+RewriteRule ^product/exs-1-tkg/purchase/?$ https://exs.customjapan.net/product/exs-1-tkg/purchase [R=301,L,NC]
+
+# Legacy URLs also redirect to purchase target
+RewriteRule ^product-street(\.html)?/?$ https://exs.customjapan.net/product/exs-street/purchase [R=301,L,NC]
+RewriteRule ^product-tkg(\.html)?/?$ https://exs.customjapan.net/product/exs-1-tkg/purchase [R=301,L,NC]
+
+# Detail pages (exs.mobi) route to unique detail files.
+RewriteRule ^product/exs-street/?$ product/detail-street.html [L,NC,QSA]
+RewriteRule ^product/exs-1-tkg/?$ product/detail-tkg.html [L,NC,QSA]
+
+# Canonical index
+RewriteRule ^index/?$ / [R=301,L,NC]
+RewriteRule ^index\.html/?$ / [R=301,L,NC]
+
+# Canonical redirects for direct .html access
+# Use THE_REQUEST to avoid rewrite loops on internally mapped clean URLs.
+RewriteCond %{THE_REQUEST} \s/+about\.html(?:[\s?]|$) [NC]
+RewriteRule ^about\.html/?$ /about [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+accessories\.html(?:[\s?]|$) [NC]
+RewriteRule ^accessories\.html/?$ /accessories [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+support\.html(?:[\s?]|$) [NC]
+RewriteRule ^support\.html/?$ /support [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+news\.html(?:[\s?]|$) [NC]
+RewriteRule ^news\.html/?$ /news [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+developer\.html(?:[\s?]|$) [NC]
+RewriteRule ^developer\.html/?$ /developer [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+partner\.html(?:[\s?]|$) [NC]
+RewriteRule ^partner\.html/?$ /partner [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+partner-list\.html(?:[\s?]|$) [NC]
+RewriteRule ^partner-list\.html/?$ /partner-list [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+partner-entry\.html(?:[\s?]|$) [NC]
+RewriteRule ^partner-entry\.html/?$ /partner-entry [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+faq\.html(?:[\s?]|$) [NC]
+RewriteRule ^faq\.html/?$ /faq [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+contact\.html(?:[\s?]|$) [NC]
+RewriteRule ^contact\.html/?$ /contact [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+company\.html(?:[\s?]|$) [NC]
+RewriteRule ^company\.html/?$ /company [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+policy\.html(?:[\s?]|$) [NC]
+RewriteRule ^policy\.html/?$ /policy [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+cart\.html(?:[\s?]|$) [NC]
+RewriteRule ^cart\.html/?$ /cart [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+form-error\.html(?:[\s?]|$) [NC]
+RewriteRule ^form-error\.html/?$ /form-error [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+thanks\.html(?:[\s?]|$) [NC]
+RewriteRule ^thanks\.html/?$ /thanks [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+colum\.html(?:[\s?]|$) [NC]
+RewriteRule ^colum\.html/?$ /colum [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+colum/(?:[\s?]|$) [NC]
+RewriteRule ^colum/$ /colum [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+product/exs-street\.html(?:[\s?]|$) [NC]
+RewriteRule ^product/exs-street\.html/?$ /product/exs-street [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+product/exs-1-tkg\.html(?:[\s?]|$) [NC]
+RewriteRule ^product/exs-1-tkg\.html/?$ /product/exs-1-tkg [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+colum/50cc\.html(?:[\s?]|$) [NC]
+RewriteRule ^colum/50cc\.html/?$ /colum/50cc [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+colum/tkg\.html(?:[\s?]|$) [NC]
+RewriteRule ^colum/tkg\.html/?$ /colum/tkg [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+colum/mopet\.html(?:[\s?]|$) [NC]
+RewriteRule ^colum/mopet\.html/?$ /colum/mopet [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+colum/detail\.html(?:[\s?]|$) [NC]
+RewriteRule ^colum/detail\.html/?$ /colum/detail [R=301,L,NC]
+RewriteCond %{THE_REQUEST} \s/+colum/cyclemodeosaka2026\.html(?:[\s?]|$) [NC]
+RewriteRule ^colum/cyclemodeosaka2026\.html/?$ /colum/cyclemodeosaka2026 [R=301,L,NC]
+
+# Route -> file mapping
+
+
+# Skip rewrite for existing files/directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Generic clean URL fallback: /about -> /about.html
+RewriteRule ^([A-Za-z0-9_-]+)/?$ $1.html [L,NC,QSA]

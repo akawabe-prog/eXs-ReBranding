@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://exs.customjapan.net/sitemap.xml
+Sitemap: https://exs.mobi/sitemap.xml
